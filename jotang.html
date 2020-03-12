@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en" class="desktop-view not-mobile-device  ">
+
+<head>
+    <meta charset="utf-8">
+    <script>
+        window.NREUM || (NREUM = {});
+        NREUM.info = {
+            "beacon": "bam.nr-data.net",
+            "errorBeacon": "bam.nr-data.net",
+            "licenseKey": "bdb170990d",
+            "applicationID": "20037000",
+            "transactionName": "d1oPTBZcDV0BEx8RCkRcAktLQAleEw==",
+            "queueTime": 1,
+            "applicationTime": 227,
+            "agent": ""
+        }
+    </script>
+    <script>
+        window.NREUM || (NREUM = {}), __nr_require = function (e, n, t) {
+            function r(t) {
+                if (!n[t]) {
+                    var o = n[t] = {
+                        exports: {}
+                    };
+                    e[t][0].call(o.exports, function (n) {
+                        var o = e[t][1][n];
+                        return r(o || n)
+                    }, o, o.exports)
+                }
+                return n[t].exports
+            }
+            if ("function" == typeof __nr_require) return __nr_require;
+            for (var o = 0; o < t.length; o++) r(t[o]);
+            return r
+        }({
+            1: [function (e, n, t) {
+                function r() {}
+
+                function o(e, n, t) {
+                    return function () {
+                        return i(e, [c.now()].concat(u(arguments)), n ? null : this, t), n ?
+                            void 0 : this
+                    }
+                }
+                var i = e("handle"),
+                    a = e(3),
+                    u = e(4),
+                    f = e("ee").get("tracer"),
+                    c = e("loader"),
+                    s = NREUM;
+                "undefined" == typeof window.newrelic && (newrelic = s);
+                var p = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished",
+                        "addToTrace", "inlineHit", "addRelease"
+                    ],
+                    d = "api-",
+                    l = d + "ixn-";
+                a(p, function (e, n) {
+                    s[n] = o(d + n, !0, "api")
+                }), s.addPageAction = o(d + "addPageAction", !0), s.setCurrentRouteName = o(d +
+                    "routeName", !0), n.exports = newrelic, s.interaction = function () {
+                    return (new r).get()
+                };
+                var m = r.prototype = {
+                    createTracer: function (e, n) {
+                        var t = {},
+                            r = this,
+                            o = "function" == typeof n;
+                        return i(l + "tracer", [c.now(), e, t], r),
+                            function () {
+                                if (f.emit((o ? "" : "no-") + "fn-start", [c.now(), r, o], t),
+                                    o) try {
+                                    return n.apply(this, arguments)
+                                } catch (e) {
+                                    throw f.emit("fn-err", [arguments, this, e], t), e
+                                } finally {
+                                    f.emit("fn-end", [c.now()], t)
+                                }
+                            }
+                    }
+                };
+                a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),
+                    function (e, n) {
+                        m[n] = o(l + n)
+                    }), newrelic.noticeError = function (e, n) {
+                    "string" == typeof e && (e = new Error(e)), i("err", [e, c.now(), !1, n])
+                }
+            }, {}],
+            2: [function (e, n, t) {
+                function r(e, n) {
+                    if (!o) return !1;
+                    if (e !== o) return !1;
+                    if (!n) return !0;
+                    if (!i) return !1;
+                    for (var t = i.split("."), r = n.split("."), a = 0; a < r.length; a++)
+                        if (r[a] !== t[a]) return !1;
+                    return !0
+                }
+                var o = null,
+                    i = null,
+                    a = /Version\/(\S+)\s+Safari/;
+                if (navigator.userAgent) {
+                    var u = navigator.userAgent,
+                        f = u.match(a);
+                    f && u.indexOf("Chrome") === -1 && u.indexOf("Chromium") === -1 && (o = "Safari",
+                        i = f[1])
+                }
+                n.exports = {
+                    agent: o,
+                    version: i,
+                    match: r
+                }
+            }, {}],
+            3: [function (e, n, t) {
+                function r(e, n) {
+                    var t = [],
+                        r = "",
+                        i = 0;
+                    for (r in e) o.call(e, r) && (t[i] = n(r, e[r]), i += 1);
+                    return t
+                }
+                var o = Object.prototype.hasOwnProperty;
+                n.exports = r
+            }, {}],
+            4: [function (e, n, t) {
+                function r(e, n, t) {
+                    n || (n = 0), "undefined" == typeof t && (t = e ? e.length : 0);
+                    for (var r = -1, o = t - n || 0, i = Array(o < 0 ? 0 : o); ++r < o;) i[r] = e[n +
+                    r];
+                    return i
+                }
+                n.exports = r
+            }, {}],
+            5: [function (e, n, t) {
+                n.exports = {
+                    exists: "undefined" != typeof window.performance && window.performance.timing &&
+                        "undefined" != typeof window.performance.timing.navigationStart
+                }
+            }, {}],
+            ee: [function (e, n, t) {
+                function r() {}
+
+                function o(e) {
+                    function n(e) {
+                        return e && e instanceof r ? e : e ? f(e, u, i) : i()
+                    }
+
+                    function t(t, r, o, i) {
+                        if (!d.aborted || i) {
+                            e && e(t, r, o);
+                            for (var a = n(o), u = v(t), f = u.length, c = 0; c < f; c++) u[c].apply(a,
+                                r);
+                            var p = s[y[t]];
+                            return p && p.push([b, t, r, a]), a
+                        }
+                    }
+
+                    function l(e, n) {
+                        h[e] = v(e).concat(n)
+                    }
+
+                    function m(e, n) {
+                        var t = h[e];
+                        if (t)
+                            for (var r = 0; r < t.length; r++) t[r] === n && t.splice(r, 1)
+                    }
+
+                    function v(e) {
+                        return h[e] || []
+                    }
+
+                    function g(e) {
+                        return p[e] = p[e] || o(t)
+                    }
+
+                    function w(e, n) {
+                        c(e, function (e, t) {
+                            n = n || "feature", y[t] = n, n in s || (s[n] = [])
+                        })
+                    }
+                    var h = {},
+                        y = {},
+                        b = {
+                            on: l,
+                            addEventListener: l,
+                            removeEventListener: m,
+                            emit: t,
+                            get: g,
+                            listeners: v,
+                            context: n,
+                            buffer: w,
+                            abort: a,
+                            aborted: !1
+                        };
+                    return b
+                }
+
+                function i() {
+                    return new r
+                }
+
+                function a() {
+                    (s.api || s.feature) && (d.aborted = !0, s = d.backlog = {})
+                }
+                var u = "nr@context",
+                    f = e("gos"),
+                    c = e(3),
+                    s = {},
+                    p = {},
+                    d = n.exports = o();
+                d.backlog = s
+            }, {}],
+            gos: [function (e, n, t) {
+                function r(e, n, t) {
+                    if (o.call(e, n)) return e[n];
+                    var r = t();
+                    if (Object.defineProperty && Object.keys) try {
+                        return Object.defineProperty(e, n, {
+                            value: r,
+                            writable: !0,
+                            enumerable: !1
+                        }), r
+                    } catch (i) {}
+                    return e[n] = r, r
+                }
+                var o = Object.prototype.hasOwnProperty;
+                n.exports = r
+            }, {}],
+            handle: [function (e, n, t) {
+                function r(e, n, t, r) {
+                    o.buffer([e], r), o.emit(e, n, t)
+                }
+                var o = e("ee").get("handle");
+                n.exports = r, r.ee = o
+            }, {}],
+            id: [function (e, n, t) {
+                function r(e) {
+                    var n = typeof e;
+                    return !e || "object" !== n && "function" !== n ? -1 : e === window ? 0 : a(e, i,
+                        function () {
+                            return o++
+                        })
+                }
+                var o = 1,
+                    i = "nr@id",
+                    a = e("gos");
+                n.exports = r
+            }, {}],
+            loader: [function (e, n, t) {
+                function r() {
+                    if (!E++) {
+                        var e = x.info = NREUM.info,
+                            n = l.getElementsByTagName("script")[0];
+                        if (setTimeout(s.abort, 3e4), !(e && e.licenseKey && e.applicationID && n))
+                            return s.abort();
+                        c(y, function (n, t) {
+                            e[n] || (e[n] = t)
+                        }), f("mark", ["onload", a() + x.offset], null, "api");
+                        var t = l.createElement("script");
+                        t.src = "https://" + e.agent, n.parentNode.insertBefore(t, n)
+                    }
+                }
+
+                function o() {
+                    "complete" === l.readyState && i()
+                }
+
+                function i() {
+                    f("mark", ["domContent", a() + x.offset], null, "api")
+                }
+
+                function a() {
+                    return O.exists && performance.now ? Math.round(performance.now()) : (u = Math.max((
+                        new Date).getTime(), u)) - x.offset
+                }
+                var u = (new Date).getTime(),
+                    f = e("handle"),
+                    c = e(3),
+                    s = e("ee"),
+                    p = e(2),
+                    d = window,
+                    l = d.document,
+                    m = "addEventListener",
+                    v = "attachEvent",
+                    g = d.XMLHttpRequest,
+                    w = g && g.prototype;
+                NREUM.o = {
+                    ST: setTimeout,
+                    SI: d.setImmediate,
+                    CT: clearTimeout,
+                    XHR: g,
+                    REQ: d.Request,
+                    EV: d.Event,
+                    PR: d.Promise,
+                    MO: d.MutationObserver
+                };
+                var h = "" + location,
+                    y = {
+                        beacon: "bam.nr-data.net",
+                        errorBeacon: "bam.nr-data.net",
+                        agent: "js-agent.newrelic.com/nr-1130.min.js"
+                    },
+                    b = g && w && w[m] && !/CriOS/.test(navigator.userAgent),
+                    x = n.exports = {
+                        offset: u,
+                        now: a,
+                        origin: h,
+                        features: {},
+                        xhrWrappable: b,
+                        userAgent: p
+                    };
+                e(1), l[m] ? (l[m]("DOMContentLoaded", i, !1), d[m]("load", r, !1)) : (l[v](
+                    "onreadystatechange", o), d[v]("onload", r)), f("mark", ["firstbyte", u], null,
+                    "api");
+                var E = 0,
+                    O = e(5)
+            }, {}]
+        }, {}, ["loader"]);
+    </script>
+    <title>【2019招新题库】焦糖19级招新题库 - JoTang - JoTang</title>
+    <meta name="description" content="出题安排
+
+张我豪：AI自然语言处理
+曹旭杰：爬虫
+段柏杉：C
+曹译文：产品+UI
+张晓艺：计算机视觉
+白雯琪：前端
+陆圣珩：后端 linux
+纪尹钦：java后端
+more+++
+
+补充: 大四和大二的同学有兴趣也一起来吧 
+题目
+
+可以出两个小问，第一个小问简单一点
+面向大一大二
+给一些参考资料，参考以前的格式
+
+时间
+
+9月20日22:00前">
+    <meta name="discourse_theme_ids" content="2">
+    <meta name="discourse_current_homepage" content="latest">
+    <meta name="author" content="">
+    <meta name="generator"
+        content="Discourse 2.2.0.beta5 - https://github.com/discourse/discourse version 6cbcd586038331ca8eddc3ed145d8c79275085b8">
+    <link rel="icon" type="image/png" href="/uploads/default/original/1X/1921183513e1f7ba620b0dbf0825a1b86c73dd18.png">
+    <link rel="apple-touch-icon" type="image/png" href="https://d.jotang.party/images/default-apple-touch-icon.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <link rel="canonical" href="https://d.jotang.party/t/2019-19/497" />
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "url": "https://d.jotang.party",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://d.jotang.party/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    </script>
+    <link rel="search" type="application/opensearchdescription+xml" href="https://d.jotang.party/opensearch.xml"
+        title="JoTang Search">
+
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token"
+        content="FBxQK+Plw9IuuiMn4ykaCaAMHb200nKo2DGQx4h303spm32OQhu51tqKArhBNY2DtROUlZIK0GZj5MRixwLyWg==" />
+
+    <meta name="fragment" content="!">
+
+
+    <link rel='preload' href='/assets/locales/zh_CN-e145947b70768e4fb6795cda9ec293154cf8edd3c9b333bfb431dc5c9fe94b60.js'
+        as='script' />
+    <script src='/assets/locales/zh_CN-e145947b70768e4fb6795cda9ec293154cf8edd3c9b333bfb431dc5c9fe94b60.js'></script>
+    <link rel='preload' href='/assets/ember_jquery-07f49b58317ea9292d939348ec0091eb50a9d8aaabd9e86cc074ef5f049918aa.js'
+        as='script' />
+    <script src='/assets/ember_jquery-07f49b58317ea9292d939348ec0091eb50a9d8aaabd9e86cc074ef5f049918aa.js'></script>
+    <link rel='preload' href='/assets/preload-store-ec90ffab9d7a6d9e507dda7cf7343e9d50b8bce624f7f44486ac8fd6b9814309.js'
+        as='script' />
+    <script src='/assets/preload-store-ec90ffab9d7a6d9e507dda7cf7343e9d50b8bce624f7f44486ac8fd6b9814309.js'></script>
+    <link rel='preload' href='/assets/vendor-957bcfd0b1422c19974dcf8f64f73eeada523e3d12dd3c76eb24c753f9399397.js'
+        as='script' />
+    <script src='/assets/vendor-957bcfd0b1422c19974dcf8f64f73eeada523e3d12dd3c76eb24c753f9399397.js'></script>
+    <link rel='preload'
+        href='/assets/pretty-text-bundle-1ffc769a242112508cf55cebf48084d3d074ec9376e7448676acd524a027b1d6.js'
+        as='script' />
+    <script src='/assets/pretty-text-bundle-1ffc769a242112508cf55cebf48084d3d074ec9376e7448676acd524a027b1d6.js'>
+    </script>
+    <link rel='preload' href='/assets/application-2be1194b28020cd20f0e79b62305638374fcc24bc13752c3edfa7761770b0d1f.js'
+        as='script' />
+    <script src='/assets/application-2be1194b28020cd20f0e79b62305638374fcc24bc13752c3edfa7761770b0d1f.js'></script>
+    <link rel='preload' href='/assets/plugin-6d1a07bf46592051c41330f4ed865c1e1d0368db8557c3ca8637e4fd238f58e6.js'
+        as='script' />
+    <script src='/assets/plugin-6d1a07bf46592051c41330f4ed865c1e1d0368db8557c3ca8637e4fd238f58e6.js'></script>
+    <link rel='preload'
+        href='/assets/plugin-third-party-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js'
+        as='script' />
+    <script src='/assets/plugin-third-party-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js'>
+    </script>
+
+
+
+
+
+    <meta id="data-ga-universal-analytics" data-tracking-code="UA-78623794-1"
+        data-json="{&quot;cookieDomain&quot;:&quot;auto&quot;,&quot;userId&quot;:104}" data-auto-link-domains="">
+
+    <link rel='preload'
+        href='/assets/google-universal-analytics-f35b4da49411e6f5559073523aab983da483976a3954c79c756f8579f6fbd6ef.js'
+        as='script' />
+    <script
+        src='/assets/google-universal-analytics-f35b4da49411e6f5559073523aab983da483976a3954c79c756f8579f6fbd6ef.js'>
+    </script>
+
+    <link rel="manifest" href="/manifest.webmanifest">
+
+
+    <link href="/stylesheets/desktop_9dca3c55be6e2f38cc5d2e38424bcb6da4454902.css?__ws=d.jotang.party" media="all"
+        rel="stylesheet" data-target="desktop" data-theme-id="2" />
+
+
+    <link href="/stylesheets/desktop_theme_2_ec088d5863db48ea84c500fa10beecfe898d68ed.css?__ws=d.jotang.party"
+        media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="2" />
+
+
+    <link rel="alternate" type="application/rss+xml" title=" &#39;【2019招新题库】焦糖19级招新题库&#39;的RSS源"
+        href="https://d.jotang.party/t/2019-19/497.rss" />
+    <meta property="og:site_name" content="JoTang" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="/images/default-apple-touch-icon.png" />
+    <meta property="og:image" content="/images/default-apple-touch-icon.png" />
+    <meta property="og:url" content="https://d.jotang.party/t/2019-19/497" />
+    <meta name="twitter:url" content="https://d.jotang.party/t/2019-19/497" />
+    <meta property="og:title" content="【2019招新题库】焦糖19级招新题库" />
+    <meta name="twitter:title" content="【2019招新题库】焦糖19级招新题库" />
+    <meta property="og:description"
+        content="出题安排  张我豪：AI自然语言处理 曹旭杰：爬虫 段柏杉：C 曹译文：产品+UI 张晓艺：计算机视觉 白雯琪：前端 陆圣珩：后端 linux 纪尹钦：java后端 more+++  补充: 大四和大二的同学有兴趣也一起来吧  题目  可以出两个小问，第一个小问简单一点 面向大一大二 给一些参考资料，参考以前的格式  时间  9月20日22:00前" />
+    <meta name="twitter:description"
+        content="出题安排  张我豪：AI自然语言处理 曹旭杰：爬虫 段柏杉：C 曹译文：产品+UI 张晓艺：计算机视觉 白雯琪：前端 陆圣珩：后端 linux 纪尹钦：java后端 more+++  补充: 大四和大二的同学有兴趣也一起来吧  题目  可以出两个小问，第一个小问简单一点 面向大一大二 给一些参考资料，参考以前的格式  时间  9月20日22:00前" />
+    <meta name="twitter:label1" value="阅读时间" />
+    <meta name="twitter:data1" value="2 mins 🕑" />
+    <meta name="twitter:label2" value="赞" />
+    <meta name="twitter:data2" value="1 ❤" />
+    <meta property="article:published_time" content="2019-09-03T08:56:00+00:00" />
+    <meta property="og:ignore_canonical" content="true" />
+
+
+
+
+
+    <meta id="data-discourse-setup" data-base-url="d.jotang.party" data-base-uri="" data-environment="production"
+        data-letter-avatar-version="5_6bca9977b612b7aeef77ba1ec1cd67b3"
+        data-markdown-it-url="/assets/markdown-it-bundle-a08c3b1fe64bef9340512f60375034b1027010fa53dc7c105a7a9af32c93e83e.js"
+        data-service-worker-url="service-worker-83e47e9f07bb77a5c8146b30ee8c7761c0ce036d70528cd57da81981879b70f7.js"
+        data-default-locale="en" data-asset-version="73b0d53dfb1b2c2d3441aa1747ce0aca" data-disable-custom-css="false"
+        data-highlight-js-path="/highlight-js/d.jotang.party/739df0d7b59574f54dde20ab5177543a92d4791d.js"
+        data-svg-sprite-path="/svg-sprite/d.jotang.party/svg-9c661597b726b8aed56db39f31d182ba97c6cca6.js">
+
+</head>
+
+<body class="">
+
+    <noscript data-path="/t/2019-19/497">
+
+        <header class="d-header">
+            <div class="wrap">
+                <div class="contents">
+                    <div class="row">
+                        <div class="logo-wrapper">
+                            <a href="/">
+                                <img src="/uploads/default/original/1X/db9d676e06d94dc0481ce128b7ddacb620d2924b.png"
+                                    alt="JoTang" id="site-logo">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="main-outlet" class="wrap">
+            <!-- preload-content: -->
+            <h1>
+                <a href="/t/2019-19/497">【2019招新题库】焦糖19级招新题库</a>
+            </h1>
+
+            <div id='breadcrumbs'>
+                <div id="breadcrumb-0" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <a href="/c/jotang" itemprop="url">
+                        <span itemprop="title">JoTang</span>
+                    </a>
+                </div>
+            </div>
+
+
+
+
+
+            <hr>
+
+
+            <div itemscope itemtype='http://schema.org/DiscussionForumPosting'>
+                <div class='creator'>
+                    <span>
+                        <a href='/u/caoyiwen0929'><b itemprop='author'>caoyiwen0929</b></a>
+
+                        <time datetime='2019-09-03T08:56:00Z' itemprop='datePublished'>
+                            2019-09-03 08:56:00 UTC
+                        </time>
+                    </span>
+                    <span itemprop='position'>#1</span>
+                </div>
+                <div class='post' itemprop='articleBody'>
+                    <h3>出题安排</h3>
+                    <ul>
+                        <li>张我豪：AI自然语言处理</li>
+                        <li>曹旭杰：爬虫</li>
+                        <li>段柏杉：C</li>
+                        <li>曹译文：产品+UI</li>
+                        <li>张晓艺：计算机视觉</li>
+                        <li>白雯琪：前端</li>
+                        <li>陆圣珩：后端 linux</li>
+                        <li>纪尹钦：java后端</li>
+                        <li>more+++</li>
+                    </ul>
+                    <p>补充: 大四和大二的同学有兴趣也一起来吧</p>
+                    <h3>题目</h3>
+                    <ul>
+                        <li>可以出两个小问，第一个小问简单一点</li>
+                        <li>面向大一大二</li>
+                        <li>给一些参考资料，参考以前的格式</li>
+                    </ul>
+                    <h3>时间</h3>
+                    <ul>
+                        <li>9月20日22:00前</li>
+                    </ul>
+                </div>
+                <meta itemprop='interactionCount' content='UserLikes:0'>
+                <meta itemprop='interactionCount' content='UserComments:0'>
+                <meta itemprop='headline' content='【2019招新题库】焦糖19级招新题库'>
+                <hr>
+            </div>
+            <div itemscope itemtype='http://schema.org/DiscussionForumPosting'>
+                <div class='creator'>
+                    <span>
+                        <a href='/u/jiyinqin'><b itemprop='author'>jiyinqin</b></a>
+
+                        <time datetime='2019-09-11T13:12:47Z' itemprop='datePublished'>
+                            2019-09-11 13:12:47 UTC
+                        </time>
+                    </span>
+                    <span itemprop='position'>#2</span>
+                </div>
+                <div class='post' itemprop='articleBody'>
+                    <h1>来，跟我一起念，<s>PHP</s> Java天下第一</h1>
+                    <h3>题目背景</h3>
+                    <blockquote>
+                        <p><strong><s>老司机带带我，我要打飞机啊</s></strong></p>
+                        <p>不知道00后的你有没有玩过飞机大战，对于90后的老腊肉可都是满满的回忆嘤嘤嘤（乱入？打死！）</p>
+                        <p>前几天正纠结出个啥题目好，忽然看到旁边大兄弟全神贯注地玩着飞机大战，灵机一动，不如我们也自己用Java写一个飞机大战吧？嘿嘿嘿这个一定很好玩（悄悄露出了不怀好意的微笑）~~
+                            话不多说，一起冲冲冲！</p>
+                    </blockquote>
+                    <h3>题目内容</h3>
+                    <h4>任务一</h4>
+                    <p>既然要自己写一款飞机大战，你肯定得先知道飞机大战怎么玩噻，这里建议没玩过的萌新先去4399玩一下（难道真有没玩过的？？？）</p>
+                    <p>如果你已经清楚了飞机大战的游戏机制，那么你可以开始尝试实现以下需求了：</p>
+                    <ul>
+                        <li>创建一个游戏框并为你的游戏添加一张好看的背景图片（相信你也不希望在纯白色的“太空”中开飞机吧）</li>
+                        <li>添加一架玩家飞机，玩家飞机可自动发射子弹并可被玩家通过上下左右键操控</li>
+                        <li>添加敌方飞机，敌机在游戏框上方随机生成并向玩家飞机移动，可以发射子弹攻击玩家飞机</li>
+                        <li>玩家飞机与敌方飞机均有生命值，受到子弹攻击会减少生命值，敌机生命值清零则消失，玩家飞机生命值清零则游戏结束</li>
+                        <li>添加碰撞检测，当玩家飞机与敌机发生碰撞时游戏结束</li>
+                    </ul>
+                    <p>做到这里，一款飞机大战的雏形已经完成了，快试玩一下自己写的游戏吧！</p>
+                    <h4>任务二</h4>
+                    <p>怎么样，玩着自己写的游戏是不是感觉特别爽，特别有成就感？不过你是不是总感觉自己写的飞机大战少了点什么？不要急，我们继续往下走！</p>
+                    <p>我大胆地猜测你也是一个完美主义者，你一定不会容忍自己写的游戏被吐槽无聊吧！如果优秀的你还学有余力，敢不敢继续接受下面的挑战（<strong>加分项，不要求全部完成</strong>）：</p>
+                    <ul>
+                        <li>实现循环背景滚动，让背景图片能随着游戏进度不断变化</li>
+                        <li>添加游戏音效和开始结束界面</li>
+                        <li>为飞机添加爆炸效果，当玩家飞机和敌机生命值清零时发生一场华丽的爆炸（艺术就是爆炸！）</li>
+                        <li>引入攻击力的概念（每发子弹造成的伤害），敌机的生命值和攻击力随时间增长，玩家飞机在击毁敌机后会随机增加一定的生命值或攻击力</li>
+                        <li>引入积分的概念，每次击毁敌机获得积分，游戏结束后进行积分结算并设置积分排行榜</li>
+                        <li>增加敌机的种类，给不同种类的敌机赋予不同的属性值和攻击效果，添加BOSS敌机，添加各种有趣的BUFF</li>
+                        <li>充分发挥你的脑洞，发掘更多有趣的玩法，改善玩家的游戏体验</li>
+                    </ul>
+                    <p>做到这里，你应该已经对Java有了一定的理解，继续努力，以后JoTang的未来就交给你们了！</p>
+                    <h3>参考资料</h3>
+                    <ul>
+                        <li>一个成熟的程序猿需要学会合理使用Google，<s>度娘</s>，和<strong>自己的脑子</strong>
+                        </li>
+                        <li>Java菜鸟教程：<a href="https://www.runoob.com/java/java-tutorial.html"
+                                rel="nofollow noopener">https://www.runoob.com/java/java-tutorial.html</a>
+                        </li>
+                        <li>Java高淇300集视频教程：<a
+                                href="https://www.bilibili.com/video/av59814573?from=search&amp;seid=3742287172359069900"
+                                rel="nofollow noopener">https://www.bilibili.com/video/av59814573?from=search&amp;seid=3742287172359069900</a>
+                            （其中有一段简易版的飞机游戏可以参考）</li>
+                        <li>网上有很多Java飞机大战的代码，<strong>可以参考但不要直接照抄，一经发现会被关小黑屋嗷！</strong>
+                        </li>
+                    </ul>
+                    <h3>其他说明</h3>
+                    <ul>
+                        <li>游戏需要的各种素材建议使用无背景的png图片</li>
+                        <li>完成后请提交项目源代码和详细的文档，代码中需包含注释，文档需包含学习过程和项目需求的完成情况（附截图）</li>
+                    </ul>
+                </div>
+                <meta itemprop='interactionCount' content='UserLikes:1'>
+                <meta itemprop='interactionCount' content='UserComments:0'>
+                <meta itemprop='headline' content='【2019招新题库】焦糖19级招新题库'>
+                <hr>
+            </div>
+            <div itemscope itemtype='http://schema.org/DiscussionForumPosting'>
+                <div class='creator'>
+                    <span>
+                        <a href='/u/caoyiwen0929'><b itemprop='author'>caoyiwen0929</b></a>
+
+                        <time datetime='2019-09-15T11:13:59Z' itemprop='datePublished'>
+                            2019-09-15 11:13:59 UTC
+                        </time>
+                    </span>
+                    <span itemprop='position'>#3</span>
+                </div>
+                <div class='post' itemprop='articleBody'>
+                    <h1>甲方爸爸他又来啦！</h1>
+                    <h3>题目背景</h3>
+                    <blockquote>
+                        <p>JoTanger准备搭建一个自己的项目交流App，开启全新的焦糖2020。急需一位产品来策划一下整个项目。</p>
+                        <p><strong>神奇的甲方爸爸晓艺：“我们这个App，①
+                                首先要有一个项目板块，在这里可以讨论立项项目，加入项目群聊，进行实时聊天；还可以新建项目，填写项目基本信息，通过审核后成为立项项目。②
+                                还要有一个头脑风暴板块，可以在这里发帖、评论、收藏、分享等。③ 同时，作为一个相爱相杀的集体，我们需要好友系统来建立联系。④
+                                消息系统也不能少，群聊私聊官方鬼畜一网打尽！”</strong></p>
+                    </blockquote>
+                    <h4>任务一</h4>
+                    <p>重新设计一个JoTang的Logo</p>
+                    <ul>
+                        <li>具有焦糖特色</li>
+                        <li>创新简洁，工具不限</li>
+                        <li>导出<code>.PNG</code>格式，与源文件一同提交</li>
+                    </ul>
+                    <h4>任务二</h4>
+                    <ol>
+                        <li>设计一个焦糖App，能够实现甲方的要求</li>
+                        <li>需要有<strong>需求分析文档</strong>，体现软件功能、业务逻辑等</li>
+                        <li>需要绘制一个简要原型，能够展现<strong>良好的交互</strong>
+                        </li>
+                        <li>可以在原型基础上再进行美化和视觉设计</li>
+                    </ol>
+                    <h3>参考资料</h3>
+                    <ul>
+                        <li>可以在各大设计网站查看优秀作品的产品展示：<a href="https://www.zcool.com.cn/" rel="nofollow noopener">站酷</a>，<a
+                                href="https://www.uisdc.com/" rel="nofollow noopener">优设</a>，<a
+                                href="https://www.ui.cn/" rel="nofollow noopener">UI中国</a>，<a
+                                href="https://dribbble.com/" rel="nofollow noopener">Dribbble</a>
+                        </li>
+                        <li>原型工具：<a href="https://www.adobe.com/cn/products/xd.html" rel="nofollow noopener">Adobe
+                                XD</a>（虽然是Adobe家的，但是免费不用破解嗷，俺搬砖一直都用它，轻便简洁），or <a href="https://www.axure.com/"
+                                rel="nofollow noopener">Axure RP</a>
+                        </li>
+                        <li>创意PS教程：<a href="https://space.bilibili.com/128827356/#/" rel="nofollow noopener">一行影视动画</a>
+                        </li>
+                        <li><a href="http://www.woshipm.com/rp/928201.html" rel="nofollow noopener">如何画出专业的原型图？</a></li>
+                    </ul>
+                    <h3>其他说明</h3>
+                    <ul>
+                        <li>完成后请提交设计源文件及导出png，还有产品文档</li>
+                    </ul>
+                </div>
+                <meta itemprop='interactionCount' content='UserLikes:0'>
+                <meta itemprop='interactionCount' content='UserComments:0'>
+                <meta itemprop='headline' content='【2019招新题库】焦糖19级招新题库'>
+                <hr>
+            </div>
+            <div itemscope itemtype='http://schema.org/DiscussionForumPosting'>
+                <div class='creator'>
+                    <span>
+                        <a href='/u/zh25714x'><b itemprop='author'>zh25714x</b></a>
+
+                        <time datetime='2019-09-15T13:26:28Z' itemprop='datePublished'>
+                            2019-09-15 13:26:28 UTC
+                        </time>
+                    </span>
+                    <span itemprop='position'>#4</span>
+                </div>
+                <div class='post' itemprop='articleBody'>
+                    <h1>来一起当数据科学家吧~</h1>
+                    <h3>题目背景</h3>
+                    <blockquote>
+                        <p>NLP (Natural Language Processing)
+                            是人工智能（AI）的一个子领域。而自然语言是人类智慧的结晶，无论是网上还是线下,每天都产生着海量的自然语言信息(新闻报道？病患诊疗单？英语阅读理解？)
+                            ,总之anywhere。。对它们进行处理是AI中最为困难的问题之一,<s>各种格式的文本信息乱七八糟</s>
+                            但从中获得的潜在信息简直就是宝藏(知识库)啊,智能问答机器人就是基于知识库来进行人机交互的。总之用途多多<s>工资还多</s><br>
+                            想了想这次的任务,那咱们就来了解如何进行机器翻译吧</p>
+                    </blockquote>
+                    <h3>题目内容</h3>
+                    <h4>任务1:</h4>
+                    <ul>
+                        <li>如何将自然语言表示为机器能够识别的数字啊？？了解一下词向量,One-Hot,Word2Vec。</li>
+                        <li>如何将源语言映射为目标语言(假设从英语到法语)？了解一下Sep2Sep模型(编码器-解码器),同时还需要了解递归神经网络(LSTM等)</li>
+                        <li>整个模型的训练过程如何进行？了解深度学习程序运行的整个过程</li>
+                    </ul>
+                    <h4>任务2:</h4>
+                    <ul>
+                        <li>学习编程语言Python,语法简单,七天快速入门~</li>
+                        <li>选用并学习任意深度框架来实现任务1,比如Tensorflow、Pytorch、Keras、Caffe等。推荐Pytorch。。</li>
+                        <li>尝试在Linux下部署深度学习环境,并开始编程</li>
+                    </ul>
+                    <h3>需要提交:</h3>
+                    <p>任务就几句话,但是包含的内容巨多,能完成到哪步算哪步吧,越多越好~提交学习心得、整理的笔记,要有逻辑,面试的时候会问。能完成到编程部分就更好了~</p>
+                    <h3>参考资料:</h3>
+                    <ul>
+                        <li>科普:关于NLP的应用https://yq.aliyun.com/articles/78031<br>
+                            +《深度学习框架PyTorch快速开发与实战》 第十一章是本次题目的全部代码,可以参考,可以抄,前提是问你的时候,你能说出是什么意思</li>
+                        <li>莫烦Pytorch,Python、可视化这些都有教:<a href="https://morvanzhou.github.io"
+                                rel="nofollow noopener">https://morvanzhou.github.io</a>
+                        </li>
+                        <li>斯坦福NLP课程:<a href="https://www.bilibili.com/video/av46216519"
+                                rel="nofollow noopener">https://www.bilibili.com/video/av46216519</a>
+                        </li>
+                    </ul>
+                    <h3>其他说明:</h3>
+                    <p>解决方案不限于以上的方法~</p>
+                </div>
+                <meta itemprop='interactionCount' content='UserLikes:0'>
+                <meta itemprop='interactionCount' content='UserComments:0'>
+                <meta itemprop='headline' content='【2019招新题库】焦糖19级招新题库'>
+                <hr>
+            </div>
+            <div itemscope itemtype='http://schema.org/DiscussionForumPosting'>
+                <div class='creator'>
+                    <span>
+                        <a href='/u/allenx555'><b itemprop='author'>allenx555</b></a>
+
+                        <time datetime='2019-09-15T13:46:17Z' itemprop='datePublished'>
+                            2019-09-15 13:46:17 UTC
+                        </time>
+                    </span>
+                    <span itemprop='position'>#5</span>
+                </div>
+                <div class='post' itemprop='articleBody'>
+                    <h2>谁来救救我的 Linux（Kali）</h2>
+                    <h3>背景</h3>
+                    <blockquote>
+                        <p>俗话说的好，kali 学的好，牢饭吃到饱，然鹅，就当我准备开始在犯罪的边缘试探之时， kali 却给我膝盖上射了一箭——我的 Linux（Kali）
+                            不太对劲。传说中的英雄啊，请你帮帮我吧。</p>
+                    </blockquote>
+                    <p>Linux 是编程的一个很重要的组成部分，除去“开源/免费”这一众所周知的优势，实质上，对于程序员来说，一个可以完全掌控的系统，一个可以高度自定义的系统（以及出现问题后 google 下只有
+                        Linux 的解决方法）或许更具吸引力。可能在刚开始上手的时候还会觉得很变扭，不过请放心，大家都是这么过来的，并且毫无疑问，你们以后会时常和它打交道。</p>
+                    <h3>任务</h3>
+                    <p>其实对于初学者，Ubuntu 之类的可能会是一个更好的选择，不过既然正好遇到了 Kali 官方镜像的这个问题，就拿来用了，Kali 具体是做什么的不重要（逃</p>
+                    <ol>
+                        <li>了解什么是 Linux，学习基本的操作方法，然后 google 一下 Kali 是做啥的</li>
+                        <li>安装虚拟机、双系统，或通过各种方法找到一台服务器/云服务器</li>
+                        <li>从 <a href="https://www.kali.org/" rel="nofollow noopener">Kali
+                                官方网站</a>下载镜像文件，并成功安装到虚拟机/双系统/服务器上</li>
+                        <li>安装成功之后，你会发现一些比较基本的命令，比如 <code>apt-get update</code> 都是无法成功执行的，请找出原因，并解决，解决的判断标准是能够成功使用
+                            apt-get 安装软件</li>
+                        <li>将你安装 Kali 的过程，以及解决上述问题的过程截图，并记录你解决问题的思路和最终的解决方法，并赋于 markdown 文件中，发送给我们</li>
+                    </ol>
+                    <h3>Tips</h3>
+                    <ol>
+                        <li>关于 markdown，这是一个非常方便的书写工具，只需学习五分钟，你就会爱上它，你可能需要花一点点时间进行学习，但它的基础语法非常简单。</li>
+                        <li>这道题目的关键是用好 google，因为 google 上有完整的解决方法，如果说你无法 google
+                            一下？解决方法是搭好梯子。（如果真的使用度娘，请<strong>谨慎</strong>参考）</li>
+                        <li>更多的提示：关于 Linux 的部分，论坛内的某一个帖子里有着更详细的指导，找到它</li>
+                    </ol>
+                </div>
+                <meta itemprop='interactionCount' content='UserLikes:0'>
+                <meta itemprop='interactionCount' content='UserComments:0'>
+                <meta itemprop='headline' content='【2019招新题库】焦糖19级招新题库'>
+                <hr>
+            </div>
+            <div itemscope itemtype='http://schema.org/DiscussionForumPosting'>
+                <div class='creator'>
+                    <span>
+                        <a href='/u/winter'><b itemprop='author'>winter</b></a>
+
+                        <time datetime='2019-09-15T16:03:03Z' itemprop='datePublished'>
+                            2019-09-15 16:03:03 UTC
+                        </time>
+                    </span>
+                    <span itemprop='position'>#6</span>
+                </div>
+                <div class='post' itemprop='articleBody'>
+                    <h1>一起来学算法吧！！</h1>
+                    <h2>题目背景</h2>
+                    <blockquote>
+                        <p><strong><s>没有背景</s></strong><br>
+                            学习算法对于刚接触编程的小白来说也许难度会比较大，但在学习算法的过程中可以快速提高同学们的编程能力，并且培养良好的编程思维。<br>
+                            我们鼓励同学们使用搜索引擎来学习算法，但请不要直接将网上的题解直接复制提交，我们也将在后续的考核中判断大家是否真正理解了这些算法。同时比起题目的完成度，我们更关心大家的学习态度。
+                        </p>
+                    </blockquote>
+                    <h2>题目内容</h2>
+                    <h3>任务一：搜索</h3>
+                    <p>大家一定都玩过走迷宫，现在我们可以通过编程来让计算机帮我们设计走出迷宫的方案和最短通关路径，只需要编写一个小程序就能将它应用在所有的迷宫上。<br>
+                        给定一个n*m大小的01方格迷宫，其中1表示障碍，0表示允许通行，在迷宫中有上下左右四种移动方式，每次只允许移动一个方格，并且每个方格只允许经过一次，给定起点坐标和终点坐标，问：从起点到终点有几条路径，同时求出最短路径的长度。数据保证起点上不会有障碍。
+                    </p>
+                    <p>输入格式：<br>
+                        第一行n,m表示迷宫大小。<br>
+                        第二行起点坐标Sx,Sy。<br>
+                        第三行终点坐标Fx,Fy。<br>
+                        接下来n行是表示迷宫的01矩阵。<br>
+                        (1≤n,m≤10，同一行中的不同数据用一个空格隔开)</p>
+                    <p>输出格式：<br>
+                        第一行输出从起点坐标到终点坐标的路径总数，第二行输出最短路径的长度。(路径长度为经过的格子总数，起点也计入路径)</p>
+                    <blockquote>
+                        <p>输入样例：<br>
+                            3 3<br>
+                            1 1<br>
+                            2 3<br>
+                            0 1 1<br>
+                            0 0 0<br>
+                            1 0 0<br>
+                            输出样例：<br>
+                            2<br>
+                            4</p>
+                    </blockquote>
+                    <h3>参考资料：</h3>
+                    <p>google，百度</p>
+                    <h3>提示:</h3>
+                    <p>1.迷宫问题一般采用深度优先搜索和广度优先搜索两种方法。<br>
+                        3.(加分项)有能力的同学可以分别使用深度优先搜索和广度优先搜索编写两个程序提交。</p>
+                    <h3>任务二：动态规划</h3>
+                    <p><strong>萌新劝退预警！！！</strong><br>
+                        今年的中秋计划被暴雨冲毁了，zfy被迫留守在寝室中，百无聊赖之际zfy开发了一种兔子棋，给定一个n格直线棋盘，每一个格子上写着一个非负的整数表示在这个格子上的萝卜数量，第一格为起点，第n格为终点，玩家可以通过使用跳跃卡片来控制兔子从起点逐步跳到终点。
+                    </p>
+                    <p>跳跃卡片共有m张，跳跃卡片共有四种(给定的m张跳跃卡片中不一定包含所有的四种卡片)，每种卡片上分别标有1,2,3,4四个数字之一，使用这种卡片后，兔子将向前跳跃相应的格子数。游戏中，玩家每次需要从所有的跳跃卡片中选择一张之前没有使用过的跳跃卡片，控制兔子跳跃前进相应的格子数。
+                    </p>
+                    <p>游戏中，兔子自动获得起点格子的萝卜，并且在后续的跳跃过程中每到达一个格子，就得到该格子相应的萝卜。兔子最终得到的萝卜数量就是兔子从起点到终点过程中到过的所有格子的萝卜总和。</p>
+                    <p>可以看出，不同的卡片使用顺序会影响最终兔子得到的萝卜总数，现在，告诉你棋盘上每个格子上的萝卜数量和所有的跳跃卡片，你能计算出兔子最多能得到的萝卜数量吗？<br>
+                        时间限制:1.00s 空间限制:125.00MB</p>
+                    <p>输入格式：<br>
+                        第一行两个正整数n,m表示棋盘长度和跳跃卡片总数。<br>
+                        第二行n个非负整数 A1,A2,…,An，其中Ai表示第i个格子上的萝卜数量。<br>
+                        第三行m个整数，B1，B2,…,Bm，分别表示m张跳跃卡片上的数字。<br>
+                        同一行中的不同数据用一个空格隔开。<br>
+                        (1≤n≤350，1≤m≤120，0≤Ai≤100，1≤Bi≤4，并且对于四种跳跃卡片，每种跳跃卡片的张数不会超过40）</p>
+                    <p>输出格式：<br>
+                        一个整数表示兔子最多能得到的萝卜数量。</p>
+                    <blockquote>
+                        <p>输入样例：<br>
+                            9 5<br>
+                            6 10 14 2 8 8 18 5 17<br>
+                            1 3 1 2 1<br>
+                            输出样例:<br>
+                            73</p>
+                    </blockquote>
+                    <h3>参考资料:</h3>
+                    <p>google,百度</p>
+                    <h3>提示：</h3>
+                    <p>1.本题难度较大，对于新手不作要求。<br>
+                        2.当所有跳跃卡片用完时，兔子恰好能跳跃到终点。<br>
+                        3.即使没有完成这一题，也可以提交文档来记录你的学习过程和想法。</p>
+                    <h2>说明：</h2>
+                    <p>1.建议同学们在编程的过程中能够在关键代码部分加上注释记录代码功能，以便我们理解你的代码，同时这也是一种良好的编程习惯。<br>
+                        2.请同学们用C/C++写，任务一和任务二各有10个测试点，按照过的测试点数量给分。写完将源代码发到招新邮箱，同时如果有题解思路/学习过程文档将作为加分项。<br>
+                        3.请同学们不要尝试抄他人题解，独立完成，若发现抄袭情况，直接取消招新资格。</p>
+                </div>
+                <meta itemprop='interactionCount' content='UserLikes:0'>
+                <meta itemprop='interactionCount' content='UserComments:0'>
+                <meta itemprop='headline' content='【2019招新题库】焦糖19级招新题库'>
+                <hr>
+            </div>
+            <div itemscope itemtype='http://schema.org/DiscussionForumPosting'>
+                <div class='creator'>
+                    <span>
+                        <a href='/u/allenx555'><b itemprop='author'>allenx555</b></a>
+
+                        <time datetime='2019-09-16T03:49:04Z' itemprop='datePublished'>
+                            2019-09-16 03:49:04 UTC
+                        </time>
+                    </span>
+                    <span itemprop='position'>#7</span>
+                </div>
+                <div class='post' itemprop='articleBody'>
+                    <h2>来，跟我一起念， <s>JavaScript</s> Python天下第一</h2>
+                    <h3>背景</h3>
+                    <blockquote>
+                        <p>从一开始的出前端题到出Linux题到出后端题，过于混乱的需求（其实是我没看清）让我无所适从，既然如此那么就来一锅乱炖吧。在此之前，Python天下第一！</p>
+                    </blockquote>
+                    <p>如果要说前端这一领域是什么时候真正起飞的，那么应该从前后端分离开始讲起（以下省略 1w 字，有兴趣的同学可以自己去了解一下前端的发展历程）。在这期间，Web API
+                        的这一概念起到了至关重要的作用，这道题目就是想让大家熟悉前后端分离这一概念，并亲手触摸常见的 Web API。（所以说本来是一道 python 题为什么会扯到前端啊！）</p>
+                    <blockquote>
+                        <p><strong>什么是 Web API？</strong><br>
+                            在我们了解什么是Web API之前，让我们看看什么是API（应用程序编程接口）。<br>
+                            根据<a href="https://en.wikipedia.org/wiki/Application_programming_interface"
+                                rel="nofollow noopener">维基百科的API定义</a>：在计算机编程中，应用程序编程接口（API）是一组用于构建软件和应用程序的子例程定义，协议和工具。<br>
+                            简单来说，API 是某种接口，它具有一组允许程序员访问应用程序，操作系统或其他服务的特定功能或数据的功能。<br>
+                            Web API 顾名思义，是一个可以使用 HTTP 协议访问的 Web 上的API。这是一个概念，而不是一种技术。我们可以使用不同的技术（如 Java，.NET 等）构建 Web
+                            API。例如，Twitter 的 <a href="https://dev.twitter.com/rest/public" rel="nofollow noopener">REST
+                                API</a>提供对读写数据的编程访问，使用它可以将 twitter 的功能集成到我们自己的应用程序中。</p>
+                    </blockquote>
+                    <p>相比 Java，Python 更为轻巧的特性可以让初学者在更短的时间内搭建一个可用的 Web API 服务器；相比 Go 其丰富的框架与库可以省去一大笔自己动手的额外开销，综上，Python
+                        天下第一（Q.E.D.）。</p>
+                    <h3>任务</h3>
+                    <p>我们先从比较容易理解的 RESTful API 开始。</p>
+                    <ol>
+                        <li>
+                            <strong>查询 RESTful API
+                                的设计原则</strong>。虽说在实际应用过程中很有可能会因为种种原因改变设计，但因为这道题目不涉及复杂场景，我们希望你的最终成果能够<strong>完全遵从</strong>设计原则
+                        </li>
+                        <li>
+                            <strong>搭建一个 Web API 服务器</strong>。如果你有其他语言的基础，你完全可以使用其他语言完成本道题目，如果没有，那么我推荐使用 Python-Flask
+                            完成本道题目。Django 默认采用的是其自带的模板系统，可能对于初学者不太方便进行更改，并搭建 Web API 服务器。至于 Flask 是什么，应该怎么用，请阅读 <a
+                                href="http://docs.jinkan.org/docs/flask/" rel="nofollow noopener">Flask 官方文档</a>。</li>
+                        <li><strong>具体要求：</strong></li>
+                    </ol>
+                    <ul>
+                        <li>将 API 部署在专用域名或主域名之下，如果是本机，即 localhost 或 127.0.0.1:XXXX</li>
+                        <li>你的 API 至少应有 GET 和 POST 两种方法</li>
+                        <li>不需要搭建数据库，即你可以在 Flask 中使用自己声明的变量或外部 Json 文件进行应答</li>
+                        <li>最终的成果应该是你可以通过浏览器（或 Postman 等工具）正常使用 API</li>
+                        <li>请将你搭建 Web API 服务器的过程纪录，并将最终结果截图，整合到 markdown 中发送给我们。</li>
+                    </ul>
+                    <h3>Tips</h3>
+                    <ol>
+                        <li>如果你拥有一个服务器/云服务器，可以尝试部署上去，并将链接发送给我们，这项将大大加分</li>
+                        <li>如果你厌倦了 RESTful API， Graphql 也同样可以</li>
+                        <li><s>你可以拒绝框架，完全手撸</s></li>
+                        <li>本题可能会存在各种各样的问题，请谷歌一个或多个足够靠谱的指南，并详细阅读 Flask 官方文档，RESTful API
+                            设计风格，遇到问题积极谷歌，实在不会可以直接联系我（QQ：869784897），我们鼓励遇到问题积极求助，但如果是可以很方便在网络上找到解决方法的问题我将拒绝回答<s>并拉黑</s>
+                        </li>
+                    </ol>
+                </div>
+                <meta itemprop='interactionCount' content='UserLikes:0'>
+                <meta itemprop='interactionCount' content='UserComments:0'>
+                <meta itemprop='headline' content='【2019招新题库】焦糖19级招新题库'>
+                <hr>
+            </div>
+            <div itemscope itemtype='http://schema.org/DiscussionForumPosting'>
+                <div class='creator'>
+                    <span>
+                        <a href='/u/Stardust567'><b itemprop='author'>Stardust567</b></a>
+
+                        <time datetime='2019-09-16T09:11:24Z' itemprop='datePublished'>
+                            2019-09-16 09:11:24 UTC
+                        </time>
+                    </span>
+                    <span itemprop='position'>#8</span>
+                </div>
+                <div class='post' itemprop='articleBody'>
+                    <h2>老司机必备技能！！！让爬虫来解放你的双手：）</h2>
+                    <h3>背景</h3>
+                    <blockquote>
+                        <p>当你在P站看到一个可爱画师小姐姐的图片真的张张戳中你的萌点，当你明明被高木太太喂了一勺又一勺的狗粮却觉得还不够还想吃同人图的时候，<s>当你发现了某个快乐的小网站想要一键解放双手的时候，</s>
+                            当你参加数学建模发现题目要你自己找数据的时候（微笑脸）我想你会需要它的</p>
+                    </blockquote>
+                    <p><strong>网络爬虫</strong> （web crawler），也叫网络蜘蛛（spider），是一种用来自动浏览<a
+                            href="https://zh.wikipedia.org/wiki/%E4%B8%87%E7%BB%B4%E7%BD%91"
+                            rel="nofollow noopener">万维网</a>的<a
+                            href="https://zh.wikipedia.org/w/index.php?title=%E7%BD%91%E7%BB%9C%E6%9C%BA%E5%99%A8%E4%BA%BA&amp;action=edit&amp;redlink=1"
+                            rel="nofollow noopener">网络机器人</a>。其目的一般为编纂<a
+                            href="https://zh.wikipedia.org/w/index.php?title=%E7%BD%91%E7%BB%9C%E7%B4%A2%E5%BC%95&amp;action=edit&amp;redlink=1"
+                            rel="nofollow noopener">网络索引</a> <s>这听起来并不像人话</s>
+                        让我们通俗点解释一下，如果将因特网比作一张错综复杂的交错巨网，那么爬虫就是这张网上的一只只小蜘蛛，这些小蜘蛛会将他们探下的路的踪迹和在路上抓到的资源反馈给我们。</p>
+                    <p>总而言之，爬虫就是一段可以自动抓取互联网上对于我们有价值的信息的程序。<br>
+                        既然说到了程序和编程，接下来就开启冒险，让我们来谈谈这次的通关任务吧。</p>
+                    <h3>任务</h3>
+                    <p>首先，编程语言，建议python！爬虫也是入门Python最好的方式（之一）</p>
+                    <ol>
+                        <li>
+                            <p><strong>爬取图片</strong> ：作为一枚咸鱼coser，安利一个我超级喜欢的coser小姐姐啊<a
+                                    href="https://worldcosplay.net/member/Itsuki-chan" rel="nofollow noopener"> A-chan
+                                    &lt;3 (Itsuki)</a> 那么亲爱的冒险者啊，你的任务就是按<em>cos过的角色</em>用爬虫爬取她所有的cos图片
+                                <s>选出你最喜欢的几张我们可以交流一下</s></p>
+                        </li>
+                        <li>
+                            <p><strong>爬取新闻</strong> ：作为一名优秀的信软学子，让我们来更深刻地了解一下信软的新闻与公告吧。那么优秀的成电学子啊，你的任务就是爬取<a
+                                    href="http://www.ss.uestc.edu.cn/"
+                                    rel="nofollow noopener">信软官网</a>学生科和教务科分别的最近200条公告<strong>并保存在数据库中</strong>。</p>
+                        </li>
+                        <li>
+                            <p><strong>具体要求：</strong></p>
+                        </li>
+                    </ol>
+                    <ul>
+                        <li>学习 Python 包并实现基本的爬虫过程，题1爬取图片请直接使用库函数手撸；</li>
+                        <li>学习 Scrapy框架，搭建工程化爬虫，题2爬取新闻请使用Scrapy框架完成；</li>
+                        <li>学习数据的存储，题1可以直接保存在本地，题2请将结果保存在数据库中；</li>
+                        <li>请将尝试爬取的过程纪录整合到<strong>markdown</strong>中，连同代码<strong>github链接</strong>和爬到的数据，打包发送给我们。</li>
+                    </ul>
+                    <h3>Tips</h3>
+                    <ol>
+                        <li>题1的话，Python一般 <strong>requests</strong>库 <strong>re</strong>库 <strong>bs4</strong>库
+                            这三个即可满足要求 ；</li>
+                        <li>题2的话，实在不愿意使用Scrapy框架也可以使用别的框架的，但请说明理由 ；</li>
+                        <li>建议详细阅读相关文档，遇到问题积极谷歌，实在不行可以私我，但请体现自己思考。<br>
+                            （“如果是可以很方便在网络上找到解决方法的问题我将拒绝回答 <s>并拉黑</s>”）</li>
+                    </ol>
+                </div>
+                <meta itemprop='interactionCount' content='UserLikes:0'>
+                <meta itemprop='interactionCount' content='UserComments:0'>
+                <meta itemprop='headline' content='【2019招新题库】焦糖19级招新题库'>
+                <hr>
+            </div>
+            <div itemscope itemtype='http://schema.org/DiscussionForumPosting'>
+                <div class='creator'>
+                    <span>
+                        <a href='/u/7uvss'><b itemprop='author'>7uvss</b></a>
+
+                        <time datetime='2019-09-16T10:08:35Z' itemprop='datePublished'>
+                            2019-09-16 10:08:35 UTC
+                        </time>
+                    </span>
+                    <span itemprop='position'>#9</span>
+                </div>
+                <div class='post' itemprop='articleBody'>
+                    <h1>成为正义使者 <s>( 入狱 )</s> 的第一步</h1>
+                    <h2>背景</h2>
+                    <p><strong>做题前必看</strong></p>
+                    <blockquote>
+                        <p>《刑法》第二百八十六条
+                            违反国家规定，对计算机信息系统功能进行删除、修改、增加、干扰，造成计算机信息系统不能正常运行，后果严重的，处五年以下有期徒刑或者拘役；后果特别严重的，处五年以上有期徒刑。违反国家规定，对计算机信息系统中存储、处理或者传输的数据和应用程序进行删除、修改、增加的操作，后果严重的，依照前款的规定处罚。故意制作、传播计算机病毒等破坏性程序，影响计算机系统正常运行，后果严重的，依照第一款的规定处罚。
+                        </p>
+                    </blockquote>
+                    <p><strong>注意！切勿将技术用于非法用途！</strong></p>
+                    <blockquote>
+                        <p>宿舍楼里有很多 WiFi
+                            热点，想知道他们的密码是多少去试一下他们的网有多快；寝室的人外放某音想把他网断了不让他看；<s>无聊的时候偷看室友电脑摄像头</s>；<s>看别人电脑里的资料</s>；你度娘了一下，发现大家都在说：用
+                            Kali 就对了。</p>
+                    </blockquote>
+                    <p>Kali 是基于 Debian 的 Linux 发行版，它集合了一些渗透和审计的工具方便我们做安全测试 <s>( 发起攻击 )</s>。</p>
+                    <p>什么是 Linux ？看一下上面的题目：</p>
+                    <blockquote>
+                        <p>Linux 是编程的一个很重要的组成部分，除去“开源/免费”这一众所周知的优势，实质上，对于程序员来说，一个可以完全掌控的系统，一个可以高度自定义的系统（以及出现问题后 google
+                            下只有 Linux 的解决方法）或许更具吸引力。可能在刚开始上手的时候还会觉得很变扭，不过请放心，大家都是这么过来的，并且毫无疑问，你们以后会时常和它打交道。</p>
+                    </blockquote>
+                    <h2>任务</h2>
+                    <p>我们在进行安全测试 <s>( 发起攻击 )</s> 时肯定希望越低调越好，同时为了应对不同的网络环境以及提高便携性，制作一个能从 U盘 启动随插随用的系统必不可少 <s>( 更有自己是黑客的感觉
+                            )</s> ，这样也解决了在虚拟机下想要进行 WiFi 扫描需要<strong>额外购置</strong>USB网卡 ( 大坑 ) 的问题。</p>
+                    <ol>
+                        <li>
+                            <p>在一个 <strong>可移动设备上 ( 譬如 U盘 )</strong> 上，安装好 <strong>Persistence</strong> Kali Live 并启动运行
+                            </p>
+                        </li>
+                        <li>
+                            <p>了解在 Linux 系统下的基本操作</p>
+                        </li>
+                        <li>
+                            <p>使用 Kali 来破解 WiFi 密码</p>
+                        </li>
+                        <li>
+                            <p>使用 Kali 进行<strong>局域网内</strong>的渗透</p>
+                        </li>
+                        <li>
+                            <p>记录你在操作过程中遇到的困难<s>坑</s>以及填坑的方法</p>
+                        </li>
+                        <li>
+                            <p>记录你的 破解/渗透 成果 ( 得到的密码/在被渗透主机你能执行什么级别的操作 )</p>
+                        </li>
+                        <li>
+                            <p>上述的两项操作建议采用 <strong>Markdown</strong> 标记语言记录并发送给我们</p>
+                        </li>
+                    </ol>
+                    <h2>Tips</h2>
+                    <ol>
+                        <li>
+                            <p>在制作 Persistence Kali Live 时，可能会遇到<strong>硬盘分区</strong>的知识，实现的方法很多，挑熟悉的来</p>
+                        </li>
+                        <li>
+                            <p>破解 WiFi 密码的方式有很多，你可以<strong>分析</strong>具体的情景，采取不同的方法 ( 暴力破解，钓鱼WiFi )</p>
+                        </li>
+                        <li>
+                            <p>进行渗透时首先应该了解被渗透主机的具体情况 ( 系统类型，系统版本，存在的漏洞 ) 选取攻击方法</p>
+                        </li>
+                        <li>
+                            <p>善于利用 Kali 中集成的工具包，Google 它们能做什么</p>
+                        </li>
+                    </ol>
+                    <h1><strong>再次提醒：点到即止。</strong></h1>
+                </div>
+                <meta itemprop='interactionCount' content='UserLikes:0'>
+                <meta itemprop='interactionCount' content='UserComments:0'>
+                <meta itemprop='headline' content='【2019招新题库】焦糖19级招新题库'>
+                <hr>
+            </div>
+
+
+
+
+
+
+            <!-- :preload-content -->
+            <footer>
+                <nav itemscope itemtype='http://schema.org/SiteNavigationElement'>
+                    <a href='/'>首页</a>
+                    <a href="/categories">分类</a>
+                    <a href="/guidelines">FAQ/指引</a>
+                    <a href="/tos">服务条款</a>
+                    <a href="/privacy">隐私政策</a>
+                </nav>
+            </footer>
+        </div>
+
+        <footer id='noscript-footer'>
+            <p style="text-align:center;">采用 <a href="http://www.discourse.org">Discourse</a>，启用 JavaScript 以获得最佳体验</p>
+        </footer>
+    </noscript>
+
+
+
+
+    <section id='main'>
+    </section>
+
+    <div id='offscreen-content'>
+    </div>
+
+
+    <div class="hidden" id="data-preloaded"
+        data-preloaded="{&quot;site&quot;:&quot;{\&quot;default_archetype\&quot;:\&quot;regular\&quot;,\&quot;notification_types\&quot;:{\&quot;mentioned\&quot;:1,\&quot;replied\&quot;:2,\&quot;quoted\&quot;:3,\&quot;edited\&quot;:4,\&quot;liked\&quot;:5,\&quot;private_message\&quot;:6,\&quot;invited_to_private_message\&quot;:7,\&quot;invitee_accepted\&quot;:8,\&quot;posted\&quot;:9,\&quot;moved_post\&quot;:10,\&quot;linked\&quot;:11,\&quot;granted_badge\&quot;:12,\&quot;invited_to_topic\&quot;:13,\&quot;custom\&quot;:14,\&quot;group_mentioned\&quot;:15,\&quot;group_message_summary\&quot;:16,\&quot;watching_first_post\&quot;:17,\&quot;topic_reminder\&quot;:18},\&quot;post_types\&quot;:{\&quot;regular\&quot;:1,\&quot;moderator_action\&quot;:2,\&quot;small_action\&quot;:3,\&quot;whisper\&quot;:4},\&quot;groups\&quot;:[{\&quot;id\&quot;:1,\&quot;name\&quot;:\&quot;admins\&quot;},{\&quot;id\&quot;:0,\&quot;name\&quot;:\&quot;everyone\&quot;},{\&quot;id\&quot;:42,\&quot;name\&quot;:\&quot;Flash\&quot;},{\&quot;id\&quot;:41,\&quot;name\&quot;:\&quot;jotang\&quot;},{\&quot;id\&quot;:2,\&quot;name\&quot;:\&quot;moderators\&quot;},{\&quot;id\&quot;:3,\&quot;name\&quot;:\&quot;staff\&quot;},{\&quot;id\&quot;:10,\&quot;name\&quot;:\&quot;trust_level_0\&quot;},{\&quot;id\&quot;:11,\&quot;name\&quot;:\&quot;trust_level_1\&quot;},{\&quot;id\&quot;:12,\&quot;name\&quot;:\&quot;trust_level_2\&quot;},{\&quot;id\&quot;:13,\&quot;name\&quot;:\&quot;trust_level_3\&quot;},{\&quot;id\&quot;:14,\&quot;name\&quot;:\&quot;trust_level_4\&quot;}],\&quot;filters\&quot;:[\&quot;latest\&quot;,\&quot;unread\&quot;,\&quot;new\&quot;,\&quot;read\&quot;,\&quot;posted\&quot;,\&quot;bookmarks\&quot;],\&quot;periods\&quot;:[\&quot;all\&quot;,\&quot;yearly\&quot;,\&quot;quarterly\&quot;,\&quot;monthly\&quot;,\&quot;weekly\&quot;,\&quot;daily\&quot;],\&quot;top_menu_items\&quot;:[\&quot;latest\&quot;,\&quot;unread\&quot;,\&quot;new\&quot;,\&quot;read\&quot;,\&quot;posted\&quot;,\&quot;bookmarks\&quot;,\&quot;category\&quot;,\&quot;categories\&quot;,\&quot;top\&quot;],\&quot;anonymous_top_menu_items\&quot;:[\&quot;latest\&quot;,\&quot;top\&quot;,\&quot;categories\&quot;,\&quot;category\&quot;,\&quot;categories\&quot;,\&quot;top\&quot;],\&quot;uncategorized_category_id\&quot;:1,\&quot;is_readonly\&quot;:false,\&quot;disabled_plugins\&quot;:[\&quot;discourse-nginx-performance-report\&quot;],\&quot;user_field_max_length\&quot;:2048,\&quot;suppressed_from_latest_category_ids\&quot;:[],\&quot;post_action_types\&quot;:[{\&quot;id\&quot;:1,\&quot;name_key\&quot;:\&quot;bookmark\&quot;,\&quot;name\&quot;:\&quot;收藏\&quot;,\&quot;description\&quot;:\&quot;收藏本帖\&quot;,\&quot;short_description\&quot;:\&quot;收藏该帖子\&quot;,\&quot;long_form\&quot;:\&quot;已收藏本帖\&quot;,\&quot;is_flag\&quot;:false,\&quot;is_custom_flag\&quot;:false},{\&quot;id\&quot;:2,\&quot;name_key\&quot;:\&quot;like\&quot;,\&quot;name\&quot;:\&quot;赞\&quot;,\&quot;description\&quot;:\&quot;赞本帖\&quot;,\&quot;short_description\&quot;:\&quot;赞该贴\&quot;,\&quot;long_form\&quot;:\&quot;赞本帖内容\&quot;,\&quot;is_flag\&quot;:false,\&quot;is_custom_flag\&quot;:false},{\&quot;id\&quot;:3,\&quot;name_key\&quot;:\&quot;off_topic\&quot;,\&quot;name\&quot;:\&quot;题外话\&quot;,\&quot;description\&quot;:\&quot;此帖与该主题标题和第一帖而言所讨论的主题无关，可能需要被移动。\&quot;,\&quot;short_description\&quot;:\&quot;和讨论不相关\&quot;,\&quot;long_form\&quot;:\&quot;标记为题外话\&quot;,\&quot;is_flag\&quot;:true,\&quot;is_custom_flag\&quot;:false},{\&quot;id\&quot;:4,\&quot;name_key\&quot;:\&quot;inappropriate\&quot;,\&quot;name\&quot;:\&quot;不当内容\&quot;,\&quot;description\&quot;:\&quot;此帖内容包含对他人的攻击、侮辱、仇视语言或违反了\\u003ca href=\\\&quot;/guidelines\\\&quot;\\u003e我们的社区准则\\u003c/a\\u003e。\&quot;,\&quot;short_description\&quot;:\&quot;违反了\\u003ca href=\\\&quot;/guidelines\\\&quot;\\u003e我们的社区指引\\u003c/a\\u003e\&quot;,\&quot;long_form\&quot;:\&quot;标记为不当内容\&quot;,\&quot;is_flag\&quot;:true,\&quot;is_custom_flag\&quot;:false},{\&quot;id\&quot;:8,\&quot;name_key\&quot;:\&quot;spam\&quot;,\&quot;name\&quot;:\&quot;垃圾\&quot;,\&quot;description\&quot;:\&quot;该帖子是广告或破坏。帖子没有价值或者与当前主题无关。\&quot;,\&quot;short_description\&quot;:\&quot;这是个广告或者破坏\&quot;,\&quot;long_form\&quot;:\&quot;标记为垃圾\&quot;,\&quot;is_flag\&quot;:true,\&quot;is_custom_flag\&quot;:false},{\&quot;id\&quot;:6,\&quot;name_key\&quot;:\&quot;notify_user\&quot;,\&quot;name\&quot;:\&quot;给@{{username}}发送一条私信\&quot;,\&quot;description\&quot;:\&quot;我想与此人私下交流他们的帖子。\&quot;,\&quot;short_description\&quot;:\&quot;我想与此人私下交流他们的帖子。\&quot;,\&quot;long_form\&quot;:\&quot;以发送私信给用户\&quot;,\&quot;is_flag\&quot;:true,\&quot;is_custom_flag\&quot;:true},{\&quot;id\&quot;:7,\&quot;name_key\&quot;:\&quot;notify_moderators\&quot;,\&quot;name\&quot;:\&quot;其他事项\&quot;,\&quot;description\&quot;:\&quot;这个帖子需要版主的注意，但是原因没有包括在上述选项中。\&quot;,\&quot;short_description\&quot;:\&quot;需要管理人员注意的其他原因\&quot;,\&quot;long_form\&quot;:\&quot;标记为需版主注意\&quot;,\&quot;is_flag\&quot;:true,\&quot;is_custom_flag\&quot;:true}],\&quot;topic_flag_types\&quot;:[{\&quot;id\&quot;:4,\&quot;name_key\&quot;:\&quot;inappropriate\&quot;,\&quot;name\&quot;:\&quot;不当内容\&quot;,\&quot;description\&quot;:\&quot;此帖内容包含对他人的攻击、侮辱、仇视语言或违反了\\u003ca href=\\\&quot;/guidelines\\\&quot;\\u003e我们的社区准则\\u003c/a\\u003e。\&quot;,\&quot;short_description\&quot;:\&quot;违反了\\u003ca href=\\\&quot;/guidelines\\\&quot;\\u003e我们的社区指引\\u003c/a\\u003e\&quot;,\&quot;long_form\&quot;:\&quot;标记为不当内容\&quot;,\&quot;is_flag\&quot;:true,\&quot;is_custom_flag\&quot;:false},{\&quot;id\&quot;:8,\&quot;name_key\&quot;:\&quot;spam\&quot;,\&quot;name\&quot;:\&quot;垃圾\&quot;,\&quot;description\&quot;:\&quot;这个主题是广告。它对本站点没有联系和帮助，仅仅是推销信息。\&quot;,\&quot;short_description\&quot;:\&quot;这是个广告\&quot;,\&quot;long_form\&quot;:\&quot;标记为垃圾\&quot;,\&quot;is_flag\&quot;:true,\&quot;is_custom_flag\&quot;:false},{\&quot;id\&quot;:7,\&quot;name_key\&quot;:\&quot;notify_moderators\&quot;,\&quot;name\&quot;:\&quot;其他内容\&quot;,\&quot;description\&quot;:\&quot;此帖需要版主依据\\u003ca href=\\\&quot;/guidelines\\\&quot;\\u003e社区准则\\u003c/a\\u003e、\\u003ca href=\\\&quot;/tos\\\&quot;\\u003e服务条款（TOS）\\u003c/a\\u003e或其它未列出的原因来给予关注。\&quot;,\&quot;short_description\&quot;:\&quot;需要管理人员注意的其他原因\&quot;,\&quot;long_form\&quot;:\&quot;标记为需版主注意\&quot;,\&quot;is_flag\&quot;:true,\&quot;is_custom_flag\&quot;:true}],\&quot;can_create_tag\&quot;:false,\&quot;can_tag_topics\&quot;:false,\&quot;can_tag_pms\&quot;:false,\&quot;topic_featured_link_allowed_category_ids\&quot;:[12,4,6,13,16,21,24,14,18,15,11,20,19,23,22,1,5,17],\&quot;user_themes\&quot;:[{\&quot;theme_id\&quot;:1,\&quot;name\&quot;:\&quot;Dark\&quot;,\&quot;default\&quot;:false},{\&quot;theme_id\&quot;:2,\&quot;name\&quot;:\&quot;Default\&quot;,\&quot;default\&quot;:true}],\&quot;censored_words\&quot;:\&quot;\&quot;,\&quot;categories\&quot;:[{\&quot;id\&quot;:1,\&quot;name\&quot;:\&quot;Uncategorized\&quot;,\&quot;color\&quot;:\&quot;AB9364\&quot;,\&quot;text_color\&quot;:\&quot;FFFFFF\&quot;,\&quot;slug\&quot;:\&quot;uncategorized\&quot;,\&quot;topic_count\&quot;:2,\&quot;post_count\&quot;:4,\&quot;position\&quot;:0,\&quot;description\&quot;:\&quot;不需要分类或者不适合放在现在的任何分类中的主题。\&quot;,\&quot;description_text\&quot;:\&quot;\&quot;,\&quot;topic_url\&quot;:\&quot;/t/\&quot;,\&quot;read_restricted\&quot;:false,\&quot;permission\&quot;:1,\&quot;notification_level\&quot;:1,\&quot;topic_template\&quot;:null,\&quot;has_children\&quot;:false,\&quot;sort_order\&quot;:null,\&quot;sort_ascending\&quot;:null,\&quot;show_subcategory_list\&quot;:false,\&quot;num_featured_topics\&quot;:3,\&quot;default_view\&quot;:null,\&quot;subcategory_list_style\&quot;:\&quot;rows\&quot;,\&quot;default_top_period\&quot;:\&quot;all\&quot;,\&quot;minimum_required_tags\&quot;:0,\&quot;navigate_to_first_post_after_read\&quot;:false,\&quot;uploaded_logo\&quot;:null,\&quot;uploaded_background\&quot;:null,\&quot;uploaded_meta\&quot;:null},{\&quot;id\&quot;:5,\&quot;name\&quot;:\&quot;JoTang\&quot;,\&quot;color\&quot;:\&quot;F7941D\&quot;,\&quot;text_color\&quot;:\&quot;FFFFFF\&quot;,\&quot;slug\&quot;:\&quot;jotang\&quot;,\&quot;topic_count\&quot;:62,\&quot;post_count\&quot;:138,\&quot;position\&quot;:4,\&quot;description\&quot;:\&quot;工作室地点： 沙河三教 507\&quot;,\&quot;description_text\&quot;:\&quot;工作室地点： 沙河三教 507\&quot;,\&quot;topic_url\&quot;:\&quot;/t/topic/14\&quot;,\&quot;read_restricted\&quot;:true,\&quot;permission\&quot;:1,\&quot;notification_level\&quot;:1,\&quot;topic_template\&quot;:\&quot;\&quot;,\&quot;has_children\&quot;:true,\&quot;sort_order\&quot;:\&quot;\&quot;,\&quot;sort_ascending\&quot;:null,\&quot;show_subcategory_list\&quot;:false,\&quot;num_featured_topics\&quot;:3,\&quot;default_view\&quot;:\&quot;top\&quot;,\&quot;subcategory_list_style\&quot;:\&quot;rows\&quot;,\&quot;default_top_period\&quot;:\&quot;monthly\&quot;,\&quot;minimum_required_tags\&quot;:0,\&quot;navigate_to_first_post_after_read\&quot;:false,\&quot;uploaded_logo\&quot;:null,\&quot;uploaded_background\&quot;:null,\&quot;uploaded_meta\&quot;:null},{\&quot;id\&quot;:6,\&quot;name\&quot;:\&quot;Web技术\&quot;,\&quot;color\&quot;:\&quot;F1592A\&quot;,\&quot;text_color\&quot;:\&quot;FFFFFF\&quot;,\&quot;slug\&quot;:\&quot;web\&quot;,\&quot;topic_count\&quot;:1,\&quot;post_count\&quot;:1,\&quot;position\&quot;:5,\&quot;description\&quot;:\&quot;本分类中讨论与 Web 相关的技术\\u003cbr\\u003e包括\\u003cbr\\u003e*  Web 前端\\u003cbr\\u003e*  Web 后端\\u003cbr\\u003e* 数据库\\u003cbr\\u003e* 中间件\\u003cbr\\u003e* 服务器平台相关技术\&quot;,\&quot;description_text\&quot;:\&quot;本分类中讨论与 Web 相关的技术包括*  Web 前端*  Web 后端* 数据库* 中间件* 服务器平台相关技术\&quot;,\&quot;topic_url\&quot;:\&quot;/t/web/15\&quot;,\&quot;read_restricted\&quot;:false,\&quot;permission\&quot;:1,\&quot;notification_level\&quot;:1,\&quot;topic_template\&quot;:\&quot;\&quot;,\&quot;has_children\&quot;:false,\&quot;sort_order\&quot;:null,\&quot;sort_ascending\&quot;:null,\&quot;show_subcategory_list\&quot;:false,\&quot;num_featured_topics\&quot;:3,\&quot;default_view\&quot;:null,\&quot;subcategory_list_style\&quot;:\&quot;rows\&quot;,\&quot;default_top_period\&quot;:\&quot;all\&quot;,\&quot;minimum_required_tags\&quot;:0,\&quot;navigate_to_first_post_after_read\&quot;:false,\&quot;uploaded_logo\&quot;:null,\&quot;uploaded_background\&quot;:null,\&quot;uploaded_meta\&quot;:null},{\&quot;id\&quot;:11,\&quot;name\&quot;:\&quot;资源分享\&quot;,\&quot;color\&quot;:\&quot;FF9933\&quot;,\&quot;text_color\&quot;:\&quot;FFFFFF\&quot;,\&quot;slug\&quot;:\&quot;shares\&quot;,\&quot;topic_count\&quot;:3,\&quot;post_count\&quot;:9,\&quot;position\&quot;:9,\&quot;description\&quot;:\&quot;欢迎大家分享自己的学习资源\&quot;,\&quot;description_text\&quot;:\&quot;欢迎大家分享自己的学习资源\&quot;,\&quot;topic_url\&quot;:\&quot;/t/topic/20\&quot;,\&quot;read_restricted\&quot;:false,\&quot;permission\&quot;:1,\&quot;notification_level\&quot;:1,\&quot;topic_template\&quot;:\&quot;\&quot;,\&quot;has_children\&quot;:false,\&quot;sort_order\&quot;:null,\&quot;sort_ascending\&quot;:null,\&quot;show_subcategory_list\&quot;:false,\&quot;num_featured_topics\&quot;:3,\&quot;default_view\&quot;:null,\&quot;subcategory_list_style\&quot;:\&quot;rows\&quot;,\&quot;default_top_period\&quot;:\&quot;all\&quot;,\&quot;minimum_required_tags\&quot;:0,\&quot;navigate_to_first_post_after_read\&quot;:false,\&quot;uploaded_logo\&quot;:null,\&quot;uploaded_background\&quot;:null,\&quot;uploaded_meta\&quot;:null},{\&quot;id\&quot;:12,\&quot;name\&quot;:\&quot;Apple\&quot;,\&quot;color\&quot;:\&quot;EEEEEE\&quot;,\&quot;text_color\&quot;:\&quot;FFFFFF\&quot;,\&quot;slug\&quot;:\&quot;\&quot;,\&quot;topic_count\&quot;:2,\&quot;post_count\&quot;:7,\&quot;position\&quot;:10,\&quot;description\&quot;:null,\&quot;description_text\&quot;:null,\&quot;topic_url\&quot;:\&quot;/t/apple/26\&quot;,\&quot;read_restricted\&quot;:false,\&quot;permission\&quot;:1,\&quot;notification_level\&quot;:1,\&quot;topic_template\&quot;:null,\&quot;has_children\&quot;:false,\&quot;sort_order\&quot;:null,\&quot;sort_ascending\&quot;:null,\&quot;show_subcategory_list\&quot;:false,\&quot;num_featured_topics\&quot;:3,\&quot;default_view\&quot;:null,\&quot;subcategory_list_style\&quot;:\&quot;rows\&quot;,\&quot;default_top_period\&quot;:\&quot;all\&quot;,\&quot;minimum_required_tags\&quot;:0,\&quot;navigate_to_first_post_after_read\&quot;:false,\&quot;uploaded_logo\&quot;:null,\&quot;uploaded_background\&quot;:null,\&quot;uploaded_meta\&quot;:null},{\&quot;id\&quot;:13,\&quot;name\&quot;:\&quot;2016创新工坊招新\&quot;,\&quot;color\&quot;:\&quot;25AAE2\&quot;,\&quot;text_color\&quot;:\&quot;FFFFFF\&quot;,\&quot;slug\&quot;:\&quot;freshmen\&quot;,\&quot;topic_count\&quot;:8,\&quot;post_count\&quot;:54,\&quot;position\&quot;:11,\&quot;description\&quot;:null,\&quot;description_text\&quot;:null,\&quot;topic_url\&quot;:\&quot;/t/topic/53\&quot;,\&quot;read_restricted\&quot;:false,\&quot;permission\&quot;:1,\&quot;notification_level\&quot;:1,\&quot;topic_template\&quot;:null,\&quot;has_children\&quot;:false,\&quot;sort_order\&quot;:null,\&quot;sort_ascending\&quot;:null,\&quot;show_subcategory_list\&quot;:false,\&quot;num_featured_topics\&quot;:3,\&quot;default_view\&quot;:null,\&quot;subcategory_list_style\&quot;:\&quot;rows\&quot;,\&quot;default_top_period\&quot;:\&quot;all\&quot;,\&quot;minimum_required_tags\&quot;:0,\&quot;navigate_to_first_post_after_read\&quot;:false,\&quot;uploaded_logo\&quot;:null,\&quot;uploaded_background\&quot;:null,\&quot;uploaded_meta\&quot;:null},{\&quot;id\&quot;:14,\&quot;name\&quot;:\&quot;MoodFeeler\&quot;,\&quot;color\&quot;:\&quot;25AAE2\&quot;,\&quot;text_color\&quot;:\&quot;FFFFFF\&quot;,\&quot;slug\&quot;:\&quot;MoodFeeler\&quot;,\&quot;topic_count\&quot;:9,\&quot;post_count\&quot;:21,\&quot;position\&quot;:12,\&quot;description\&quot;:null,\&quot;description_text\&quot;:null,\&quot;topic_url\&quot;:\&quot;/t/moodfeeler/68\&quot;,\&quot;read_restricted\&quot;:true,\&quot;permission\&quot;:1,\&quot;parent_category_id\&quot;:5,\&quot;notification_level\&quot;:1,\&quot;topic_template\&quot;:\&quot;\&quot;,\&quot;has_children\&quot;:false,\&quot;sort_order\&quot;:\&quot;\&quot;,\&quot;sort_ascending\&quot;:null,\&quot;show_subcategory_list\&quot;:false,\&quot;num_featured_topics\&quot;:3,\&quot;default_view\&quot;:null,\&quot;subcategory_list_style\&quot;:\&quot;rows_with_featured_topics\&quot;,\&quot;default_top_period\&quot;:\&quot;all\&quot;,\&quot;minimum_required_tags\&quot;:0,\&quot;navigate_to_first_post_after_read\&quot;:false,\&quot;uploaded_logo\&quot;:null,\&quot;uploaded_background\&quot;:null,\&quot;uploaded_meta\&quot;:null},{\&quot;id\&quot;:18,\&quot;name\&quot;:\&quot;招新相关\&quot;,\&quot;color\&quot;:\&quot;12A89D\&quot;,\&quot;text_color\&quot;:\&quot;FFFFFF\&quot;,\&quot;slug\&quot;:\&quot;recruit\&quot;,\&quot;topic_count\&quot;:4,\&quot;post_count\&quot;:22,\&quot;position\&quot;:12,\&quot;description\&quot;:\&quot;焦糖工作室每年招新相关的帖子\&quot;,\&quot;description_text\&quot;:\&quot;焦糖工作室每年招新相关的帖子\&quot;,\&quot;topic_url\&quot;:\&quot;/t/topic/312\&quot;,\&quot;read_restricted\&quot;:false,\&quot;permission\&quot;:1,\&quot;notification_level\&quot;:1,\&quot;topic_template\&quot;:\&quot;\&quot;,\&quot;has_children\&quot;:true,\&quot;sort_order\&quot;:\&quot;\&quot;,\&quot;sort_ascending\&quot;:null,\&quot;show_subcategory_list\&quot;:false,\&quot;num_featured_topics\&quot;:3,\&quot;default_view\&quot;:\&quot;\&quot;,\&quot;subcategory_list_style\&quot;:\&quot;rows_with_featured_topics\&quot;,\&quot;default_top_period\&quot;:\&quot;all\&quot;,\&quot;minimum_required_tags\&quot;:0,\&quot;navigate_to_first_post_after_read\&quot;:false,\&quot;uploaded_logo\&quot;:null,\&quot;uploaded_background\&quot;:null,\&quot;uploaded_meta\&quot;:null},{\&quot;id\&quot;:17,\&quot;name\&quot;:\&quot;NLP\&quot;,\&quot;color\&quot;:\&quot;652D90\&quot;,\&quot;text_color\&quot;:\&quot;FFFFFF\&quot;,\&quot;slug\&quot;:\&quot;NLP\&quot;,\&quot;topic_count\&quot;:6,\&quot;post_count\&quot;:8,\&quot;position\&quot;:13,\&quot;description\&quot;:\&quot;NLP小组主要研究方向为自然语言处理相关技术的应用创新\&quot;,\&quot;description_text\&quot;:\&quot;NLP小组主要研究方向为自然语言处理相关技术的应用创新\&quot;,\&quot;topic_url\&quot;:\&quot;/t/topic/311\&quot;,\&quot;read_restricted\&quot;:true,\&quot;permission\&quot;:1,\&quot;notification_level\&quot;:1,\&quot;topic_template\&quot;:\&quot;\&quot;,\&quot;has_children\&quot;:false,\&quot;sort_order\&quot;:\&quot;\&quot;,\&quot;sort_ascending\&quot;:null,\&quot;show_subcategory_list\&quot;:false,\&quot;num_featured_topics\&quot;:3,\&quot;default_view\&quot;:\&quot;\&quot;,\&quot;subcategory_list_style\&quot;:\&quot;rows_with_featured_topics\&quot;,\&quot;default_top_period\&quot;:\&quot;all\&quot;,\&quot;minimum_required_tags\&quot;:0,\&quot;navigate_to_first_post_after_read\&quot;:false,\&quot;uploaded_logo\&quot;:null,\&quot;uploaded_background\&quot;:null,\&quot;uploaded_meta\&quot;:null},{\&quot;id\&quot;:16,\&quot;name\&quot;:\&quot;珍珠单词\&quot;,\&quot;color\&quot;:\&quot;09bb07\&quot;,\&quot;text_color\&quot;:\&quot;FFFFFF\&quot;,\&quot;slug\&quot;:\&quot;\&quot;,\&quot;topic_count\&quot;:0,\&quot;post_count\&quot;:0,\&quot;position\&quot;:14,\&quot;description\&quot;:null,\&quot;description_text\&quot;:null,\&quot;topic_url\&quot;:\&quot;/t/topic/204\&quot;,\&quot;read_restricted\&quot;:true,\&quot;permission\&quot;:1,\&quot;parent_category_id\&quot;:5,\&quot;notification_level\&quot;:1,\&quot;topic_template\&quot;:\&quot;\&quot;,\&quot;has_children\&quot;:false,\&quot;sort_order\&quot;:\&quot;\&quot;,\&quot;sort_ascending\&quot;:null,\&quot;show_subcategory_list\&quot;:false,\&quot;num_featured_topics\&quot;:3,\&quot;default_view\&quot;:\&quot;latest\&quot;,\&quot;subcategory_list_style\&quot;:\&quot;rows_with_featured_topics\&quot;,\&quot;default_top_period\&quot;:\&quot;all\&quot;,\&quot;minimum_required_tags\&quot;:0,\&quot;navigate_to_first_post_after_read\&quot;:false,\&quot;uploaded_logo\&quot;:null,\&quot;uploaded_background\&quot;:null,\&quot;uploaded_meta\&quot;:null},{\&quot;id\&quot;:19,\&quot;name\&quot;:\&quot;会议记录\&quot;,\&quot;color\&quot;:\&quot;808281\&quot;,\&quot;text_color\&quot;:\&quot;FFFFFF\&quot;,\&quot;slug\&quot;:\&quot;\&quot;,\&quot;topic_count\&quot;:13,\&quot;post_count\&quot;:16,\&quot;position\&quot;:14,\&quot;description\&quot;:null,\&quot;description_text\&quot;:null,\&quot;topic_url\&quot;:\&quot;/t/topic/313\&quot;,\&quot;read_restricted\&quot;:true,\&quot;permission\&quot;:1,\&quot;parent_category_id\&quot;:5,\&quot;notification_level\&quot;:1,\&quot;topic_template\&quot;:\&quot;\&quot;,\&quot;has_children\&quot;:false,\&quot;sort_order\&quot;:\&quot;\&quot;,\&quot;sort_ascending\&quot;:null,\&quot;show_subcategory_list\&quot;:false,\&quot;num_featured_topics\&quot;:3,\&quot;default_view\&quot;:\&quot;\&quot;,\&quot;subcategory_list_style\&quot;:\&quot;rows_with_featured_topics\&quot;,\&quot;default_top_period\&quot;:\&quot;all\&quot;,\&quot;minimum_required_tags\&quot;:0,\&quot;navigate_to_first_post_after_read\&quot;:false,\&quot;uploaded_logo\&quot;:null,\&quot;uploaded_background\&quot;:null,\&quot;uploaded_meta\&quot;:null},{\&quot;id\&quot;:20,\&quot;name\&quot;:\&quot;NeuralView\&quot;,\&quot;color\&quot;:\&quot;231F20\&quot;,\&quot;text_color\&quot;:\&quot;FFFFFF\&quot;,\&quot;slug\&quot;:\&quot;NeuralView\&quot;,\&quot;topic_count\&quot;:3,\&quot;post_count\&quot;:6,\&quot;position\&quot;:14,\&quot;description\&quot;:null,\&quot;description_text\&quot;:null,\&quot;topic_url\&quot;:\&quot;/t/topic/353\&quot;,\&quot;read_restricted\&quot;:true,\&quot;permission\&quot;:1,\&quot;parent_category_id\&quot;:5,\&quot;notification_level\&quot;:1,\&quot;topic_template\&quot;:\&quot;\&quot;,\&quot;has_children\&quot;:false,\&quot;sort_order\&quot;:\&quot;\&quot;,\&quot;sort_ascending\&quot;:null,\&quot;show_subcategory_list\&quot;:false,\&quot;num_featured_topics\&quot;:3,\&quot;default_view\&quot;:\&quot;\&quot;,\&quot;subcategory_list_style\&quot;:\&quot;rows_with_featured_topics\&quot;,\&quot;default_top_period\&quot;:\&quot;all\&quot;,\&quot;minimum_required_tags\&quot;:0,\&quot;navigate_to_first_post_after_read\&quot;:false,\&quot;uploaded_logo\&quot;:null,\&quot;uploaded_background\&quot;:null,\&quot;uploaded_meta\&quot;:null},{\&quot;id\&quot;:15,\&quot;name\&quot;:\&quot;萌新的活动区\&quot;,\&quot;color\&quot;:\&quot;BF1E2E\&quot;,\&quot;text_color\&quot;:\&quot;FFFFFF\&quot;,\&quot;slug\&quot;:\&quot;fresh\&quot;,\&quot;topic_count\&quot;:4,\&quot;post_count\&quot;:9,\&quot;position\&quot;:14,\&quot;description\&quot;:\&quot;这个讨论区只有萌新才能看到！\&quot;,\&quot;description_text\&quot;:\&quot;这个讨论区只有萌新才能看到！\&quot;,\&quot;topic_url\&quot;:\&quot;/t/topic/104\&quot;,\&quot;read_restricted\&quot;:true,\&quot;permission\&quot;:1,\&quot;parent_category_id\&quot;:5,\&quot;notification_level\&quot;:1,\&quot;topic_template\&quot;:\&quot;\&quot;,\&quot;has_children\&quot;:false,\&quot;sort_order\&quot;:\&quot;\&quot;,\&quot;sort_ascending\&quot;:null,\&quot;show_subcategory_list\&quot;:false,\&quot;num_featured_topics\&quot;:3,\&quot;default_view\&quot;:\&quot;latest\&quot;,\&quot;subcategory_list_style\&quot;:\&quot;rows_with_featured_topics\&quot;,\&quot;default_top_period\&quot;:\&quot;all\&quot;,\&quot;minimum_required_tags\&quot;:0,\&quot;navigate_to_first_post_after_read\&quot;:false,\&quot;uploaded_logo\&quot;:null,\&quot;uploaded_background\&quot;:null,\&quot;uploaded_meta\&quot;:null},{\&quot;id\&quot;:21,\&quot;name\&quot;:\&quot;提问区\&quot;,\&quot;color\&quot;:\&quot;12A89D\&quot;,\&quot;text_color\&quot;:\&quot;FFFFFF\&quot;,\&quot;slug\&quot;:\&quot;questions\&quot;,\&quot;topic_count\&quot;:0,\&quot;post_count\&quot;:0,\&quot;position\&quot;:15,\&quot;description\&quot;:\&quot;所有与招新相关疑问都可以在这里提出\&quot;,\&quot;description_text\&quot;:\&quot;所有与招新相关疑问都可以在这里提出\&quot;,\&quot;topic_url\&quot;:\&quot;/t/topic/367\&quot;,\&quot;read_restricted\&quot;:false,\&quot;permission\&quot;:1,\&quot;parent_category_id\&quot;:18,\&quot;notification_level\&quot;:1,\&quot;topic_template\&quot;:null,\&quot;has_children\&quot;:false,\&quot;sort_order\&quot;:null,\&quot;sort_ascending\&quot;:null,\&quot;show_subcategory_list\&quot;:false,\&quot;num_featured_topics\&quot;:3,\&quot;default_view\&quot;:null,\&quot;subcategory_list_style\&quot;:\&quot;rows_with_featured_topics\&quot;,\&quot;default_top_period\&quot;:\&quot;all\&quot;,\&quot;minimum_required_tags\&quot;:0,\&quot;navigate_to_first_post_after_read\&quot;:false,\&quot;uploaded_logo\&quot;:null,\&quot;uploaded_background\&quot;:null,\&quot;uploaded_meta\&quot;:null},{\&quot;id\&quot;:22,\&quot;name\&quot;:\&quot;经验分享\&quot;,\&quot;color\&quot;:\&quot;FFFF00\&quot;,\&quot;text_color\&quot;:\&quot;FFFFFF\&quot;,\&quot;slug\&quot;:\&quot;\&quot;,\&quot;topic_count\&quot;:6,\&quot;post_count\&quot;:18,\&quot;position\&quot;:16,\&quot;description\&quot;:\&quot;教程和踩坑经历\&quot;,\&quot;description_text\&quot;:\&quot;教程和踩坑经历\&quot;,\&quot;topic_url\&quot;:\&quot;/t/topic/368\&quot;,\&quot;read_restricted\&quot;:false,\&quot;permission\&quot;:1,\&quot;notification_level\&quot;:1,\&quot;topic_template\&quot;:\&quot;\&quot;,\&quot;has_children\&quot;:false,\&quot;sort_order\&quot;:\&quot;\&quot;,\&quot;sort_ascending\&quot;:null,\&quot;show_subcategory_list\&quot;:false,\&quot;num_featured_topics\&quot;:3,\&quot;default_view\&quot;:\&quot;\&quot;,\&quot;subcategory_list_style\&quot;:\&quot;rows_with_featured_topics\&quot;,\&quot;default_top_period\&quot;:\&quot;all\&quot;,\&quot;minimum_required_tags\&quot;:0,\&quot;navigate_to_first_post_after_read\&quot;:false,\&quot;uploaded_logo\&quot;:null,\&quot;uploaded_background\&quot;:null,\&quot;uploaded_meta\&quot;:null},{\&quot;id\&quot;:23,\&quot;name\&quot;:\&quot;智慧物流\&quot;,\&quot;color\&quot;:\&quot;AB9364\&quot;,\&quot;text_color\&quot;:\&quot;FFFFFF\&quot;,\&quot;slug\&quot;:\&quot;\&quot;,\&quot;topic_count\&quot;:1,\&quot;post_count\&quot;:2,\&quot;position\&quot;:16,\&quot;description\&quot;:null,\&quot;description_text\&quot;:null,\&quot;topic_url\&quot;:\&quot;/t/topic/371\&quot;,\&quot;read_restricted\&quot;:true,\&quot;permission\&quot;:1,\&quot;parent_category_id\&quot;:5,\&quot;notification_level\&quot;:1,\&quot;topic_template\&quot;:\&quot;\&quot;,\&quot;has_children\&quot;:false,\&quot;sort_order\&quot;:\&quot;\&quot;,\&quot;sort_ascending\&quot;:null,\&quot;show_subcategory_list\&quot;:false,\&quot;num_featured_topics\&quot;:3,\&quot;default_view\&quot;:\&quot;\&quot;,\&quot;subcategory_list_style\&quot;:\&quot;rows_with_featured_topics\&quot;,\&quot;default_top_period\&quot;:\&quot;all\&quot;,\&quot;minimum_required_tags\&quot;:0,\&quot;navigate_to_first_post_after_read\&quot;:false,\&quot;uploaded_logo\&quot;:null,\&quot;uploaded_background\&quot;:null,\&quot;uploaded_meta\&quot;:null},{\&quot;id\&quot;:24,\&quot;name\&quot;:\&quot;抒写\&quot;,\&quot;color\&quot;:\&quot;0088CC\&quot;,\&quot;text_color\&quot;:\&quot;FFFFFF\&quot;,\&quot;slug\&quot;:\&quot;intext\&quot;,\&quot;topic_count\&quot;:2,\&quot;post_count\&quot;:7,\&quot;position\&quot;:17,\&quot;description\&quot;:null,\&quot;description_text\&quot;:null,\&quot;topic_url\&quot;:\&quot;/t/topic/430\&quot;,\&quot;read_restricted\&quot;:true,\&quot;permission\&quot;:1,\&quot;parent_category_id\&quot;:5,\&quot;notification_level\&quot;:1,\&quot;topic_template\&quot;:\&quot;\&quot;,\&quot;has_children\&quot;:false,\&quot;sort_order\&quot;:\&quot;\&quot;,\&quot;sort_ascending\&quot;:null,\&quot;show_subcategory_list\&quot;:false,\&quot;num_featured_topics\&quot;:3,\&quot;default_view\&quot;:\&quot;\&quot;,\&quot;subcategory_list_style\&quot;:\&quot;rows_with_featured_topics\&quot;,\&quot;default_top_period\&quot;:\&quot;all\&quot;,\&quot;minimum_required_tags\&quot;:0,\&quot;navigate_to_first_post_after_read\&quot;:false,\&quot;uploaded_logo\&quot;:null,\&quot;uploaded_background\&quot;:null,\&quot;uploaded_meta\&quot;:null}],\&quot;trust_levels\&quot;:[{\&quot;id\&quot;:0,\&quot;name\&quot;:\&quot;新用户\&quot;},{\&quot;id\&quot;:1,\&quot;name\&quot;:\&quot;初级用户\&quot;},{\&quot;id\&quot;:2,\&quot;name\&quot;:\&quot;成员\&quot;},{\&quot;id\&quot;:3,\&quot;name\&quot;:\&quot;活跃用户\&quot;},{\&quot;id\&quot;:4,\&quot;name\&quot;:\&quot;资深\&quot;}],\&quot;archetypes\&quot;:[{\&quot;id\&quot;:\&quot;regular\&quot;,\&quot;name\&quot;:\&quot;常规主题\&quot;,\&quot;options\&quot;:[]},{\&quot;id\&quot;:\&quot;banner\&quot;,\&quot;name\&quot;:\&quot;横幅主题\&quot;,\&quot;options\&quot;:[]}],\&quot;user_fields\&quot;:[],\&quot;auth_providers\&quot;:[{\&quot;name\&quot;:\&quot;google_oauth2\&quot;,\&quot;custom_url\&quot;:null,\&quot;pretty_name_override\&quot;:null,\&quot;title_override\&quot;:null,\&quot;message_override\&quot;:null,\&quot;frame_width\&quot;:850,\&quot;frame_height\&quot;:500,\&quot;full_screen_login\&quot;:false,\&quot;can_connect\&quot;:true,\&quot;can_revoke\&quot;:true},{\&quot;name\&quot;:\&quot;github\&quot;,\&quot;custom_url\&quot;:null,\&quot;pretty_name_override\&quot;:null,\&quot;title_override\&quot;:null,\&quot;message_override\&quot;:null,\&quot;frame_width\&quot;:null,\&quot;frame_height\&quot;:null,\&quot;full_screen_login\&quot;:false,\&quot;can_connect\&quot;:true,\&quot;can_revoke\&quot;:true}]}&quot;,&quot;siteSettings&quot;:&quot;{\&quot;default_locale\&quot;:\&quot;en\&quot;,\&quot;title\&quot;:\&quot;JoTang\&quot;,\&quot;contact_email\&quot;:\&quot;whtsky@gmail.com\&quot;,\&quot;contact_url\&quot;:\&quot;\&quot;,\&quot;logo\&quot;:\&quot;/uploads/default/original/1X/db9d676e06d94dc0481ce128b7ddacb620d2924b.png\&quot;,\&quot;logo_small\&quot;:\&quot;/uploads/default/original/1X/1921183513e1f7ba620b0dbf0825a1b86c73dd18.png\&quot;,\&quot;digest_logo\&quot;:\&quot;\&quot;,\&quot;mobile_logo\&quot;:\&quot;\&quot;,\&quot;large_icon\&quot;:\&quot;\&quot;,\&quot;favicon\&quot;:\&quot;/uploads/default/original/1X/1921183513e1f7ba620b0dbf0825a1b86c73dd18.png\&quot;,\&quot;apple_touch_icon\&quot;:\&quot;\&quot;,\&quot;allow_user_locale\&quot;:true,\&quot;support_mixed_text_direction\&quot;:false,\&quot;suggested_topics\&quot;:5,\&quot;ga_universal_tracking_code\&quot;:\&quot;UA-78623794-1\&quot;,\&quot;ga_universal_domain_name\&quot;:\&quot;auto\&quot;,\&quot;gtm_container_id\&quot;:\&quot;\&quot;,\&quot;top_menu\&quot;:\&quot;latest|new|unread|categories\&quot;,\&quot;post_menu\&quot;:\&quot;like-count|like|flag|edit|bookmark|delete|admin|reply\&quot;,\&quot;post_menu_hidden_items\&quot;:\&quot;flag|bookmark|edit|delete|admin\&quot;,\&quot;share_links\&quot;:\&quot;\&quot;,\&quot;desktop_category_page_style\&quot;:\&quot;categories_only\&quot;,\&quot;category_colors\&quot;:\&quot;BF1E2E|F1592A|F7941D|9EB83B|3AB54A|12A89D|25AAE2|0E76BD|652D90|92278F|ED207B|8C6238|231F20|808281|B3B5B4|E45735\&quot;,\&quot;category_style\&quot;:\&quot;bullet\&quot;,\&quot;enable_mobile_theme\&quot;:true,\&quot;relative_date_duration\&quot;:30,\&quot;fixed_category_positions\&quot;:false,\&quot;fixed_category_positions_on_create\&quot;:false,\&quot;enable_badges\&quot;:true,\&quot;enable_badge_sql\&quot;:false,\&quot;enable_whispers\&quot;:false,\&quot;push_notifications_prompt\&quot;:true,\&quot;vapid_public_key_bytes\&quot;:\&quot;4|58|244|88|203|48|115|92|228|119|102|197|87|38|63|78|41|86|41|139|118|24|27|238|163|247|44|199|102|25|171|5|249|162|61|175|18|100|74|1|221|34|224|43|197|237|122|162|94|53|198|211|181|143|205|144|223|117|16|163|198|232|16|124|227\&quot;,\&quot;invite_only\&quot;:false,\&quot;login_required\&quot;:false,\&quot;must_approve_users\&quot;:false,\&quot;enable_local_logins\&quot;:true,\&quot;enable_local_logins_via_email\&quot;:true,\&quot;allow_new_registrations\&quot;:true,\&quot;enable_signup_cta\&quot;:true,\&quot;enable_sso\&quot;:false,\&quot;sso_overrides_avatar\&quot;:false,\&quot;min_username_length\&quot;:3,\&quot;max_username_length\&quot;:20,\&quot;min_password_length\&quot;:8,\&quot;min_admin_password_length\&quot;:8,\&quot;logout_redirect\&quot;:\&quot;\&quot;,\&quot;full_name_required\&quot;:false,\&quot;enable_names\&quot;:true,\&quot;invites_per_page\&quot;:40,\&quot;delete_user_max_post_age\&quot;:60,\&quot;delete_all_posts_max\&quot;:15,\&quot;show_email_on_profile\&quot;:false,\&quot;prioritize_username_in_ux\&quot;:true,\&quot;enable_user_directory\&quot;:true,\&quot;allow_anonymous_posting\&quot;:false,\&quot;anonymous_posting_min_trust_level\&quot;:1,\&quot;hide_user_profiles_from_public\&quot;:true,\&quot;hide_suspension_reasons\&quot;:false,\&quot;enable_group_directory\&quot;:true,\&quot;min_post_length\&quot;:20,\&quot;min_first_post_length\&quot;:20,\&quot;min_personal_message_post_length\&quot;:10,\&quot;max_post_length\&quot;:32000,\&quot;topic_featured_link_enabled\&quot;:true,\&quot;min_topic_title_length\&quot;:5,\&quot;max_topic_title_length\&quot;:255,\&quot;min_personal_message_title_length\&quot;:2,\&quot;allow_uncategorized_topics\&quot;:true,\&quot;min_title_similar_length\&quot;:10,\&quot;enable_personal_messages\&quot;:true,\&quot;enable_personal_email_messages\&quot;:false,\&quot;edit_history_visible_to_public\&quot;:true,\&quot;delete_removed_posts_after\&quot;:24,\&quot;traditional_markdown_linebreaks\&quot;:false,\&quot;enable_markdown_typographer\&quot;:true,\&quot;enable_markdown_linkify\&quot;:true,\&quot;markdown_linkify_tlds\&quot;:\&quot;com|net|org|io|co|tv|ru|cn|us|uk|me|de|fr|fi|gov\&quot;,\&quot;enable_rich_text_paste\&quot;:true,\&quot;suppress_reply_directly_below\&quot;:true,\&quot;suppress_reply_directly_above\&quot;:true,\&quot;max_reply_history\&quot;:1,\&quot;enable_mentions\&quot;:true,\&quot;newuser_max_images\&quot;:1,\&quot;newuser_max_attachments\&quot;:0,\&quot;show_pinned_excerpt_mobile\&quot;:true,\&quot;show_pinned_excerpt_desktop\&quot;:true,\&quot;display_name_on_posts\&quot;:false,\&quot;show_time_gap_days\&quot;:7,\&quot;short_progress_text_threshold\&quot;:10000,\&quot;default_code_lang\&quot;:\&quot;auto\&quot;,\&quot;autohighlight_all_code\&quot;:false,\&quot;highlighted_languages\&quot;:\&quot;bash|cs|cpp|css|coffeescript|diff|xml|http|ini|json|java|javascript|makefile|markdown|ruby|php|python|sql\&quot;,\&quot;enable_emoji\&quot;:true,\&quot;enable_emoji_shortcuts\&quot;:true,\&quot;emoji_set\&quot;:\&quot;apple\&quot;,\&quot;emoji_autocomplete_min_chars\&quot;:0,\&quot;enable_inline_emoji_translation\&quot;:false,\&quot;code_formatting_style\&quot;:\&quot;4-spaces-indent\&quot;,\&quot;allowed_href_schemes\&quot;:\&quot;\&quot;,\&quot;watched_words_regular_expressions\&quot;:false,\&quot;enable_advanced_editor_preview_sync\&quot;:false,\&quot;email_time_window_mins\&quot;:10,\&quot;disable_digest_emails\&quot;:false,\&quot;email_in\&quot;:false,\&quot;disable_emails\&quot;:\&quot;no\&quot;,\&quot;bounce_score_threshold\&quot;:4,\&quot;max_image_size_kb\&quot;:30720,\&quot;max_attachment_size_kb\&quot;:30720,\&quot;authorized_extensions\&quot;:\&quot;*\&quot;,\&quot;authorized_extensions_for_staff\&quot;:\&quot;\&quot;,\&quot;max_image_width\&quot;:690,\&quot;max_image_height\&quot;:500,\&quot;prevent_anons_from_downloading_files\&quot;:false,\&quot;enable_s3_uploads\&quot;:false,\&quot;allow_profile_backgrounds\&quot;:true,\&quot;allow_uploaded_avatars\&quot;:true,\&quot;allow_animated_avatars\&quot;:false,\&quot;default_avatars\&quot;:\&quot;\&quot;,\&quot;external_system_avatars_enabled\&quot;:true,\&quot;external_system_avatars_url\&quot;:\&quot;/letter_avatar_proxy/v2/letter/{first_letter}/{color}/{size}.png\&quot;,\&quot;selectable_avatars_enabled\&quot;:false,\&quot;allow_staff_to_upload_any_file_in_pm\&quot;:true,\&quot;simultaneous_uploads\&quot;:5,\&quot;tl1_requires_read_posts\&quot;:30,\&quot;tl3_links_no_follow\&quot;:true,\&quot;use_admin_ip_whitelist\&quot;:false,\&quot;allowed_iframes\&quot;:\&quot;https://www.google.com/maps/embed?|https://www.openstreetmap.org/export/embed.html?|https://calendar.google.com/calendar/embed?|https://codepen.io/\&quot;,\&quot;max_oneboxes_per_post\&quot;:50,\&quot;flags_default_topics\&quot;:false,\&quot;alert_admins_if_errors_per_minute\&quot;:0,\&quot;alert_admins_if_errors_per_hour\&quot;:0,\&quot;max_prints_per_hour_per_user\&quot;:5,\&quot;enable_long_polling\&quot;:false,\&quot;long_polling_base_url\&quot;:\&quot;/\&quot;,\&quot;background_polling_interval\&quot;:60000,\&quot;polling_interval\&quot;:3000,\&quot;anon_polling_interval\&quot;:15000,\&quot;flush_timings_secs\&quot;:20,\&quot;verbose_localization\&quot;:false,\&quot;max_new_topics\&quot;:500,\&quot;enable_safe_mode\&quot;:true,\&quot;tos_url\&quot;:\&quot;\&quot;,\&quot;privacy_policy_url\&quot;:\&quot;\&quot;,\&quot;faq_url\&quot;:\&quot;\&quot;,\&quot;enable_backups\&quot;:true,\&quot;backup_location\&quot;:\&quot;s3\&quot;,\&quot;maximum_backups\&quot;:5,\&quot;min_search_term_length\&quot;:3,\&quot;log_search_queries\&quot;:true,\&quot;version_checks\&quot;:true,\&quot;suppress_uncategorized_badge\&quot;:true,\&quot;header_dropdown_category_count\&quot;:8,\&quot;topic_views_heat_low\&quot;:1000,\&quot;topic_views_heat_medium\&quot;:2000,\&quot;topic_views_heat_high\&quot;:5000,\&quot;topic_post_like_heat_low\&quot;:0.5,\&quot;topic_post_like_heat_medium\&quot;:1.0,\&quot;topic_post_like_heat_high\&quot;:2.0,\&quot;history_hours_low\&quot;:12,\&quot;history_hours_medium\&quot;:24,\&quot;history_hours_high\&quot;:48,\&quot;cold_age_days_low\&quot;:14,\&quot;cold_age_days_medium\&quot;:90,\&quot;cold_age_days_high\&quot;:180,\&quot;global_notice\&quot;:\&quot;\&quot;,\&quot;show_create_topics_notice\&quot;:true,\&quot;bootstrap_mode_min_users\&quot;:20,\&quot;bootstrap_mode_enabled\&quot;:false,\&quot;automatically_unpin_topics\&quot;:true,\&quot;read_time_word_count\&quot;:500,\&quot;topic_page_title_includes_category\&quot;:true,\&quot;svg_icon_subset\&quot;:\&quot;\&quot;,\&quot;disable_mailing_list_mode\&quot;:false,\&quot;default_topics_automatic_unpin\&quot;:true,\&quot;tagging_enabled\&quot;:false,\&quot;tag_style\&quot;:\&quot;simple\&quot;,\&quot;max_tags_per_topic\&quot;:5,\&quot;max_tag_length\&quot;:20,\&quot;min_trust_level_to_tag_topics\&quot;:\&quot;0\&quot;,\&quot;max_tag_search_results\&quot;:5,\&quot;show_filter_by_tag\&quot;:false,\&quot;tags_sort_alphabetically\&quot;:false,\&quot;tags_listed_by_group\&quot;:false,\&quot;suppress_overlapping_tags_in_list\&quot;:false,\&quot;force_lowercase_tags\&quot;:true,\&quot;discourse_narrative_bot_enabled\&quot;:true,\&quot;presence_enabled\&quot;:true,\&quot;poll_enabled\&quot;:true,\&quot;poll_maximum_options\&quot;:20,\&quot;poll_minimum_trust_level_to_create\&quot;:1,\&quot;details_enabled\&quot;:true,\&quot;discourse_local_dates_enabled\&quot;:true,\&quot;discourse_local_dates_default_formats\&quot;:\&quot;LLL|LTS|LL|LLLL\&quot;,\&quot;discourse_local_dates_default_timezones\&quot;:\&quot;Europe/Paris|America/Los_Angeles\&quot;,\&quot;available_locales\&quot;:\&quot;[{\\\&quot;name\\\&quot;:\\\&quot;اللغة العربية\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;ar\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;български език\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;bg\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;bosanski jezik\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;bs_BA\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;català\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;ca\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;čeština\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;cs\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;dansk\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;da\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;Deutsch\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;de\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;ελληνικά\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;el\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;English\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;en\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;Español\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;es\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;eesti\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;et\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;فارسی\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;fa_IR\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;suomi\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;fi\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;Français\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;fr\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;galego\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;gl\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;עברית\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;he\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;magyar\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;hu\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;Indonesian\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;id\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;Italiano\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;it\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;日本語\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;ja\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;한국어\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;ko\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;lietuvių kalba\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;lt\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;latviešu valoda\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;lv\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;Norsk bokmål\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;nb_NO\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;Nederlands\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;nl\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;język polski\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;pl_PL\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;Português\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;pt\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;Português (BR)\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;pt_BR\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;limba română\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;ro\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;Русский\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;ru\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;slovenčina\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;sk\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;slovenščina\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;sl\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;Shqip\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;sq\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;српски језик\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;sr\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;svenska\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;sv\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;Kiswahili\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;sw\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;తెలుగు\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;te\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;ไทย\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;th\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;Türkçe\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;tr_TR\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;українська мова\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;uk\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;اردو\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;ur\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;Việt Nam\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;vi\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;中文\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;zh_CN\\\&quot;},{\\\&quot;name\\\&quot;:\\\&quot;中文 (TW)\\\&quot;,\\\&quot;value\\\&quot;:\\\&quot;zh_TW\\\&quot;}]\&quot;,\&quot;site_logo_url\&quot;:\&quot;/uploads/default/original/1X/db9d676e06d94dc0481ce128b7ddacb620d2924b.png\&quot;,\&quot;site_logo_small_url\&quot;:\&quot;/uploads/default/original/1X/1921183513e1f7ba620b0dbf0825a1b86c73dd18.png\&quot;,\&quot;site_mobile_logo_url\&quot;:\&quot;\&quot;,\&quot;site_favicon_url\&quot;:\&quot;/uploads/default/original/1X/1921183513e1f7ba620b0dbf0825a1b86c73dd18.png\&quot;}&quot;,&quot;customHTML&quot;:&quot;{\&quot;top\&quot;:\&quot;\&quot;,\&quot;footer\&quot;:\&quot;\&quot;}&quot;,&quot;banner&quot;:&quot;{}&quot;,&quot;customEmoji&quot;:&quot;[]&quot;,&quot;translationOverrides&quot;:&quot;{}&quot;,&quot;currentUser&quot;:&quot;{\&quot;id\&quot;:104,\&quot;username\&quot;:\&quot;YiJing233\&quot;,\&quot;name\&quot;:\&quot;Yi King\&quot;,\&quot;avatar_template\&quot;:\&quot;/user_avatar/d.jotang.party/yijing233/{size}/278_1.png\&quot;,\&quot;unread_notifications\&quot;:0,\&quot;unread_private_messages\&quot;:0,\&quot;read_first_notification\&quot;:true,\&quot;admin\&quot;:false,\&quot;notification_channel_position\&quot;:1,\&quot;moderator\&quot;:false,\&quot;staff\&quot;:false,\&quot;title\&quot;:null,\&quot;reply_count\&quot;:0,\&quot;topic_count\&quot;:1,\&quot;enable_quoting\&quot;:true,\&quot;external_links_in_new_tab\&quot;:false,\&quot;dynamic_favicon\&quot;:false,\&quot;trust_level\&quot;:1,\&quot;can_send_private_email_messages\&quot;:false,\&quot;can_edit\&quot;:true,\&quot;can_delete_account\&quot;:true,\&quot;should_be_redirected_to_top\&quot;:false,\&quot;disable_jump_reply\&quot;:false,\&quot;custom_fields\&quot;:{},\&quot;muted_category_ids\&quot;:[],\&quot;dismissed_banner_key\&quot;:null,\&quot;is_anonymous\&quot;:false,\&quot;read_faq\&quot;:true,\&quot;automatically_unpin_topics\&quot;:true,\&quot;mailing_list_mode\&quot;:false,\&quot;previous_visit_at\&quot;:\&quot;2019-09-09T14:34:46.167Z\&quot;,\&quot;seen_notification_id\&quot;:885,\&quot;can_create_topic\&quot;:true,\&quot;link_posting_access\&quot;:\&quot;full\&quot;,\&quot;top_category_ids\&quot;:[],\&quot;hide_profile_and_presence\&quot;:false,\&quot;groups\&quot;:[{\&quot;id\&quot;:10,\&quot;automatic\&quot;:true,\&quot;name\&quot;:\&quot;trust_level_0\&quot;,\&quot;display_name\&quot;:\&quot;信任等级0\&quot;,\&quot;user_count\&quot;:103,\&quot;mentionable_level\&quot;:0,\&quot;messageable_level\&quot;:0,\&quot;visibility_level\&quot;:0,\&quot;automatic_membership_email_domains\&quot;:null,\&quot;automatic_membership_retroactive\&quot;:false,\&quot;primary_group\&quot;:false,\&quot;title\&quot;:null,\&quot;grant_trust_level\&quot;:null,\&quot;has_messages\&quot;:false,\&quot;flair_url\&quot;:null,\&quot;flair_bg_color\&quot;:null,\&quot;flair_color\&quot;:null,\&quot;bio_cooked\&quot;:null,\&quot;public_admission\&quot;:false,\&quot;public_exit\&quot;:false,\&quot;allow_membership_requests\&quot;:false,\&quot;full_name\&quot;:null,\&quot;default_notification_level\&quot;:3,\&quot;membership_request_template\&quot;:null},{\&quot;id\&quot;:41,\&quot;automatic\&quot;:false,\&quot;name\&quot;:\&quot;jotang\&quot;,\&quot;user_count\&quot;:53,\&quot;mentionable_level\&quot;:3,\&quot;messageable_level\&quot;:3,\&quot;visibility_level\&quot;:0,\&quot;automatic_membership_email_domains\&quot;:\&quot;jotang.party\&quot;,\&quot;automatic_membership_retroactive\&quot;:false,\&quot;primary_group\&quot;:false,\&quot;title\&quot;:\&quot;\&quot;,\&quot;grant_trust_level\&quot;:null,\&quot;has_messages\&quot;:false,\&quot;flair_url\&quot;:\&quot;\&quot;,\&quot;flair_bg_color\&quot;:\&quot;\&quot;,\&quot;flair_color\&quot;:\&quot;\&quot;,\&quot;bio_cooked\&quot;:null,\&quot;public_admission\&quot;:false,\&quot;public_exit\&quot;:true,\&quot;allow_membership_requests\&quot;:false,\&quot;full_name\&quot;:\&quot;\&quot;,\&quot;default_notification_level\&quot;:3,\&quot;membership_request_template\&quot;:\&quot;\&quot;},{\&quot;id\&quot;:11,\&quot;automatic\&quot;:true,\&quot;name\&quot;:\&quot;trust_level_1\&quot;,\&quot;display_name\&quot;:\&quot;信任等级1\&quot;,\&quot;user_count\&quot;:69,\&quot;mentionable_level\&quot;:0,\&quot;messageable_level\&quot;:0,\&quot;visibility_level\&quot;:0,\&quot;automatic_membership_email_domains\&quot;:null,\&quot;automatic_membership_retroactive\&quot;:false,\&quot;primary_group\&quot;:false,\&quot;title\&quot;:null,\&quot;grant_trust_level\&quot;:null,\&quot;has_messages\&quot;:false,\&quot;flair_url\&quot;:null,\&quot;flair_bg_color\&quot;:null,\&quot;flair_color\&quot;:null,\&quot;bio_cooked\&quot;:null,\&quot;public_admission\&quot;:false,\&quot;public_exit\&quot;:false,\&quot;allow_membership_requests\&quot;:false,\&quot;full_name\&quot;:null,\&quot;default_notification_level\&quot;:3,\&quot;membership_request_template\&quot;:null}]}&quot;,&quot;topicTrackingStates&quot;:&quot;[]&quot;,&quot;topic_497&quot;:&quot;{\&quot;post_stream\&quot;:{\&quot;posts\&quot;:[{\&quot;id\&quot;:942,\&quot;name\&quot;:\&quot;文译\&quot;,\&quot;username\&quot;:\&quot;caoyiwen0929\&quot;,\&quot;avatar_template\&quot;:\&quot;/user_avatar/d.jotang.party/caoyiwen0929/{size}/301_1.png\&quot;,\&quot;created_at\&quot;:\&quot;2019-09-03T08:56:00.410Z\&quot;,\&quot;cooked\&quot;:\&quot;\\u003ch3\\u003e出题安排\\u003c/h3\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e张我豪：AI自然语言处理\\u003c/li\\u003e\\n\\u003cli\\u003e曹旭杰：爬虫\\u003c/li\\u003e\\n\\u003cli\\u003e段柏杉：C\\u003c/li\\u003e\\n\\u003cli\\u003e曹译文：产品+UI\\u003c/li\\u003e\\n\\u003cli\\u003e张晓艺：计算机视觉\\u003c/li\\u003e\\n\\u003cli\\u003e白雯琪：前端\\u003c/li\\u003e\\n\\u003cli\\u003e陆圣珩：后端 linux\\u003c/li\\u003e\\n\\u003cli\\u003e纪尹钦：java后端\\u003c/li\\u003e\\n\\u003cli\\u003emore+++\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003cp\\u003e补充: 大四和大二的同学有兴趣也一起来吧\\u003c/p\\u003e\\n\\u003ch3\\u003e题目\\u003c/h3\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e可以出两个小问，第一个小问简单一点\\u003c/li\\u003e\\n\\u003cli\\u003e面向大一大二\\u003c/li\\u003e\\n\\u003cli\\u003e给一些参考资料，参考以前的格式\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003ch3\\u003e时间\\u003c/h3\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e9月20日22:00前\\u003c/li\\u003e\\n\\u003c/ul\\u003e\&quot;,\&quot;post_number\&quot;:1,\&quot;post_type\&quot;:1,\&quot;updated_at\&quot;:\&quot;2019-09-16T09:14:30.608Z\&quot;,\&quot;reply_count\&quot;:0,\&quot;reply_to_post_number\&quot;:null,\&quot;quote_count\&quot;:0,\&quot;avg_time\&quot;:97,\&quot;incoming_link_count\&quot;:1,\&quot;reads\&quot;:21,\&quot;score\&quot;:14.05,\&quot;yours\&quot;:false,\&quot;topic_id\&quot;:497,\&quot;topic_slug\&quot;:\&quot;2019-19\&quot;,\&quot;display_username\&quot;:\&quot;文译\&quot;,\&quot;primary_group_name\&quot;:null,\&quot;primary_group_flair_url\&quot;:null,\&quot;primary_group_flair_bg_color\&quot;:null,\&quot;primary_group_flair_color\&quot;:null,\&quot;version\&quot;:4,\&quot;can_edit\&quot;:false,\&quot;can_delete\&quot;:false,\&quot;can_recover\&quot;:false,\&quot;can_wiki\&quot;:false,\&quot;read\&quot;:true,\&quot;user_title\&quot;:\&quot;\&quot;,\&quot;actions_summary\&quot;:[{\&quot;id\&quot;:2,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:3,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:4,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:8,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:6,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:7,\&quot;can_act\&quot;:true}],\&quot;moderator\&quot;:false,\&quot;admin\&quot;:true,\&quot;staff\&quot;:true,\&quot;user_id\&quot;:61,\&quot;hidden\&quot;:false,\&quot;trust_level\&quot;:4,\&quot;deleted_at\&quot;:null,\&quot;user_deleted\&quot;:false,\&quot;edit_reason\&quot;:null,\&quot;can_view_edit_history\&quot;:true,\&quot;wiki\&quot;:false},{\&quot;id\&quot;:949,\&quot;name\&quot;:\&quot;纪尹钦\&quot;,\&quot;username\&quot;:\&quot;jiyinqin\&quot;,\&quot;avatar_template\&quot;:\&quot;/user_avatar/d.jotang.party/jiyinqin/{size}/264_1.png\&quot;,\&quot;created_at\&quot;:\&quot;2019-09-11T13:12:47.322Z\&quot;,\&quot;cooked\&quot;:\&quot;\\u003ch1\\u003e来，跟我一起念，\\u003cs\\u003ePHP\\u003c/s\\u003e Java天下第一\\u003c/h1\\u003e\\n\\u003ch3\\u003e题目背景\\u003c/h3\\u003e\\n\\u003cblockquote\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003e\\u003cs\\u003e老司机带带我，我要打飞机啊\\u003c/s\\u003e\\u003c/strong\\u003e\\u003c/p\\u003e\\n\\u003cp\\u003e不知道00后的你有没有玩过飞机大战，对于90后的老腊肉可都是满满的回忆嘤嘤嘤（乱入？打死！）\\u003c/p\\u003e\\n\\u003cp\\u003e前几天正纠结出个啥题目好，忽然看到旁边大兄弟全神贯注地玩着飞机大战，灵机一动，不如我们也自己用Java写一个飞机大战吧？嘿嘿嘿这个一定很好玩（悄悄露出了不怀好意的微笑）~~ 话不多说，一起冲冲冲！\\u003c/p\\u003e\\n\\u003c/blockquote\\u003e\\n\\u003ch3\\u003e题目内容\\u003c/h3\\u003e\\n\\u003ch4\\u003e任务一\\u003c/h4\\u003e\\n\\u003cp\\u003e既然要自己写一款飞机大战，你肯定得先知道飞机大战怎么玩噻，这里建议没玩过的萌新先去4399玩一下（难道真有没玩过的？？？）\\u003c/p\\u003e\\n\\u003cp\\u003e如果你已经清楚了飞机大战的游戏机制，那么你可以开始尝试实现以下需求了：\\u003c/p\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e创建一个游戏框并为你的游戏添加一张好看的背景图片（相信你也不希望在纯白色的“太空”中开飞机吧）\\u003c/li\\u003e\\n\\u003cli\\u003e添加一架玩家飞机，玩家飞机可自动发射子弹并可被玩家通过上下左右键操控\\u003c/li\\u003e\\n\\u003cli\\u003e添加敌方飞机，敌机在游戏框上方随机生成并向玩家飞机移动，可以发射子弹攻击玩家飞机\\u003c/li\\u003e\\n\\u003cli\\u003e玩家飞机与敌方飞机均有生命值，受到子弹攻击会减少生命值，敌机生命值清零则消失，玩家飞机生命值清零则游戏结束\\u003c/li\\u003e\\n\\u003cli\\u003e添加碰撞检测，当玩家飞机与敌机发生碰撞时游戏结束\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003cp\\u003e做到这里，一款飞机大战的雏形已经完成了，快试玩一下自己写的游戏吧！\\u003c/p\\u003e\\n\\u003ch4\\u003e任务二\\u003c/h4\\u003e\\n\\u003cp\\u003e怎么样，玩着自己写的游戏是不是感觉特别爽，特别有成就感？不过你是不是总感觉自己写的飞机大战少了点什么？不要急，我们继续往下走！\\u003c/p\\u003e\\n\\u003cp\\u003e我大胆地猜测你也是一个完美主义者，你一定不会容忍自己写的游戏被吐槽无聊吧！如果优秀的你还学有余力，敢不敢继续接受下面的挑战（\\u003cstrong\\u003e加分项，不要求全部完成\\u003c/strong\\u003e）：\\u003c/p\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e实现循环背景滚动，让背景图片能随着游戏进度不断变化\\u003c/li\\u003e\\n\\u003cli\\u003e添加游戏音效和开始结束界面\\u003c/li\\u003e\\n\\u003cli\\u003e为飞机添加爆炸效果，当玩家飞机和敌机生命值清零时发生一场华丽的爆炸（艺术就是爆炸！）\\u003c/li\\u003e\\n\\u003cli\\u003e引入攻击力的概念（每发子弹造成的伤害），敌机的生命值和攻击力随时间增长，玩家飞机在击毁敌机后会随机增加一定的生命值或攻击力\\u003c/li\\u003e\\n\\u003cli\\u003e引入积分的概念，每次击毁敌机获得积分，游戏结束后进行积分结算并设置积分排行榜\\u003c/li\\u003e\\n\\u003cli\\u003e增加敌机的种类，给不同种类的敌机赋予不同的属性值和攻击效果，添加BOSS敌机，添加各种有趣的BUFF\\u003c/li\\u003e\\n\\u003cli\\u003e充分发挥你的脑洞，发掘更多有趣的玩法，改善玩家的游戏体验\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003cp\\u003e做到这里，你应该已经对Java有了一定的理解，继续努力，以后JoTang的未来就交给你们了！\\u003c/p\\u003e\\n\\u003ch3\\u003e参考资料\\u003c/h3\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e一个成熟的程序猿需要学会合理使用Google，\\u003cs\\u003e度娘\\u003c/s\\u003e，和\\u003cstrong\\u003e自己的脑子\\u003c/strong\\u003e\\n\\u003c/li\\u003e\\n\\u003cli\\u003eJava菜鸟教程：\\u003ca href=\\\&quot;https://www.runoob.com/java/java-tutorial.html\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003ehttps://www.runoob.com/java/java-tutorial.html\\u003c/a\\u003e\\n\\u003c/li\\u003e\\n\\u003cli\\u003eJava高淇300集视频教程：\\u003ca href=\\\&quot;https://www.bilibili.com/video/av59814573?from=search\\u0026amp;seid=3742287172359069900\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003ehttps://www.bilibili.com/video/av59814573?from=search\\u0026amp;seid=3742287172359069900\\u003c/a\\u003e （其中有一段简易版的飞机游戏可以参考）\\u003c/li\\u003e\\n\\u003cli\\u003e网上有很多Java飞机大战的代码，\\u003cstrong\\u003e可以参考但不要直接照抄，一经发现会被关小黑屋嗷！\\u003c/strong\\u003e\\n\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003ch3\\u003e其他说明\\u003c/h3\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e游戏需要的各种素材建议使用无背景的png图片\\u003c/li\\u003e\\n\\u003cli\\u003e完成后请提交项目源代码和详细的文档，代码中需包含注释，文档需包含学习过程和项目需求的完成情况（附截图）\\u003c/li\\u003e\\n\\u003c/ul\\u003e\&quot;,\&quot;post_number\&quot;:2,\&quot;post_type\&quot;:1,\&quot;updated_at\&quot;:\&quot;2019-09-16T01:17:02.149Z\&quot;,\&quot;reply_count\&quot;:0,\&quot;reply_to_post_number\&quot;:null,\&quot;quote_count\&quot;:0,\&quot;avg_time\&quot;:189,\&quot;incoming_link_count\&quot;:0,\&quot;reads\&quot;:18,\&quot;score\&quot;:28.05,\&quot;yours\&quot;:false,\&quot;topic_id\&quot;:497,\&quot;topic_slug\&quot;:\&quot;2019-19\&quot;,\&quot;display_username\&quot;:\&quot;纪尹钦\&quot;,\&quot;primary_group_name\&quot;:null,\&quot;primary_group_flair_url\&quot;:null,\&quot;primary_group_flair_bg_color\&quot;:null,\&quot;primary_group_flair_color\&quot;:null,\&quot;version\&quot;:4,\&quot;can_edit\&quot;:false,\&quot;can_delete\&quot;:false,\&quot;can_recover\&quot;:false,\&quot;can_wiki\&quot;:false,\&quot;link_counts\&quot;:[{\&quot;url\&quot;:\&quot;https://www.bilibili.com/video/av59814573?from=search\\u0026seid=3742287172359069900\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;title\&quot;:\&quot;【尚学堂】Java300集 - 高琪(零基础初学入门)_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili\&quot;,\&quot;clicks\&quot;:0},{\&quot;url\&quot;:\&quot;https://www.runoob.com/java/java-tutorial.html\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;title\&quot;:\&quot;Java 教程 | 菜鸟教程\&quot;,\&quot;clicks\&quot;:0}],\&quot;read\&quot;:true,\&quot;user_title\&quot;:\&quot;\&quot;,\&quot;actions_summary\&quot;:[{\&quot;id\&quot;:2,\&quot;count\&quot;:1,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:3,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:4,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:8,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:6,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:7,\&quot;can_act\&quot;:true}],\&quot;moderator\&quot;:false,\&quot;admin\&quot;:false,\&quot;staff\&quot;:false,\&quot;user_id\&quot;:63,\&quot;hidden\&quot;:false,\&quot;trust_level\&quot;:4,\&quot;deleted_at\&quot;:null,\&quot;user_deleted\&quot;:false,\&quot;edit_reason\&quot;:null,\&quot;can_view_edit_history\&quot;:true,\&quot;wiki\&quot;:false},{\&quot;id\&quot;:951,\&quot;name\&quot;:\&quot;文译\&quot;,\&quot;username\&quot;:\&quot;caoyiwen0929\&quot;,\&quot;avatar_template\&quot;:\&quot;/user_avatar/d.jotang.party/caoyiwen0929/{size}/301_1.png\&quot;,\&quot;created_at\&quot;:\&quot;2019-09-15T11:13:59.860Z\&quot;,\&quot;cooked\&quot;:\&quot;\\u003ch1\\u003e甲方爸爸他又来啦！\\u003c/h1\\u003e\\n\\u003ch3\\u003e题目背景\\u003c/h3\\u003e\\n\\u003cblockquote\\u003e\\n\\u003cp\\u003eJoTanger准备搭建一个自己的项目交流App，开启全新的焦糖2020。急需一位产品来策划一下整个项目。\\u003c/p\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003e神奇的甲方爸爸晓艺：“我们这个App，① 首先要有一个项目板块，在这里可以讨论立项项目，加入项目群聊，进行实时聊天；还可以新建项目，填写项目基本信息，通过审核后成为立项项目。② 还要有一个头脑风暴板块，可以在这里发帖、评论、收藏、分享等。③ 同时，作为一个相爱相杀的集体，我们需要好友系统来建立联系。④ 消息系统也不能少，群聊私聊官方鬼畜一网打尽！”\\u003c/strong\\u003e\\u003c/p\\u003e\\n\\u003c/blockquote\\u003e\\n\\u003ch4\\u003e任务一\\u003c/h4\\u003e\\n\\u003cp\\u003e重新设计一个JoTang的Logo\\u003c/p\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e具有焦糖特色\\u003c/li\\u003e\\n\\u003cli\\u003e创新简洁，工具不限\\u003c/li\\u003e\\n\\u003cli\\u003e导出\\u003ccode\\u003e.PNG\\u003c/code\\u003e格式，与源文件一同提交\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003ch4\\u003e任务二\\u003c/h4\\u003e\\n\\u003col\\u003e\\n\\u003cli\\u003e设计一个焦糖App，能够实现甲方的要求\\u003c/li\\u003e\\n\\u003cli\\u003e需要有\\u003cstrong\\u003e需求分析文档\\u003c/strong\\u003e，体现软件功能、业务逻辑等\\u003c/li\\u003e\\n\\u003cli\\u003e需要绘制一个简要原型，能够展现\\u003cstrong\\u003e良好的交互\\u003c/strong\\u003e\\n\\u003c/li\\u003e\\n\\u003cli\\u003e可以在原型基础上再进行美化和视觉设计\\u003c/li\\u003e\\n\\u003c/ol\\u003e\\n\\u003ch3\\u003e参考资料\\u003c/h3\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e可以在各大设计网站查看优秀作品的产品展示：\\u003ca href=\\\&quot;https://www.zcool.com.cn/\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003e站酷\\u003c/a\\u003e，\\u003ca href=\\\&quot;https://www.uisdc.com/\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003e优设\\u003c/a\\u003e，\\u003ca href=\\\&quot;https://www.ui.cn/\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003eUI中国\\u003c/a\\u003e，\\u003ca href=\\\&quot;https://dribbble.com/\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003eDribbble\\u003c/a\\u003e\\n\\u003c/li\\u003e\\n\\u003cli\\u003e原型工具：\\u003ca href=\\\&quot;https://www.adobe.com/cn/products/xd.html\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003eAdobe XD\\u003c/a\\u003e（虽然是Adobe家的，但是免费不用破解嗷，俺搬砖一直都用它，轻便简洁），or \\u003ca href=\\\&quot;https://www.axure.com/\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003eAxure RP\\u003c/a\\u003e\\n\\u003c/li\\u003e\\n\\u003cli\\u003e创意PS教程：\\u003ca href=\\\&quot;https://space.bilibili.com/128827356/#/\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003e一行影视动画\\u003c/a\\u003e\\n\\u003c/li\\u003e\\n\\u003cli\\u003e\\u003ca href=\\\&quot;http://www.woshipm.com/rp/928201.html\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003e如何画出专业的原型图？\\u003c/a\\u003e\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003ch3\\u003e其他说明\\u003c/h3\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e完成后请提交设计源文件及导出png，还有产品文档\\u003c/li\\u003e\\n\\u003c/ul\\u003e\&quot;,\&quot;post_number\&quot;:3,\&quot;post_type\&quot;:1,\&quot;updated_at\&quot;:\&quot;2019-09-15T11:14:24.191Z\&quot;,\&quot;reply_count\&quot;:0,\&quot;reply_to_post_number\&quot;:null,\&quot;quote_count\&quot;:0,\&quot;avg_time\&quot;:137,\&quot;incoming_link_count\&quot;:0,\&quot;reads\&quot;:18,\&quot;score\&quot;:10.45,\&quot;yours\&quot;:false,\&quot;topic_id\&quot;:497,\&quot;topic_slug\&quot;:\&quot;2019-19\&quot;,\&quot;display_username\&quot;:\&quot;文译\&quot;,\&quot;primary_group_name\&quot;:null,\&quot;primary_group_flair_url\&quot;:null,\&quot;primary_group_flair_bg_color\&quot;:null,\&quot;primary_group_flair_color\&quot;:null,\&quot;version\&quot;:1,\&quot;can_edit\&quot;:false,\&quot;can_delete\&quot;:false,\&quot;can_recover\&quot;:false,\&quot;can_wiki\&quot;:false,\&quot;link_counts\&quot;:[{\&quot;url\&quot;:\&quot;https://www.uisdc.com/\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;title\&quot;:\&quot;优设网 - UISDC - 设计师交流学习平台 - 看设计文章，学软件教程，找灵感素材，尽在优设网！\&quot;,\&quot;clicks\&quot;:1},{\&quot;url\&quot;:\&quot;https://space.bilibili.com/128827356/#/\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;title\&quot;:\&quot;一行影视动画的个人空间 - 哔哩哔哩 ( ゜- ゜)つロ 乾杯~ Bilibili\&quot;,\&quot;clicks\&quot;:0},{\&quot;url\&quot;:\&quot;https://www.axure.com/\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;title\&quot;:\&quot;Axure RP 9 - Prototypes, Specifications, and Diagrams in One Tool\&quot;,\&quot;clicks\&quot;:0},{\&quot;url\&quot;:\&quot;https://www.adobe.com/cn/products/xd.html\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;title\&quot;:\&quot;下载免费的 Adobe XD | UX/UI 设计和协作工具\&quot;,\&quot;clicks\&quot;:0},{\&quot;url\&quot;:\&quot;https://dribbble.com/\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;title\&quot;:\&quot;Dribbble - Discover the World’s Top Designers \\u0026 Creative Professionals\&quot;,\&quot;clicks\&quot;:0},{\&quot;url\&quot;:\&quot;https://www.ui.cn/\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;title\&quot;:\&quot;UI中国-专业用户体验设计平台\&quot;,\&quot;clicks\&quot;:0},{\&quot;url\&quot;:\&quot;https://www.zcool.com.cn/\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;title\&quot;:\&quot;站酷 (ZCOOL) - 设计师互动平台 - 打开站酷，发现更好的设计！\&quot;,\&quot;clicks\&quot;:0},{\&quot;url\&quot;:\&quot;http://www.woshipm.com/rp/928201.html\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;title\&quot;:\&quot;如何画出专业的原型图？（上） | 人人都是产品经理\&quot;,\&quot;clicks\&quot;:0}],\&quot;read\&quot;:true,\&quot;user_title\&quot;:\&quot;\&quot;,\&quot;actions_summary\&quot;:[{\&quot;id\&quot;:2,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:3,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:4,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:8,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:6,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:7,\&quot;can_act\&quot;:true}],\&quot;moderator\&quot;:false,\&quot;admin\&quot;:true,\&quot;staff\&quot;:true,\&quot;user_id\&quot;:61,\&quot;hidden\&quot;:false,\&quot;trust_level\&quot;:4,\&quot;deleted_at\&quot;:null,\&quot;user_deleted\&quot;:false,\&quot;edit_reason\&quot;:null,\&quot;can_view_edit_history\&quot;:true,\&quot;wiki\&quot;:false},{\&quot;id\&quot;:952,\&quot;name\&quot;:\&quot;小野\&quot;,\&quot;username\&quot;:\&quot;zh25714x\&quot;,\&quot;avatar_template\&quot;:\&quot;/letter_avatar_proxy/v2/letter/z/aca169/{size}.png\&quot;,\&quot;created_at\&quot;:\&quot;2019-09-15T13:26:28.513Z\&quot;,\&quot;cooked\&quot;:\&quot;\\u003ch1\\u003e来一起当数据科学家吧~\\u003c/h1\\u003e\\n\\u003ch3\\u003e题目背景\\u003c/h3\\u003e\\n\\u003cblockquote\\u003e\\n\\u003cp\\u003eNLP (Natural Language Processing) 是人工智能（AI）的一个子领域。而自然语言是人类智慧的结晶，无论是网上还是线下,每天都产生着海量的自然语言信息(新闻报道？病患诊疗单？英语阅读理解？) ,总之anywhere。。对它们进行处理是AI中最为困难的问题之一,\\u003cs\\u003e各种格式的文本信息乱七八糟\\u003c/s\\u003e 但从中获得的潜在信息简直就是宝藏(知识库)啊,智能问答机器人就是基于知识库来进行人机交互的。总之用途多多\\u003cs\\u003e工资还多\\u003c/s\\u003e\\u003cbr\\u003e\\n想了想这次的任务,那咱们就来了解如何进行机器翻译吧\\u003c/p\\u003e\\n\\u003c/blockquote\\u003e\\n\\u003ch3\\u003e题目内容\\u003c/h3\\u003e\\n\\u003ch4\\u003e任务1:\\u003c/h4\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e如何将自然语言表示为机器能够识别的数字啊？？了解一下词向量,One-Hot,Word2Vec。\\u003c/li\\u003e\\n\\u003cli\\u003e如何将源语言映射为目标语言(假设从英语到法语)？了解一下Sep2Sep模型(编码器-解码器),同时还需要了解递归神经网络(LSTM等)\\u003c/li\\u003e\\n\\u003cli\\u003e整个模型的训练过程如何进行？了解深度学习程序运行的整个过程\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003ch4\\u003e任务2:\\u003c/h4\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e学习编程语言Python,语法简单,七天快速入门~\\u003c/li\\u003e\\n\\u003cli\\u003e选用并学习任意深度框架来实现任务1,比如Tensorflow、Pytorch、Keras、Caffe等。推荐Pytorch。。\\u003c/li\\u003e\\n\\u003cli\\u003e尝试在Linux下部署深度学习环境,并开始编程\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003ch3\\u003e需要提交:\\u003c/h3\\u003e\\n\\u003cp\\u003e任务就几句话,但是包含的内容巨多,能完成到哪步算哪步吧,越多越好~提交学习心得、整理的笔记,要有逻辑,面试的时候会问。能完成到编程部分就更好了~\\u003c/p\\u003e\\n\\u003ch3\\u003e参考资料:\\u003c/h3\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e科普:关于NLP的应用https://yq.aliyun.com/articles/78031\\u003cbr\\u003e\\n+《深度学习框架PyTorch快速开发与实战》 第十一章是本次题目的全部代码,可以参考,可以抄,前提是问你的时候,你能说出是什么意思\\u003c/li\\u003e\\n\\u003cli\\u003e莫烦Pytorch,Python、可视化这些都有教:\\u003ca href=\\\&quot;https://morvanzhou.github.io\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003ehttps://morvanzhou.github.io\\u003c/a\\u003e\\n\\u003c/li\\u003e\\n\\u003cli\\u003e斯坦福NLP课程:\\u003ca href=\\\&quot;https://www.bilibili.com/video/av46216519\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003ehttps://www.bilibili.com/video/av46216519\\u003c/a\\u003e\\n\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003ch3\\u003e其他说明:\\u003c/h3\\u003e\\n\\u003cp\\u003e解决方案不限于以上的方法~\\u003c/p\\u003e\&quot;,\&quot;post_number\&quot;:4,\&quot;post_type\&quot;:1,\&quot;updated_at\&quot;:\&quot;2019-09-15T13:26:28.513Z\&quot;,\&quot;reply_count\&quot;:0,\&quot;reply_to_post_number\&quot;:null,\&quot;quote_count\&quot;:0,\&quot;avg_time\&quot;:120,\&quot;incoming_link_count\&quot;:0,\&quot;reads\&quot;:16,\&quot;score\&quot;:9.2,\&quot;yours\&quot;:false,\&quot;topic_id\&quot;:497,\&quot;topic_slug\&quot;:\&quot;2019-19\&quot;,\&quot;display_username\&quot;:\&quot;小野\&quot;,\&quot;primary_group_name\&quot;:\&quot;jotang\&quot;,\&quot;primary_group_flair_url\&quot;:\&quot;\&quot;,\&quot;primary_group_flair_bg_color\&quot;:\&quot;\&quot;,\&quot;primary_group_flair_color\&quot;:\&quot;\&quot;,\&quot;version\&quot;:1,\&quot;can_edit\&quot;:false,\&quot;can_delete\&quot;:false,\&quot;can_recover\&quot;:false,\&quot;can_wiki\&quot;:false,\&quot;link_counts\&quot;:[{\&quot;url\&quot;:\&quot;https://www.bilibili.com/video/av46216519\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;title\&quot;:\&quot;(2019)斯坦福CS224n深度学习自然语言处理课程 by Chris Manning_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili\&quot;,\&quot;clicks\&quot;:0},{\&quot;url\&quot;:\&quot;https://morvanzhou.github.io\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;title\&quot;:\&quot;莫烦Python\&quot;,\&quot;clicks\&quot;:0}],\&quot;read\&quot;:true,\&quot;user_title\&quot;:null,\&quot;actions_summary\&quot;:[{\&quot;id\&quot;:2,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:3,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:4,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:8,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:6,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:7,\&quot;can_act\&quot;:true}],\&quot;moderator\&quot;:false,\&quot;admin\&quot;:true,\&quot;staff\&quot;:true,\&quot;user_id\&quot;:33,\&quot;hidden\&quot;:false,\&quot;trust_level\&quot;:4,\&quot;deleted_at\&quot;:null,\&quot;user_deleted\&quot;:false,\&quot;edit_reason\&quot;:null,\&quot;can_view_edit_history\&quot;:true,\&quot;wiki\&quot;:false},{\&quot;id\&quot;:953,\&quot;name\&quot;:\&quot;allenx555\&quot;,\&quot;username\&quot;:\&quot;allenx555\&quot;,\&quot;avatar_template\&quot;:\&quot;/user_avatar/d.jotang.party/allenx555/{size}/176_1.png\&quot;,\&quot;created_at\&quot;:\&quot;2019-09-15T13:46:17.433Z\&quot;,\&quot;cooked\&quot;:\&quot;\\u003ch2\\u003e谁来救救我的 Linux（Kali）\\u003c/h2\\u003e\\n\\u003ch3\\u003e背景\\u003c/h3\\u003e\\n\\u003cblockquote\\u003e\\n\\u003cp\\u003e俗话说的好，kali 学的好，牢饭吃到饱，然鹅，就当我准备开始在犯罪的边缘试探之时， kali 却给我膝盖上射了一箭——我的 Linux（Kali） 不太对劲。传说中的英雄啊，请你帮帮我吧。\\u003c/p\\u003e\\n\\u003c/blockquote\\u003e\\n\\u003cp\\u003eLinux 是编程的一个很重要的组成部分，除去“开源/免费”这一众所周知的优势，实质上，对于程序员来说，一个可以完全掌控的系统，一个可以高度自定义的系统（以及出现问题后 google 下只有 Linux 的解决方法）或许更具吸引力。可能在刚开始上手的时候还会觉得很变扭，不过请放心，大家都是这么过来的，并且毫无疑问，你们以后会时常和它打交道。\\u003c/p\\u003e\\n\\u003ch3\\u003e任务\\u003c/h3\\u003e\\n\\u003cp\\u003e其实对于初学者，Ubuntu 之类的可能会是一个更好的选择，不过既然正好遇到了 Kali 官方镜像的这个问题，就拿来用了，Kali 具体是做什么的不重要（逃\\u003c/p\\u003e\\n\\u003col\\u003e\\n\\u003cli\\u003e了解什么是 Linux，学习基本的操作方法，然后 google 一下 Kali 是做啥的\\u003c/li\\u003e\\n\\u003cli\\u003e安装虚拟机、双系统，或通过各种方法找到一台服务器/云服务器\\u003c/li\\u003e\\n\\u003cli\\u003e从 \\u003ca href=\\\&quot;https://www.kali.org/\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003eKali 官方网站\\u003c/a\\u003e下载镜像文件，并成功安装到虚拟机/双系统/服务器上\\u003c/li\\u003e\\n\\u003cli\\u003e安装成功之后，你会发现一些比较基本的命令，比如 \\u003ccode\\u003eapt-get update\\u003c/code\\u003e 都是无法成功执行的，请找出原因，并解决，解决的判断标准是能够成功使用 apt-get 安装软件\\u003c/li\\u003e\\n\\u003cli\\u003e将你安装 Kali 的过程，以及解决上述问题的过程截图，并记录你解决问题的思路和最终的解决方法，并赋于 markdown 文件中，发送给我们\\u003c/li\\u003e\\n\\u003c/ol\\u003e\\n\\u003ch3\\u003eTips\\u003c/h3\\u003e\\n\\u003col\\u003e\\n\\u003cli\\u003e关于 markdown，这是一个非常方便的书写工具，只需学习五分钟，你就会爱上它，你可能需要花一点点时间进行学习，但它的基础语法非常简单。\\u003c/li\\u003e\\n\\u003cli\\u003e这道题目的关键是用好 google，因为 google 上有完整的解决方法，如果说你无法 google 一下？解决方法是搭好梯子。（如果真的使用度娘，请\\u003cstrong\\u003e谨慎\\u003c/strong\\u003e参考）\\u003c/li\\u003e\\n\\u003cli\\u003e更多的提示：关于 Linux 的部分，论坛内的某一个帖子里有着更详细的指导，找到它\\u003c/li\\u003e\\n\\u003c/ol\\u003e\&quot;,\&quot;post_number\&quot;:5,\&quot;post_type\&quot;:1,\&quot;updated_at\&quot;:\&quot;2019-09-15T13:46:17.433Z\&quot;,\&quot;reply_count\&quot;:0,\&quot;reply_to_post_number\&quot;:null,\&quot;quote_count\&quot;:0,\&quot;avg_time\&quot;:101,\&quot;incoming_link_count\&quot;:0,\&quot;reads\&quot;:16,\&quot;score\&quot;:8.25,\&quot;yours\&quot;:false,\&quot;topic_id\&quot;:497,\&quot;topic_slug\&quot;:\&quot;2019-19\&quot;,\&quot;display_username\&quot;:\&quot;allenx555\&quot;,\&quot;primary_group_name\&quot;:null,\&quot;primary_group_flair_url\&quot;:null,\&quot;primary_group_flair_bg_color\&quot;:null,\&quot;primary_group_flair_color\&quot;:null,\&quot;version\&quot;:1,\&quot;can_edit\&quot;:false,\&quot;can_delete\&quot;:false,\&quot;can_recover\&quot;:false,\&quot;can_wiki\&quot;:false,\&quot;link_counts\&quot;:[{\&quot;url\&quot;:\&quot;https://www.kali.org/\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;title\&quot;:\&quot;Kali Linux | Penetration Testing and Ethical Hacking Linux Distribution\&quot;,\&quot;clicks\&quot;:0}],\&quot;read\&quot;:true,\&quot;user_title\&quot;:\&quot;资深\&quot;,\&quot;actions_summary\&quot;:[{\&quot;id\&quot;:2,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:3,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:4,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:8,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:6,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:7,\&quot;can_act\&quot;:true}],\&quot;moderator\&quot;:true,\&quot;admin\&quot;:true,\&quot;staff\&quot;:true,\&quot;user_id\&quot;:60,\&quot;hidden\&quot;:false,\&quot;trust_level\&quot;:4,\&quot;deleted_at\&quot;:null,\&quot;user_deleted\&quot;:false,\&quot;edit_reason\&quot;:null,\&quot;can_view_edit_history\&quot;:true,\&quot;wiki\&quot;:false},{\&quot;id\&quot;:954,\&quot;name\&quot;:\&quot;1.wing\&quot;,\&quot;username\&quot;:\&quot;winter\&quot;,\&quot;avatar_template\&quot;:\&quot;/letter_avatar_proxy/v2/letter/w/2bfe46/{size}.png\&quot;,\&quot;created_at\&quot;:\&quot;2019-09-15T16:03:03.101Z\&quot;,\&quot;cooked\&quot;:\&quot;\\u003ch1\\u003e一起来学算法吧！！\\u003c/h1\\u003e\\n\\u003ch2\\u003e题目背景\\u003c/h2\\u003e\\n\\u003cblockquote\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003e\\u003cs\\u003e没有背景\\u003c/s\\u003e\\u003c/strong\\u003e\\u003cbr\\u003e\\n学习算法对于刚接触编程的小白来说也许难度会比较大，但在学习算法的过程中可以快速提高同学们的编程能力，并且培养良好的编程思维。\\u003cbr\\u003e\\n我们鼓励同学们使用搜索引擎来学习算法，但请不要直接将网上的题解直接复制提交，我们也将在后续的考核中判断大家是否真正理解了这些算法。同时比起题目的完成度，我们更关心大家的学习态度。\\u003c/p\\u003e\\n\\u003c/blockquote\\u003e\\n\\u003ch2\\u003e题目内容\\u003c/h2\\u003e\\n\\u003ch3\\u003e任务一：搜索\\u003c/h3\\u003e\\n\\u003cp\\u003e大家一定都玩过走迷宫，现在我们可以通过编程来让计算机帮我们设计走出迷宫的方案和最短通关路径，只需要编写一个小程序就能将它应用在所有的迷宫上。\\u003cbr\\u003e\\n给定一个n*m大小的01方格迷宫，其中1表示障碍，0表示允许通行，在迷宫中有上下左右四种移动方式，每次只允许移动一个方格，并且每个方格只允许经过一次，给定起点坐标和终点坐标，问：从起点到终点有几条路径，同时求出最短路径的长度。数据保证起点上不会有障碍。\\u003c/p\\u003e\\n\\u003cp\\u003e输入格式：\\u003cbr\\u003e\\n第一行n,m表示迷宫大小。\\u003cbr\\u003e\\n第二行起点坐标Sx,Sy。\\u003cbr\\u003e\\n第三行终点坐标Fx,Fy。\\u003cbr\\u003e\\n接下来n行是表示迷宫的01矩阵。\\u003cbr\\u003e\\n(1≤n,m≤10，同一行中的不同数据用一个空格隔开)\\u003c/p\\u003e\\n\\u003cp\\u003e输出格式：\\u003cbr\\u003e\\n第一行输出从起点坐标到终点坐标的路径总数，第二行输出最短路径的长度。(路径长度为经过的格子总数，起点也计入路径)\\u003c/p\\u003e\\n\\u003cblockquote\\u003e\\n\\u003cp\\u003e输入样例：\\u003cbr\\u003e\\n3 3\\u003cbr\\u003e\\n1 1\\u003cbr\\u003e\\n2 3\\u003cbr\\u003e\\n0 1 1\\u003cbr\\u003e\\n0 0 0\\u003cbr\\u003e\\n1 0 0\\u003cbr\\u003e\\n输出样例：\\u003cbr\\u003e\\n2\\u003cbr\\u003e\\n4\\u003c/p\\u003e\\n\\u003c/blockquote\\u003e\\n\\u003ch3\\u003e参考资料：\\u003c/h3\\u003e\\n\\u003cp\\u003egoogle，百度\\u003c/p\\u003e\\n\\u003ch3\\u003e提示:\\u003c/h3\\u003e\\n\\u003cp\\u003e1.迷宫问题一般采用深度优先搜索和广度优先搜索两种方法。\\u003cbr\\u003e\\n3.(加分项)有能力的同学可以分别使用深度优先搜索和广度优先搜索编写两个程序提交。\\u003c/p\\u003e\\n\\u003ch3\\u003e任务二：动态规划\\u003c/h3\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003e萌新劝退预警！！！\\u003c/strong\\u003e\\u003cbr\\u003e\\n今年的中秋计划被暴雨冲毁了，zfy被迫留守在寝室中，百无聊赖之际zfy开发了一种兔子棋，给定一个n格直线棋盘，每一个格子上写着一个非负的整数表示在这个格子上的萝卜数量，第一格为起点，第n格为终点，玩家可以通过使用跳跃卡片来控制兔子从起点逐步跳到终点。\\u003c/p\\u003e\\n\\u003cp\\u003e跳跃卡片共有m张，跳跃卡片共有四种(给定的m张跳跃卡片中不一定包含所有的四种卡片)，每种卡片上分别标有1,2,3,4四个数字之一，使用这种卡片后，兔子将向前跳跃相应的格子数。游戏中，玩家每次需要从所有的跳跃卡片中选择一张之前没有使用过的跳跃卡片，控制兔子跳跃前进相应的格子数。\\u003c/p\\u003e\\n\\u003cp\\u003e游戏中，兔子自动获得起点格子的萝卜，并且在后续的跳跃过程中每到达一个格子，就得到该格子相应的萝卜。兔子最终得到的萝卜数量就是兔子从起点到终点过程中到过的所有格子的萝卜总和。\\u003c/p\\u003e\\n\\u003cp\\u003e可以看出，不同的卡片使用顺序会影响最终兔子得到的萝卜总数，现在，告诉你棋盘上每个格子上的萝卜数量和所有的跳跃卡片，你能计算出兔子最多能得到的萝卜数量吗？\\u003cbr\\u003e\\n时间限制:1.00s   空间限制:125.00MB\\u003c/p\\u003e\\n\\u003cp\\u003e输入格式：\\u003cbr\\u003e\\n第一行两个正整数n,m表示棋盘长度和跳跃卡片总数。\\u003cbr\\u003e\\n第二行n个非负整数 A1,A2,…,An，其中Ai表示第i个格子上的萝卜数量。\\u003cbr\\u003e\\n第三行m个整数，B1，B2,…,Bm，分别表示m张跳跃卡片上的数字。\\u003cbr\\u003e\\n同一行中的不同数据用一个空格隔开。\\u003cbr\\u003e\\n(1≤n≤350，1≤m≤120，0≤Ai≤100，1≤Bi≤4，并且对于四种跳跃卡片，每种跳跃卡片的张数不会超过40）\\u003c/p\\u003e\\n\\u003cp\\u003e输出格式：\\u003cbr\\u003e\\n一个整数表示兔子最多能得到的萝卜数量。\\u003c/p\\u003e\\n\\u003cblockquote\\u003e\\n\\u003cp\\u003e输入样例：\\u003cbr\\u003e\\n9 5\\u003cbr\\u003e\\n6 10 14 2 8 8 18 5 17\\u003cbr\\u003e\\n1 3 1 2 1\\u003cbr\\u003e\\n输出样例:\\u003cbr\\u003e\\n73\\u003c/p\\u003e\\n\\u003c/blockquote\\u003e\\n\\u003ch3\\u003e参考资料:\\u003c/h3\\u003e\\n\\u003cp\\u003egoogle,百度\\u003c/p\\u003e\\n\\u003ch3\\u003e提示：\\u003c/h3\\u003e\\n\\u003cp\\u003e1.本题难度较大，对于新手不作要求。\\u003cbr\\u003e\\n2.当所有跳跃卡片用完时，兔子恰好能跳跃到终点。\\u003cbr\\u003e\\n3.即使没有完成这一题，也可以提交文档来记录你的学习过程和想法。\\u003c/p\\u003e\\n\\u003ch2\\u003e说明：\\u003c/h2\\u003e\\n\\u003cp\\u003e1.建议同学们在编程的过程中能够在关键代码部分加上注释记录代码功能，以便我们理解你的代码，同时这也是一种良好的编程习惯。\\u003cbr\\u003e\\n2.请同学们用C/C++写，任务一和任务二各有10个测试点，按照过的测试点数量给分。写完将源代码发到招新邮箱，同时如果有题解思路/学习过程文档将作为加分项。\\u003cbr\\u003e\\n3.请同学们不要尝试抄他人题解，独立完成，若发现抄袭情况，直接取消招新资格。\\u003c/p\\u003e\&quot;,\&quot;post_number\&quot;:6,\&quot;post_type\&quot;:1,\&quot;updated_at\&quot;:\&quot;2019-09-16T00:28:27.942Z\&quot;,\&quot;reply_count\&quot;:0,\&quot;reply_to_post_number\&quot;:null,\&quot;quote_count\&quot;:0,\&quot;avg_time\&quot;:129,\&quot;incoming_link_count\&quot;:0,\&quot;reads\&quot;:15,\&quot;score\&quot;:9.45,\&quot;yours\&quot;:false,\&quot;topic_id\&quot;:497,\&quot;topic_slug\&quot;:\&quot;2019-19\&quot;,\&quot;display_username\&quot;:\&quot;1.wing\&quot;,\&quot;primary_group_name\&quot;:null,\&quot;primary_group_flair_url\&quot;:null,\&quot;primary_group_flair_bg_color\&quot;:null,\&quot;primary_group_flair_color\&quot;:null,\&quot;version\&quot;:6,\&quot;can_edit\&quot;:false,\&quot;can_delete\&quot;:false,\&quot;can_recover\&quot;:false,\&quot;can_wiki\&quot;:false,\&quot;read\&quot;:true,\&quot;user_title\&quot;:null,\&quot;actions_summary\&quot;:[{\&quot;id\&quot;:2,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:3,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:4,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:8,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:6,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:7,\&quot;can_act\&quot;:true}],\&quot;moderator\&quot;:false,\&quot;admin\&quot;:false,\&quot;staff\&quot;:false,\&quot;user_id\&quot;:96,\&quot;hidden\&quot;:false,\&quot;trust_level\&quot;:1,\&quot;deleted_at\&quot;:null,\&quot;user_deleted\&quot;:false,\&quot;edit_reason\&quot;:null,\&quot;can_view_edit_history\&quot;:true,\&quot;wiki\&quot;:false},{\&quot;id\&quot;:955,\&quot;name\&quot;:\&quot;allenx555\&quot;,\&quot;username\&quot;:\&quot;allenx555\&quot;,\&quot;avatar_template\&quot;:\&quot;/user_avatar/d.jotang.party/allenx555/{size}/176_1.png\&quot;,\&quot;created_at\&quot;:\&quot;2019-09-16T03:49:04.462Z\&quot;,\&quot;cooked\&quot;:\&quot;\\u003ch2\\u003e来，跟我一起念， \\u003cs\\u003eJavaScript\\u003c/s\\u003e  Python天下第一\\u003c/h2\\u003e\\n\\u003ch3\\u003e背景\\u003c/h3\\u003e\\n\\u003cblockquote\\u003e\\n\\u003cp\\u003e从一开始的出前端题到出Linux题到出后端题，过于混乱的需求（其实是我没看清）让我无所适从，既然如此那么就来一锅乱炖吧。在此之前，Python天下第一！\\u003c/p\\u003e\\n\\u003c/blockquote\\u003e\\n\\u003cp\\u003e如果要说前端这一领域是什么时候真正起飞的，那么应该从前后端分离开始讲起（以下省略 1w 字，有兴趣的同学可以自己去了解一下前端的发展历程）。在这期间，Web API 的这一概念起到了至关重要的作用，这道题目就是想让大家熟悉前后端分离这一概念，并亲手触摸常见的 Web API。（所以说本来是一道 python 题为什么会扯到前端啊！）\\u003c/p\\u003e\\n\\u003cblockquote\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003e什么是 Web API？\\u003c/strong\\u003e\\u003cbr\\u003e\\n在我们了解什么是Web API之前，让我们看看什么是API（应用程序编程接口）。\\u003cbr\\u003e\\n根据\\u003ca href=\\\&quot;https://en.wikipedia.org/wiki/Application_programming_interface\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003e维基百科的API定义\\u003c/a\\u003e：在计算机编程中，应用程序编程接口（API）是一组用于构建软件和应用程序的子例程定义，协议和工具。\\u003cbr\\u003e\\n简单来说，API 是某种接口，它具有一组允许程序员访问应用程序，操作系统或其他服务的特定功能或数据的功能。\\u003cbr\\u003e\\nWeb API 顾名思义，是一个可以使用 HTTP 协议访问的 Web 上的API。这是一个概念，而不是一种技术。我们可以使用不同的技术（如 Java，.NET 等）构建 Web API。例如，Twitter 的 \\u003ca href=\\\&quot;https://dev.twitter.com/rest/public\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003eREST API\\u003c/a\\u003e提供对读写数据的编程访问，使用它可以将 twitter 的功能集成到我们自己的应用程序中。\\u003c/p\\u003e\\n\\u003c/blockquote\\u003e\\n\\u003cp\\u003e相比 Java，Python 更为轻巧的特性可以让初学者在更短的时间内搭建一个可用的 Web API 服务器；相比 Go 其丰富的框架与库可以省去一大笔自己动手的额外开销，综上，Python 天下第一（Q.E.D.）。\\u003c/p\\u003e\\n\\u003ch3\\u003e任务\\u003c/h3\\u003e\\n\\u003cp\\u003e我们先从比较容易理解的 RESTful API 开始。\\u003c/p\\u003e\\n\\u003col\\u003e\\n\\u003cli\\u003e\\n\\u003cstrong\\u003e查询 RESTful API 的设计原则\\u003c/strong\\u003e。虽说在实际应用过程中很有可能会因为种种原因改变设计，但因为这道题目不涉及复杂场景，我们希望你的最终成果能够\\u003cstrong\\u003e完全遵从\\u003c/strong\\u003e设计原则\\u003c/li\\u003e\\n\\u003cli\\u003e\\n\\u003cstrong\\u003e搭建一个 Web API 服务器\\u003c/strong\\u003e。如果你有其他语言的基础，你完全可以使用其他语言完成本道题目，如果没有，那么我推荐使用 Python-Flask 完成本道题目。Django 默认采用的是其自带的模板系统，可能对于初学者不太方便进行更改，并搭建 Web API 服务器。至于 Flask 是什么，应该怎么用，请阅读 \\u003ca href=\\\&quot;http://docs.jinkan.org/docs/flask/\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003eFlask 官方文档\\u003c/a\\u003e。\\u003c/li\\u003e\\n\\u003cli\\u003e\\u003cstrong\\u003e具体要求：\\u003c/strong\\u003e\\u003c/li\\u003e\\n\\u003c/ol\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e将 API 部署在专用域名或主域名之下，如果是本机，即 localhost 或 127.0.0.1:XXXX\\u003c/li\\u003e\\n\\u003cli\\u003e你的 API 至少应有 GET 和 POST 两种方法\\u003c/li\\u003e\\n\\u003cli\\u003e不需要搭建数据库，即你可以在 Flask 中使用自己声明的变量或外部 Json 文件进行应答\\u003c/li\\u003e\\n\\u003cli\\u003e最终的成果应该是你可以通过浏览器（或 Postman 等工具）正常使用 API\\u003c/li\\u003e\\n\\u003cli\\u003e请将你搭建 Web API 服务器的过程纪录，并将最终结果截图，整合到 markdown 中发送给我们。\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003ch3\\u003eTips\\u003c/h3\\u003e\\n\\u003col\\u003e\\n\\u003cli\\u003e如果你拥有一个服务器/云服务器，可以尝试部署上去，并将链接发送给我们，这项将大大加分\\u003c/li\\u003e\\n\\u003cli\\u003e如果你厌倦了 RESTful API， Graphql 也同样可以\\u003c/li\\u003e\\n\\u003cli\\u003e\\u003cs\\u003e你可以拒绝框架，完全手撸\\u003c/s\\u003e\\u003c/li\\u003e\\n\\u003cli\\u003e本题可能会存在各种各样的问题，请谷歌一个或多个足够靠谱的指南，并详细阅读 Flask 官方文档，RESTful API 设计风格，遇到问题积极谷歌，实在不会可以直接联系我（QQ：869784897），我们鼓励遇到问题积极求助，但如果是可以很方便在网络上找到解决方法的问题我将拒绝回答\\u003cs\\u003e并拉黑\\u003c/s\\u003e\\n\\u003c/li\\u003e\\n\\u003c/ol\\u003e\&quot;,\&quot;post_number\&quot;:7,\&quot;post_type\&quot;:1,\&quot;updated_at\&quot;:\&quot;2019-09-16T03:53:44.242Z\&quot;,\&quot;reply_count\&quot;:0,\&quot;reply_to_post_number\&quot;:null,\&quot;quote_count\&quot;:0,\&quot;avg_time\&quot;:68,\&quot;incoming_link_count\&quot;:0,\&quot;reads\&quot;:14,\&quot;score\&quot;:6.2,\&quot;yours\&quot;:false,\&quot;topic_id\&quot;:497,\&quot;topic_slug\&quot;:\&quot;2019-19\&quot;,\&quot;display_username\&quot;:\&quot;allenx555\&quot;,\&quot;primary_group_name\&quot;:null,\&quot;primary_group_flair_url\&quot;:null,\&quot;primary_group_flair_bg_color\&quot;:null,\&quot;primary_group_flair_color\&quot;:null,\&quot;version\&quot;:1,\&quot;can_edit\&quot;:false,\&quot;can_delete\&quot;:false,\&quot;can_recover\&quot;:false,\&quot;can_wiki\&quot;:false,\&quot;link_counts\&quot;:[{\&quot;url\&quot;:\&quot;http://docs.jinkan.org/docs/flask/\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;title\&quot;:\&quot;欢迎使用 Flask — Flask 0.10.1 文档\&quot;,\&quot;clicks\&quot;:1},{\&quot;url\&quot;:\&quot;https://dev.twitter.com/rest/public\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;clicks\&quot;:0},{\&quot;url\&quot;:\&quot;https://en.wikipedia.org/wiki/Application_programming_interface\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;title\&quot;:\&quot;Application programming interface - Wikipedia\&quot;,\&quot;clicks\&quot;:0}],\&quot;read\&quot;:true,\&quot;user_title\&quot;:\&quot;资深\&quot;,\&quot;actions_summary\&quot;:[{\&quot;id\&quot;:2,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:3,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:4,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:8,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:6,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:7,\&quot;can_act\&quot;:true}],\&quot;moderator\&quot;:true,\&quot;admin\&quot;:true,\&quot;staff\&quot;:true,\&quot;user_id\&quot;:60,\&quot;hidden\&quot;:false,\&quot;trust_level\&quot;:4,\&quot;deleted_at\&quot;:null,\&quot;user_deleted\&quot;:false,\&quot;edit_reason\&quot;:null,\&quot;can_view_edit_history\&quot;:true,\&quot;wiki\&quot;:false},{\&quot;id\&quot;:956,\&quot;name\&quot;:\&quot;Stardust567\&quot;,\&quot;username\&quot;:\&quot;Stardust567\&quot;,\&quot;avatar_template\&quot;:\&quot;/user_avatar/d.jotang.party/stardust567/{size}/300_1.png\&quot;,\&quot;created_at\&quot;:\&quot;2019-09-16T09:11:24.924Z\&quot;,\&quot;cooked\&quot;:\&quot;\\u003ch2\\u003e老司机必备技能！！！让爬虫来解放你的双手：）\\u003c/h2\\u003e\\n\\u003ch3\\u003e背景\\u003c/h3\\u003e\\n\\u003cblockquote\\u003e\\n\\u003cp\\u003e当你在P站看到一个可爱画师小姐姐的图片真的张张戳中你的萌点，当你明明被高木太太喂了一勺又一勺的狗粮却觉得还不够还想吃同人图的时候，\\u003cs\\u003e当你发现了某个快乐的小网站想要一键解放双手的时候，\\u003c/s\\u003e 当你参加数学建模发现题目要你自己找数据的时候（微笑脸）我想你会需要它的\\u003c/p\\u003e\\n\\u003c/blockquote\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003e网络爬虫\\u003c/strong\\u003e （web crawler），也叫网络蜘蛛（spider），是一种用来自动浏览\\u003ca href=\\\&quot;https://zh.wikipedia.org/wiki/%E4%B8%87%E7%BB%B4%E7%BD%91\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003e万维网\\u003c/a\\u003e的\\u003ca href=\\\&quot;https://zh.wikipedia.org/w/index.php?title=%E7%BD%91%E7%BB%9C%E6%9C%BA%E5%99%A8%E4%BA%BA\\u0026amp;action=edit\\u0026amp;redlink=1\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003e网络机器人\\u003c/a\\u003e。其目的一般为编纂\\u003ca href=\\\&quot;https://zh.wikipedia.org/w/index.php?title=%E7%BD%91%E7%BB%9C%E7%B4%A2%E5%BC%95\\u0026amp;action=edit\\u0026amp;redlink=1\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003e网络索引\\u003c/a\\u003e \\u003cs\\u003e这听起来并不像人话\\u003c/s\\u003e 让我们通俗点解释一下，如果将因特网比作一张错综复杂的交错巨网，那么爬虫就是这张网上的一只只小蜘蛛，这些小蜘蛛会将他们探下的路的踪迹和在路上抓到的资源反馈给我们。\\u003c/p\\u003e\\n\\u003cp\\u003e总而言之，爬虫就是一段可以自动抓取互联网上对于我们有价值的信息的程序。\\u003cbr\\u003e\\n既然说到了程序和编程，接下来就开启冒险，让我们来谈谈这次的通关任务吧。\\u003c/p\\u003e\\n\\u003ch3\\u003e任务\\u003c/h3\\u003e\\n\\u003cp\\u003e首先，编程语言，建议python！爬虫也是入门Python最好的方式（之一）\\u003c/p\\u003e\\n\\u003col\\u003e\\n\\u003cli\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003e爬取图片\\u003c/strong\\u003e ：作为一枚咸鱼coser，安利一个我超级喜欢的coser小姐姐啊\\u003ca href=\\\&quot;https://worldcosplay.net/member/Itsuki-chan\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003e A-chan \\u0026lt;3 (Itsuki)\\u003c/a\\u003e 那么亲爱的冒险者啊，你的任务就是按\\u003cem\\u003ecos过的角色\\u003c/em\\u003e用爬虫爬取她所有的cos图片 \\u003cs\\u003e选出你最喜欢的几张我们可以交流一下\\u003c/s\\u003e\\u003c/p\\u003e\\n\\u003c/li\\u003e\\n\\u003cli\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003e爬取新闻\\u003c/strong\\u003e ：作为一名优秀的信软学子，让我们来更深刻地了解一下信软的新闻与公告吧。那么优秀的成电学子啊，你的任务就是爬取\\u003ca href=\\\&quot;http://www.ss.uestc.edu.cn/\\\&quot; rel=\\\&quot;nofollow noopener\\\&quot;\\u003e信软官网\\u003c/a\\u003e学生科和教务科分别的最近200条公告\\u003cstrong\\u003e并保存在数据库中\\u003c/strong\\u003e。\\u003c/p\\u003e\\n\\u003c/li\\u003e\\n\\u003cli\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003e具体要求：\\u003c/strong\\u003e\\u003c/p\\u003e\\n\\u003c/li\\u003e\\n\\u003c/ol\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e学习 Python 包并实现基本的爬虫过程，题1爬取图片请直接使用库函数手撸；\\u003c/li\\u003e\\n\\u003cli\\u003e学习 Scrapy框架，搭建工程化爬虫，题2爬取新闻请使用Scrapy框架完成；\\u003c/li\\u003e\\n\\u003cli\\u003e学习数据的存储，题1可以直接保存在本地，题2请将结果保存在数据库中；\\u003c/li\\u003e\\n\\u003cli\\u003e请将尝试爬取的过程纪录整合到\\u003cstrong\\u003emarkdown\\u003c/strong\\u003e中，连同代码\\u003cstrong\\u003egithub链接\\u003c/strong\\u003e和爬到的数据，打包发送给我们。\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003ch3\\u003eTips\\u003c/h3\\u003e\\n\\u003col\\u003e\\n\\u003cli\\u003e题1的话，Python一般 \\u003cstrong\\u003erequests\\u003c/strong\\u003e库 \\u003cstrong\\u003ere\\u003c/strong\\u003e库 \\u003cstrong\\u003ebs4\\u003c/strong\\u003e库 这三个即可满足要求 ；\\u003c/li\\u003e\\n\\u003cli\\u003e题2的话，实在不愿意使用Scrapy框架也可以使用别的框架的，但请说明理由 ；\\u003c/li\\u003e\\n\\u003cli\\u003e建议详细阅读相关文档，遇到问题积极谷歌，实在不行可以私我，但请体现自己思考。\\u003cbr\\u003e\\n（“如果是可以很方便在网络上找到解决方法的问题我将拒绝回答 \\u003cs\\u003e并拉黑\\u003c/s\\u003e”）\\u003c/li\\u003e\\n\\u003c/ol\\u003e\&quot;,\&quot;post_number\&quot;:8,\&quot;post_type\&quot;:1,\&quot;updated_at\&quot;:\&quot;2019-09-16T10:56:56.693Z\&quot;,\&quot;reply_count\&quot;:0,\&quot;reply_to_post_number\&quot;:null,\&quot;quote_count\&quot;:0,\&quot;avg_time\&quot;:34,\&quot;incoming_link_count\&quot;:0,\&quot;reads\&quot;:13,\&quot;score\&quot;:4.3,\&quot;yours\&quot;:false,\&quot;topic_id\&quot;:497,\&quot;topic_slug\&quot;:\&quot;2019-19\&quot;,\&quot;display_username\&quot;:\&quot;Stardust567\&quot;,\&quot;primary_group_name\&quot;:null,\&quot;primary_group_flair_url\&quot;:null,\&quot;primary_group_flair_bg_color\&quot;:null,\&quot;primary_group_flair_color\&quot;:null,\&quot;version\&quot;:3,\&quot;can_edit\&quot;:false,\&quot;can_delete\&quot;:false,\&quot;can_recover\&quot;:false,\&quot;can_wiki\&quot;:false,\&quot;link_counts\&quot;:[{\&quot;url\&quot;:\&quot;https://worldcosplay.net/member/Itsuki-chan\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;title\&quot;:\&quot;Profile | A-chan \\u003c3 - Cure WorldCosplay\&quot;,\&quot;clicks\&quot;:3},{\&quot;url\&quot;:\&quot;http://www.ss.uestc.edu.cn/\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;title\&quot;:\&quot;电子科技大学信息与软件工程学院|首页\&quot;,\&quot;clicks\&quot;:0},{\&quot;url\&quot;:\&quot;https://zh.wikipedia.org/w/index.php?title=%E7%BD%91%E7%BB%9C%E7%B4%A2%E5%BC%95\\u0026action=edit\\u0026redlink=1\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;clicks\&quot;:0},{\&quot;url\&quot;:\&quot;https://zh.wikipedia.org/w/index.php?title=%E7%BD%91%E7%BB%9C%E6%9C%BA%E5%99%A8%E4%BA%BA\\u0026action=edit\\u0026redlink=1\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;clicks\&quot;:0},{\&quot;url\&quot;:\&quot;https://zh.wikipedia.org/wiki/%E4%B8%87%E7%BB%B4%E7%BD%91\&quot;,\&quot;internal\&quot;:false,\&quot;reflection\&quot;:false,\&quot;title\&quot;:\&quot;万维网 - 维基百科，自由的百科全书\&quot;,\&quot;clicks\&quot;:0}],\&quot;read\&quot;:true,\&quot;user_title\&quot;:\&quot;\&quot;,\&quot;actions_summary\&quot;:[{\&quot;id\&quot;:2,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:3,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:4,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:8,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:6,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:7,\&quot;can_act\&quot;:true}],\&quot;moderator\&quot;:false,\&quot;admin\&quot;:false,\&quot;staff\&quot;:false,\&quot;user_id\&quot;:87,\&quot;hidden\&quot;:false,\&quot;trust_level\&quot;:1,\&quot;deleted_at\&quot;:null,\&quot;user_deleted\&quot;:false,\&quot;edit_reason\&quot;:null,\&quot;can_view_edit_history\&quot;:true,\&quot;wiki\&quot;:false},{\&quot;id\&quot;:957,\&quot;name\&quot;:\&quot;马世豪\&quot;,\&quot;username\&quot;:\&quot;7uvss\&quot;,\&quot;avatar_template\&quot;:\&quot;/letter_avatar_proxy/v2/letter/7/839c29/{size}.png\&quot;,\&quot;created_at\&quot;:\&quot;2019-09-16T10:08:35.117Z\&quot;,\&quot;cooked\&quot;:\&quot;\\u003ch1\\u003e成为正义使者 \\u003cs\\u003e( 入狱 )\\u003c/s\\u003e 的第一步\\u003c/h1\\u003e\\n\\u003ch2\\u003e背景\\u003c/h2\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003e做题前必看\\u003c/strong\\u003e\\u003c/p\\u003e\\n\\u003cblockquote\\u003e\\n\\u003cp\\u003e《刑法》第二百八十六条 违反国家规定，对计算机信息系统功能进行删除、修改、增加、干扰，造成计算机信息系统不能正常运行，后果严重的，处五年以下有期徒刑或者拘役；后果特别严重的，处五年以上有期徒刑。违反国家规定，对计算机信息系统中存储、处理或者传输的数据和应用程序进行删除、修改、增加的操作，后果严重的，依照前款的规定处罚。故意制作、传播计算机病毒等破坏性程序，影响计算机系统正常运行，后果严重的，依照第一款的规定处罚。\\u003c/p\\u003e\\n\\u003c/blockquote\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003e注意！切勿将技术用于非法用途！\\u003c/strong\\u003e\\u003c/p\\u003e\\n\\u003cblockquote\\u003e\\n\\u003cp\\u003e宿舍楼里有很多 WiFi 热点，想知道他们的密码是多少去试一下他们的网有多快；寝室的人外放某音想把他网断了不让他看；\\u003cs\\u003e无聊的时候偷看室友电脑摄像头\\u003c/s\\u003e；\\u003cs\\u003e看别人电脑里的资料\\u003c/s\\u003e；你度娘了一下，发现大家都在说：用 Kali 就对了。\\u003c/p\\u003e\\n\\u003c/blockquote\\u003e\\n\\u003cp\\u003eKali 是基于 Debian 的 Linux 发行版，它集合了一些渗透和审计的工具方便我们做安全测试 \\u003cs\\u003e( 发起攻击 )\\u003c/s\\u003e。\\u003c/p\\u003e\\n\\u003cp\\u003e什么是 Linux ？看一下上面的题目：\\u003c/p\\u003e\\n\\u003cblockquote\\u003e\\n\\u003cp\\u003eLinux 是编程的一个很重要的组成部分，除去“开源/免费”这一众所周知的优势，实质上，对于程序员来说，一个可以完全掌控的系统，一个可以高度自定义的系统（以及出现问题后 google 下只有 Linux 的解决方法）或许更具吸引力。可能在刚开始上手的时候还会觉得很变扭，不过请放心，大家都是这么过来的，并且毫无疑问，你们以后会时常和它打交道。\\u003c/p\\u003e\\n\\u003c/blockquote\\u003e\\n\\u003ch2\\u003e任务\\u003c/h2\\u003e\\n\\u003cp\\u003e我们在进行安全测试 \\u003cs\\u003e( 发起攻击 )\\u003c/s\\u003e 时肯定希望越低调越好，同时为了应对不同的网络环境以及提高便携性，制作一个能从 U盘 启动随插随用的系统必不可少 \\u003cs\\u003e( 更有自己是黑客的感觉 )\\u003c/s\\u003e ，这样也解决了在虚拟机下想要进行 WiFi 扫描需要\\u003cstrong\\u003e额外购置\\u003c/strong\\u003eUSB网卡 ( 大坑 ) 的问题。\\u003c/p\\u003e\\n\\u003col\\u003e\\n\\u003cli\\u003e\\n\\u003cp\\u003e在一个 \\u003cstrong\\u003e可移动设备上 ( 譬如 U盘 )\\u003c/strong\\u003e 上，安装好 \\u003cstrong\\u003ePersistence\\u003c/strong\\u003e Kali Live 并启动运行\\u003c/p\\u003e\\n\\u003c/li\\u003e\\n\\u003cli\\u003e\\n\\u003cp\\u003e了解在 Linux 系统下的基本操作\\u003c/p\\u003e\\n\\u003c/li\\u003e\\n\\u003cli\\u003e\\n\\u003cp\\u003e使用 Kali 来破解 WiFi 密码\\u003c/p\\u003e\\n\\u003c/li\\u003e\\n\\u003cli\\u003e\\n\\u003cp\\u003e使用 Kali 进行\\u003cstrong\\u003e局域网内\\u003c/strong\\u003e的渗透\\u003c/p\\u003e\\n\\u003c/li\\u003e\\n\\u003cli\\u003e\\n\\u003cp\\u003e记录你在操作过程中遇到的困难\\u003cs\\u003e坑\\u003c/s\\u003e以及填坑的方法\\u003c/p\\u003e\\n\\u003c/li\\u003e\\n\\u003cli\\u003e\\n\\u003cp\\u003e记录你的 破解/渗透 成果 ( 得到的密码/在被渗透主机你能执行什么级别的操作 )\\u003c/p\\u003e\\n\\u003c/li\\u003e\\n\\u003cli\\u003e\\n\\u003cp\\u003e上述的两项操作建议采用 \\u003cstrong\\u003eMarkdown\\u003c/strong\\u003e 标记语言记录并发送给我们\\u003c/p\\u003e\\n\\u003c/li\\u003e\\n\\u003c/ol\\u003e\\n\\u003ch2\\u003eTips\\u003c/h2\\u003e\\n\\u003col\\u003e\\n\\u003cli\\u003e\\n\\u003cp\\u003e在制作 Persistence Kali Live 时，可能会遇到\\u003cstrong\\u003e硬盘分区\\u003c/strong\\u003e的知识，实现的方法很多，挑熟悉的来\\u003c/p\\u003e\\n\\u003c/li\\u003e\\n\\u003cli\\u003e\\n\\u003cp\\u003e破解 WiFi 密码的方式有很多，你可以\\u003cstrong\\u003e分析\\u003c/strong\\u003e具体的情景，采取不同的方法 ( 暴力破解，钓鱼WiFi )\\u003c/p\\u003e\\n\\u003c/li\\u003e\\n\\u003cli\\u003e\\n\\u003cp\\u003e进行渗透时首先应该了解被渗透主机的具体情况 ( 系统类型，系统版本，存在的漏洞 ) 选取攻击方法\\u003c/p\\u003e\\n\\u003c/li\\u003e\\n\\u003cli\\u003e\\n\\u003cp\\u003e善于利用 Kali 中集成的工具包，Google 它们能做什么\\u003c/p\\u003e\\n\\u003c/li\\u003e\\n\\u003c/ol\\u003e\\n\\u003ch1\\u003e\\u003cstrong\\u003e再次提醒：点到即止。\\u003c/strong\\u003e\\u003c/h1\\u003e\&quot;,\&quot;post_number\&quot;:9,\&quot;post_type\&quot;:1,\&quot;updated_at\&quot;:\&quot;2019-09-16T10:08:35.117Z\&quot;,\&quot;reply_count\&quot;:0,\&quot;reply_to_post_number\&quot;:null,\&quot;quote_count\&quot;:0,\&quot;avg_time\&quot;:150,\&quot;incoming_link_count\&quot;:0,\&quot;reads\&quot;:11,\&quot;score\&quot;:9.7,\&quot;yours\&quot;:false,\&quot;topic_id\&quot;:497,\&quot;topic_slug\&quot;:\&quot;2019-19\&quot;,\&quot;display_username\&quot;:\&quot;马世豪\&quot;,\&quot;primary_group_name\&quot;:null,\&quot;primary_group_flair_url\&quot;:null,\&quot;primary_group_flair_bg_color\&quot;:null,\&quot;primary_group_flair_color\&quot;:null,\&quot;version\&quot;:1,\&quot;can_edit\&quot;:false,\&quot;can_delete\&quot;:false,\&quot;can_recover\&quot;:false,\&quot;can_wiki\&quot;:false,\&quot;read\&quot;:true,\&quot;user_title\&quot;:null,\&quot;actions_summary\&quot;:[{\&quot;id\&quot;:2,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:3,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:4,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:8,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:6,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:7,\&quot;can_act\&quot;:true}],\&quot;moderator\&quot;:false,\&quot;admin\&quot;:false,\&quot;staff\&quot;:false,\&quot;user_id\&quot;:98,\&quot;hidden\&quot;:false,\&quot;trust_level\&quot;:1,\&quot;deleted_at\&quot;:null,\&quot;user_deleted\&quot;:false,\&quot;edit_reason\&quot;:null,\&quot;can_view_edit_history\&quot;:true,\&quot;wiki\&quot;:false}],\&quot;stream\&quot;:[942,949,951,952,953,954,955,956,957]},\&quot;timeline_lookup\&quot;:[[1,13],[2,5],[3,1],[6,0]],\&quot;suggested_topics\&quot;:[{\&quot;id\&quot;:498,\&quot;title\&quot;:\&quot;【讨论帖】实习之后的一些感想\&quot;,\&quot;fancy_title\&quot;:\&quot;【讨论帖】实习之后的一些感想\&quot;,\&quot;slug\&quot;:\&quot;topic\&quot;,\&quot;posts_count\&quot;:4,\&quot;reply_count\&quot;:1,\&quot;highest_post_number\&quot;:4,\&quot;image_url\&quot;:null,\&quot;created_at\&quot;:\&quot;2019-09-03T20:10:52.316Z\&quot;,\&quot;last_posted_at\&quot;:\&quot;2019-09-06T13:45:56.851Z\&quot;,\&quot;bumped\&quot;:true,\&quot;bumped_at\&quot;:\&quot;2019-09-06T13:45:56.851Z\&quot;,\&quot;unseen\&quot;:false,\&quot;last_read_post_number\&quot;:4,\&quot;unread\&quot;:0,\&quot;new_posts\&quot;:0,\&quot;pinned\&quot;:false,\&quot;unpinned\&quot;:null,\&quot;visible\&quot;:true,\&quot;closed\&quot;:false,\&quot;archived\&quot;:false,\&quot;notification_level\&quot;:2,\&quot;bookmarked\&quot;:false,\&quot;liked\&quot;:false,\&quot;archetype\&quot;:\&quot;regular\&quot;,\&quot;like_count\&quot;:0,\&quot;views\&quot;:25,\&quot;category_id\&quot;:5,\&quot;featured_link\&quot;:null,\&quot;posters\&quot;:[{\&quot;extras\&quot;:\&quot;latest\&quot;,\&quot;description\&quot;:\&quot;原始作者, 当前大部分帖子作者\&quot;,\&quot;user\&quot;:{\&quot;id\&quot;:31,\&quot;username\&quot;:\&quot;Agrimonia\&quot;,\&quot;name\&quot;:\&quot;林勇聪\&quot;,\&quot;avatar_template\&quot;:\&quot;/user_avatar/d.jotang.party/agrimonia/{size}/143_1.png\&quot;}},{\&quot;extras\&quot;:null,\&quot;description\&quot;:\&quot;频繁发帖者\&quot;,\&quot;user\&quot;:{\&quot;id\&quot;:41,\&quot;username\&quot;:\&quot;Wayne\&quot;,\&quot;name\&quot;:\&quot;余老板\&quot;,\&quot;avatar_template\&quot;:\&quot;/letter_avatar_proxy/v2/letter/w/0ea827/{size}.png\&quot;}}]},{\&quot;id\&quot;:408,\&quot;title\&quot;:\&quot;2018 创新工坊改革\&quot;,\&quot;fancy_title\&quot;:\&quot;2018 创新工坊改革\&quot;,\&quot;slug\&quot;:\&quot;topic\&quot;,\&quot;posts_count\&quot;:1,\&quot;reply_count\&quot;:0,\&quot;highest_post_number\&quot;:1,\&quot;image_url\&quot;:null,\&quot;created_at\&quot;:\&quot;2018-10-19T06:34:03.125Z\&quot;,\&quot;last_posted_at\&quot;:\&quot;2018-10-19T06:34:03.359Z\&quot;,\&quot;bumped\&quot;:true,\&quot;bumped_at\&quot;:\&quot;2018-10-19T07:21:13.623Z\&quot;,\&quot;unseen\&quot;:false,\&quot;last_read_post_number\&quot;:1,\&quot;unread\&quot;:0,\&quot;new_posts\&quot;:0,\&quot;pinned\&quot;:false,\&quot;unpinned\&quot;:null,\&quot;visible\&quot;:true,\&quot;closed\&quot;:false,\&quot;archived\&quot;:false,\&quot;notification_level\&quot;:1,\&quot;bookmarked\&quot;:false,\&quot;liked\&quot;:false,\&quot;archetype\&quot;:\&quot;regular\&quot;,\&quot;like_count\&quot;:0,\&quot;views\&quot;:34,\&quot;category_id\&quot;:5,\&quot;featured_link\&quot;:null,\&quot;posters\&quot;:[{\&quot;extras\&quot;:\&quot;latest single\&quot;,\&quot;description\&quot;:\&quot;原始作者, 当前大部分帖子作者\&quot;,\&quot;user\&quot;:{\&quot;id\&quot;:65,\&quot;username\&quot;:\&quot;YAOYI626\&quot;,\&quot;name\&quot;:\&quot;张晓艺\&quot;,\&quot;avatar_template\&quot;:\&quot;/user_avatar/d.jotang.party/yaoyi626/{size}/210_1.png\&quot;}}]},{\&quot;id\&quot;:414,\&quot;title\&quot;:\&quot;2016/2017 级每周例会/项目进度分享会方案\&quot;,\&quot;fancy_title\&quot;:\&quot;2016/2017 级每周例会/项目进度分享会方案\&quot;,\&quot;slug\&quot;:\&quot;2016-2017\&quot;,\&quot;posts_count\&quot;:1,\&quot;reply_count\&quot;:0,\&quot;highest_post_number\&quot;:1,\&quot;image_url\&quot;:null,\&quot;created_at\&quot;:\&quot;2018-10-25T12:56:31.706Z\&quot;,\&quot;last_posted_at\&quot;:\&quot;2018-10-25T12:56:31.862Z\&quot;,\&quot;bumped\&quot;:true,\&quot;bumped_at\&quot;:\&quot;2018-10-25T12:56:31.862Z\&quot;,\&quot;unseen\&quot;:false,\&quot;last_read_post_number\&quot;:1,\&quot;unread\&quot;:0,\&quot;new_posts\&quot;:0,\&quot;pinned\&quot;:false,\&quot;unpinned\&quot;:null,\&quot;visible\&quot;:true,\&quot;closed\&quot;:false,\&quot;archived\&quot;:false,\&quot;notification_level\&quot;:1,\&quot;bookmarked\&quot;:false,\&quot;liked\&quot;:false,\&quot;archetype\&quot;:\&quot;regular\&quot;,\&quot;like_count\&quot;:0,\&quot;views\&quot;:18,\&quot;category_id\&quot;:5,\&quot;featured_link\&quot;:null,\&quot;posters\&quot;:[{\&quot;extras\&quot;:\&quot;latest single\&quot;,\&quot;description\&quot;:\&quot;原始作者, 当前大部分帖子作者\&quot;,\&quot;user\&quot;:{\&quot;id\&quot;:60,\&quot;username\&quot;:\&quot;allenx555\&quot;,\&quot;name\&quot;:\&quot;allenx555\&quot;,\&quot;avatar_template\&quot;:\&quot;/user_avatar/d.jotang.party/allenx555/{size}/176_1.png\&quot;}}]},{\&quot;id\&quot;:428,\&quot;title\&quot;:\&quot;2018-2019 比赛汇总\&quot;,\&quot;fancy_title\&quot;:\&quot;2018-2019 比赛汇总\&quot;,\&quot;slug\&quot;:\&quot;2018-2019\&quot;,\&quot;posts_count\&quot;:1,\&quot;reply_count\&quot;:0,\&quot;highest_post_number\&quot;:1,\&quot;image_url\&quot;:null,\&quot;created_at\&quot;:\&quot;2018-11-27T14:25:20.357Z\&quot;,\&quot;last_posted_at\&quot;:\&quot;2018-11-27T14:25:20.498Z\&quot;,\&quot;bumped\&quot;:true,\&quot;bumped_at\&quot;:\&quot;2018-11-30T12:58:51.367Z\&quot;,\&quot;unseen\&quot;:false,\&quot;last_read_post_number\&quot;:1,\&quot;unread\&quot;:0,\&quot;new_posts\&quot;:0,\&quot;pinned\&quot;:false,\&quot;unpinned\&quot;:null,\&quot;visible\&quot;:true,\&quot;closed\&quot;:false,\&quot;archived\&quot;:false,\&quot;notification_level\&quot;:1,\&quot;bookmarked\&quot;:false,\&quot;liked\&quot;:false,\&quot;archetype\&quot;:\&quot;regular\&quot;,\&quot;like_count\&quot;:0,\&quot;views\&quot;:14,\&quot;category_id\&quot;:5,\&quot;featured_link\&quot;:null,\&quot;posters\&quot;:[{\&quot;extras\&quot;:\&quot;latest single\&quot;,\&quot;description\&quot;:\&quot;原始作者, 当前大部分帖子作者\&quot;,\&quot;user\&quot;:{\&quot;id\&quot;:60,\&quot;username\&quot;:\&quot;allenx555\&quot;,\&quot;name\&quot;:\&quot;allenx555\&quot;,\&quot;avatar_template\&quot;:\&quot;/user_avatar/d.jotang.party/allenx555/{size}/176_1.png\&quot;}}]},{\&quot;id\&quot;:448,\&quot;title\&quot;:\&quot;【Tips】大二寒假你应该做的事\&quot;,\&quot;fancy_title\&quot;:\&quot;【Tips】大二寒假你应该做的事\&quot;,\&quot;slug\&quot;:\&quot;tips\&quot;,\&quot;posts_count\&quot;:2,\&quot;reply_count\&quot;:0,\&quot;highest_post_number\&quot;:2,\&quot;image_url\&quot;:null,\&quot;created_at\&quot;:\&quot;2019-01-09T15:19:09.142Z\&quot;,\&quot;last_posted_at\&quot;:\&quot;2019-01-09T16:09:39.236Z\&quot;,\&quot;bumped\&quot;:true,\&quot;bumped_at\&quot;:\&quot;2019-01-09T16:09:39.236Z\&quot;,\&quot;unseen\&quot;:false,\&quot;last_read_post_number\&quot;:2,\&quot;unread\&quot;:0,\&quot;new_posts\&quot;:0,\&quot;pinned\&quot;:false,\&quot;unpinned\&quot;:null,\&quot;visible\&quot;:true,\&quot;closed\&quot;:false,\&quot;archived\&quot;:false,\&quot;notification_level\&quot;:1,\&quot;bookmarked\&quot;:false,\&quot;liked\&quot;:false,\&quot;archetype\&quot;:\&quot;regular\&quot;,\&quot;like_count\&quot;:0,\&quot;views\&quot;:27,\&quot;category_id\&quot;:5,\&quot;featured_link\&quot;:null,\&quot;posters\&quot;:[{\&quot;extras\&quot;:null,\&quot;description\&quot;:\&quot;原始作者\&quot;,\&quot;user\&quot;:{\&quot;id\&quot;:31,\&quot;username\&quot;:\&quot;Agrimonia\&quot;,\&quot;name\&quot;:\&quot;林勇聪\&quot;,\&quot;avatar_template\&quot;:\&quot;/user_avatar/d.jotang.party/agrimonia/{size}/143_1.png\&quot;}},{\&quot;extras\&quot;:\&quot;latest\&quot;,\&quot;description\&quot;:\&quot;当前大部分帖子作者\&quot;,\&quot;user\&quot;:{\&quot;id\&quot;:3,\&quot;username\&quot;:\&quot;verazuo\&quot;,\&quot;name\&quot;:\&quot;沈馨悦\&quot;,\&quot;avatar_template\&quot;:\&quot;/user_avatar/d.jotang.party/verazuo/{size}/1_1.png\&quot;}}]}],\&quot;id\&quot;:497,\&quot;title\&quot;:\&quot;【2019招新题库】焦糖19级招新题库\&quot;,\&quot;fancy_title\&quot;:\&quot;【2019招新题库】焦糖19级招新题库\&quot;,\&quot;posts_count\&quot;:9,\&quot;created_at\&quot;:\&quot;2019-09-03T08:56:00.242Z\&quot;,\&quot;views\&quot;:47,\&quot;reply_count\&quot;:0,\&quot;like_count\&quot;:1,\&quot;last_posted_at\&quot;:\&quot;2019-09-16T10:08:35.117Z\&quot;,\&quot;visible\&quot;:true,\&quot;closed\&quot;:false,\&quot;archived\&quot;:false,\&quot;has_summary\&quot;:false,\&quot;archetype\&quot;:\&quot;regular\&quot;,\&quot;slug\&quot;:\&quot;2019-19\&quot;,\&quot;category_id\&quot;:5,\&quot;word_count\&quot;:1251,\&quot;deleted_at\&quot;:null,\&quot;user_id\&quot;:61,\&quot;featured_link\&quot;:null,\&quot;pinned_globally\&quot;:false,\&quot;pinned_at\&quot;:null,\&quot;pinned_until\&quot;:null,\&quot;draft\&quot;:null,\&quot;draft_key\&quot;:\&quot;topic_497\&quot;,\&quot;draft_sequence\&quot;:0,\&quot;posted\&quot;:false,\&quot;unpinned\&quot;:null,\&quot;pinned\&quot;:false,\&quot;details\&quot;:{\&quot;created_by\&quot;:{\&quot;id\&quot;:61,\&quot;username\&quot;:\&quot;caoyiwen0929\&quot;,\&quot;name\&quot;:\&quot;文译\&quot;,\&quot;avatar_template\&quot;:\&quot;/user_avatar/d.jotang.party/caoyiwen0929/{size}/301_1.png\&quot;},\&quot;last_poster\&quot;:{\&quot;id\&quot;:98,\&quot;username\&quot;:\&quot;7uvss\&quot;,\&quot;name\&quot;:\&quot;马世豪\&quot;,\&quot;avatar_template\&quot;:\&quot;/letter_avatar_proxy/v2/letter/7/839c29/{size}.png\&quot;},\&quot;participants\&quot;:[{\&quot;id\&quot;:60,\&quot;username\&quot;:\&quot;allenx555\&quot;,\&quot;name\&quot;:\&quot;allenx555\&quot;,\&quot;avatar_template\&quot;:\&quot;/user_avatar/d.jotang.party/allenx555/{size}/176_1.png\&quot;,\&quot;post_count\&quot;:2,\&quot;primary_group_name\&quot;:null,\&quot;primary_group_flair_url\&quot;:null,\&quot;primary_group_flair_color\&quot;:null,\&quot;primary_group_flair_bg_color\&quot;:null},{\&quot;id\&quot;:61,\&quot;username\&quot;:\&quot;caoyiwen0929\&quot;,\&quot;name\&quot;:\&quot;文译\&quot;,\&quot;avatar_template\&quot;:\&quot;/user_avatar/d.jotang.party/caoyiwen0929/{size}/301_1.png\&quot;,\&quot;post_count\&quot;:2,\&quot;primary_group_name\&quot;:null,\&quot;primary_group_flair_url\&quot;:null,\&quot;primary_group_flair_color\&quot;:null,\&quot;primary_group_flair_bg_color\&quot;:null},{\&quot;id\&quot;:87,\&quot;username\&quot;:\&quot;Stardust567\&quot;,\&quot;name\&quot;:\&quot;Stardust567\&quot;,\&quot;avatar_template\&quot;:\&quot;/user_avatar/d.jotang.party/stardust567/{size}/300_1.png\&quot;,\&quot;post_count\&quot;:1,\&quot;primary_group_name\&quot;:null,\&quot;primary_group_flair_url\&quot;:null,\&quot;primary_group_flair_color\&quot;:null,\&quot;primary_group_flair_bg_color\&quot;:null},{\&quot;id\&quot;:96,\&quot;username\&quot;:\&quot;winter\&quot;,\&quot;name\&quot;:\&quot;1.wing\&quot;,\&quot;avatar_template\&quot;:\&quot;/letter_avatar_proxy/v2/letter/w/2bfe46/{size}.png\&quot;,\&quot;post_count\&quot;:1,\&quot;primary_group_name\&quot;:null,\&quot;primary_group_flair_url\&quot;:null,\&quot;primary_group_flair_color\&quot;:null,\&quot;primary_group_flair_bg_color\&quot;:null},{\&quot;id\&quot;:98,\&quot;username\&quot;:\&quot;7uvss\&quot;,\&quot;name\&quot;:\&quot;马世豪\&quot;,\&quot;avatar_template\&quot;:\&quot;/letter_avatar_proxy/v2/letter/7/839c29/{size}.png\&quot;,\&quot;post_count\&quot;:1,\&quot;primary_group_name\&quot;:null,\&quot;primary_group_flair_url\&quot;:null,\&quot;primary_group_flair_color\&quot;:null,\&quot;primary_group_flair_bg_color\&quot;:null},{\&quot;id\&quot;:63,\&quot;username\&quot;:\&quot;jiyinqin\&quot;,\&quot;name\&quot;:\&quot;纪尹钦\&quot;,\&quot;avatar_template\&quot;:\&quot;/user_avatar/d.jotang.party/jiyinqin/{size}/264_1.png\&quot;,\&quot;post_count\&quot;:1,\&quot;primary_group_name\&quot;:null,\&quot;primary_group_flair_url\&quot;:null,\&quot;primary_group_flair_color\&quot;:null,\&quot;primary_group_flair_bg_color\&quot;:null},{\&quot;id\&quot;:33,\&quot;username\&quot;:\&quot;zh25714x\&quot;,\&quot;name\&quot;:\&quot;小野\&quot;,\&quot;avatar_template\&quot;:\&quot;/letter_avatar_proxy/v2/letter/z/aca169/{size}.png\&quot;,\&quot;post_count\&quot;:1,\&quot;primary_group_name\&quot;:\&quot;jotang\&quot;,\&quot;primary_group_flair_url\&quot;:\&quot;\&quot;,\&quot;primary_group_flair_color\&quot;:\&quot;\&quot;,\&quot;primary_group_flair_bg_color\&quot;:\&quot;\&quot;}],\&quot;links\&quot;:[{\&quot;url\&quot;:\&quot;https://worldcosplay.net/member/Itsuki-chan\&quot;,\&quot;title\&quot;:\&quot;Profile | A-chan \\u003c3 - Cure WorldCosplay\&quot;,\&quot;internal\&quot;:false,\&quot;attachment\&quot;:false,\&quot;reflection\&quot;:false,\&quot;clicks\&quot;:3,\&quot;user_id\&quot;:87,\&quot;domain\&quot;:\&quot;worldcosplay.net\&quot;,\&quot;root_domain\&quot;:\&quot;worldcosplay.net\&quot;},{\&quot;url\&quot;:\&quot;http://docs.jinkan.org/docs/flask/\&quot;,\&quot;title\&quot;:\&quot;欢迎使用 Flask — Flask 0.10.1 文档\&quot;,\&quot;internal\&quot;:false,\&quot;attachment\&quot;:false,\&quot;reflection\&quot;:false,\&quot;clicks\&quot;:1,\&quot;user_id\&quot;:60,\&quot;domain\&quot;:\&quot;docs.jinkan.org\&quot;,\&quot;root_domain\&quot;:\&quot;jinkan.org\&quot;},{\&quot;url\&quot;:\&quot;https://www.uisdc.com/\&quot;,\&quot;title\&quot;:\&quot;优设网 - UISDC - 设计师交流学习平台 - 看设计文章，学软件教程，找灵感素材，尽在优设网！\&quot;,\&quot;internal\&quot;:false,\&quot;attachment\&quot;:false,\&quot;reflection\&quot;:false,\&quot;clicks\&quot;:1,\&quot;user_id\&quot;:61,\&quot;domain\&quot;:\&quot;www.uisdc.com\&quot;,\&quot;root_domain\&quot;:\&quot;uisdc.com\&quot;}],\&quot;notification_level\&quot;:2,\&quot;notifications_reason_id\&quot;:null,\&quot;can_create_post\&quot;:true,\&quot;can_reply_as_new_topic\&quot;:true,\&quot;can_flag_topic\&quot;:true},\&quot;current_post_number\&quot;:1,\&quot;highest_post_number\&quot;:9,\&quot;last_read_post_number\&quot;:9,\&quot;last_read_post_id\&quot;:957,\&quot;deleted_by\&quot;:null,\&quot;actions_summary\&quot;:[{\&quot;id\&quot;:4,\&quot;count\&quot;:0,\&quot;hidden\&quot;:false,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:8,\&quot;count\&quot;:0,\&quot;hidden\&quot;:false,\&quot;can_act\&quot;:true},{\&quot;id\&quot;:7,\&quot;count\&quot;:0,\&quot;hidden\&quot;:false,\&quot;can_act\&quot;:true}],\&quot;chunk_size\&quot;:20,\&quot;bookmarked\&quot;:false,\&quot;topic_timer\&quot;:null,\&quot;private_topic_timer\&quot;:null,\&quot;message_bus_last_id\&quot;:51,\&quot;participant_count\&quot;:7}&quot;}">
+    </div>
+    <link rel='preload'
+        href='/assets/preload-application-data-0a59ccab480941aaac91f9e7fa7f77496323ae056aaa4158822dea35de319c01.js'
+        as='script' />
+    <script src='/assets/preload-application-data-0a59ccab480941aaac91f9e7fa7f77496323ae056aaa4158822dea35de319c01.js'>
+    </script>
+
+
+
+    <link rel='preload'
+        href='/assets/browser-update-d924ff41586d6dcda055f0cfb41488724ba2e2d5271fef65ce5f480b46f9231d.js' as='script' />
+    <script src='/assets/browser-update-d924ff41586d6dcda055f0cfb41488724ba2e2d5271fef65ce5f480b46f9231d.js'></script>
+
+
+
+</body>
+
+</html>
