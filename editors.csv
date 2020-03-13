@@ -1,0 +1,38 @@
+属性,值,描述
+align,"left
+    center
+    right","
+HTML5 不支持。HTML 4.01 已废弃。 
+	规定表格相对周围元素的对齐方式。"
+bgcolor,"rgb(x,x,x)
+    #xxxxxx
+    colorname","
+HTML5 不支持。HTML 4.01 已废弃。 
+	规定表格的背景颜色。"
+border,"1
+	""""",规定表格单元是否拥有边框。
+cellpadding,pixels,"
+HTML5 不支持。规定单元边沿与其内容之间的空白。"
+cellspacing,pixels,"
+HTML5 不支持。规定单元格之间的空白。"
+frame,"void
+      above
+      below
+      hsides
+      lhs
+      rhs
+      vsides
+      box
+      border","
+HTML5 不支持。规定外侧边框的哪个部分是可见的。"
+rules,"none
+      groups
+      rows
+      cols
+      all","
+HTML5 不支持。规定内侧边框的哪个部分是可见的。"
+summary,text,"
+HTML5 不支持。规定表格的摘要。"
+width,"pixels
+      %","
+HTML5 不支持。规定表格的宽度。"
