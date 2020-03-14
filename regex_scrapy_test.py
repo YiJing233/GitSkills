@@ -2,8 +2,8 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import re
 
-originurl = "http://www.pythonscraping.com/pages/page3.html"
-url = originurl.encode("utf-8")
+url = "http://www.pythonscraping.com/pages/page3.html"
+# url = originurl.encode("utf-8")
 print(url)
 
 html = urlopen(url)
